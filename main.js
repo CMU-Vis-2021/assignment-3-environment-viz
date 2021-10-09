@@ -4,17 +4,19 @@ import vegaEmbed from "vega-embed";
 //getting code from: https://codepen.io/ames/pen/vLVavK
 //https://bost.ocks.org/mike/bubble-map/
 
-// var svg = d3.select("svg"),
-//     width = +svg.attr("width"),
-//     height = +svg.attr("height");
+
 // Size 
-var width = 460
-var height = 400
+var width = 650;
+var height = 600;
+
+//adjusting the size of the circle for both the bubble map and the key to use
+var minRadiusRange = 1;
+var maxRadiusRange = 260000;
 
 // Map and projection
 var projection = d3.geoMercator()
-    .center([-98, 39])                // GPS of location to zoom on
-    .scale(410)                       // This is like the zoom
+    .center([-96, 39])                // GPS of location to zoom on
+    .scale(588)                       // This is like the zoom
     .translate([ width/2, height/2 ])
 
 
@@ -157,8 +159,8 @@ var color = d3.scaleOrdinal()
 
  // Add a scale for bubble size
  var size = d3.scaleLinear()
- .domain([1,260000])  // What's in the data
- .range([ 2, 15])  // Size in pixel
+ .domain([minRadiusRange,maxRadiusRange])  // What's in the data
+ .range([ 2, 25])  // Size in pixel
 
 // Draw the map
 svg.append("g")
@@ -189,7 +191,59 @@ svg
   .on("mouseover", mouseover)
   .on("mousemove", mousemove)
   .on("mouseleave", mouseleave)
+
+//now I'm making the key
+
+// var svg = d3.select("#my_dataviz")
+//   .append("svg")
+//     .attr("width", 50)
+//     .attr("height", 50)
+
+var valuesToShow = [minRadiusRange, maxRadiusRange/2, maxRadiusRange]
+var xCircle = 50
+var xLabel = 100
+var yCircle = 480
+
+
+svg
+  .selectAll("legend")
+  .data(valuesToShow)
+  .enter()
+  .append("circle")
+    .attr("cx", xCircle)
+    .attr("cy", function(d){ return yCircle - size(d) } )
+    .attr("r", function(d){ return size(d) })
+    .style("fill", "none")
+    .attr("stroke", "black")
+svg
+    .selectAll("legend")
+    .data(valuesToShow)
+    .enter()
+    .append("line")
+      .attr('x1', function(d){ return xCircle + size(d) } )
+      .attr('x2', xLabel)
+      .attr('y1', function(d){ return yCircle - size(d)*1.5 } )
+      .attr('y2', function(d){ return yCircle - size(d)*1.5 } )
+      .attr('stroke', 'black')
+      .style('stroke-dasharray', ('2,2'))
+  
+  // Add legend: labels
+svg
+    .selectAll("legend")
+    .data(valuesToShow)
+    .enter()
+    .append("text")
+      .attr('x', xLabel)
+      .attr('y', function(d){ return yCircle - size(d)*1.5 } )
+      .text( function(d){ if(d == maxRadiusRange){return d+" acres"}else{return d} } )
+      .style("font-size", 12)
+      .attr('alignment-baseline', 'middle')
+
+
+    
 })
+
+
 
 
 d3.select("#d3-div").append("p").text("hello from D3");
