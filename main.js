@@ -4,9 +4,12 @@ import vegaEmbed from "vega-embed";
 //getting code from: https://codepen.io/ames/pen/vLVavK
 //https://bost.ocks.org/mike/bubble-map/
 
-var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
+// var svg = d3.select("svg"),
+//     width = +svg.attr("width"),
+//     height = +svg.attr("height");
+// Size 
+var width = 460
+var height = 400
 
 // Map and projection
 var projection = d3.geoMercator()
@@ -115,6 +118,42 @@ console.log("IN HERE");
 // Filter data
 //data.features = data.features.filter( function(d){return d.properties.name=="USA"});
 
+ // create a tooltip
+ var Tooltip = d3.select("#my_dataviz")
+ .append("div")
+ .attr("class", "tooltip")
+ .style("opacity", 1)
+ .style("background-color", "white")
+ .style("border", "solid")
+ .style("border-width", "2px")
+ .style("border-radius", "5px")
+ .style("padding", "5px")
+ 
+    // Three function that change the tooltip when user hover / move / leave a cell
+    const mouseover = function(event, d) {
+      Tooltip.style("opacity", 1)
+    }
+    var mousemove = function(event, d) {
+      console.log(event);
+      console.log(event.x);
+      Tooltip
+        .html(d.FIRE_SIZE + "<br>" + "long: " + d.LONGITUDE + "<br>" + "lat: " + d.LATITUDE)
+        .style("left", (event.x)+30 + "px")
+        .style("top", (event.y)-30 + "px")
+    }
+    var mouseleave = function(event, d) {
+      Tooltip.style("opacity", 0)
+    }
+
+
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+  .attr("width", width)
+  .attr("height", height)
+
+var color = d3.scaleOrdinal()
+      .domain(["1996", "1999", "2000", "2002","2003","2009","2012","2013" ])
+      .range([ "#F6DDCC", "#F5CBA7", "#EB984E", "#E67E22", "#CA6F1E", "#A04000", "#873600","#6E2C00"])
 
  // Add a scale for bubble size
  var size = d3.scaleLinear()
@@ -143,10 +182,13 @@ svg
     .attr("cx", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[0] })
     .attr("cy", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[1] })
     .attr("r", function(d){ return size(d.FIRE_SIZE) })
-    .style("fill", "69b3a2")
-    .attr("stroke", "#69b3a2")
+    .style("fill", function(d){ return color(d.FIRE_YEAR) })
+    .attr("stroke", function(d){ return color(d.FIRE_YEAR) })
     .attr("stroke-width", 3)
     .attr("fill-opacity", .4)
+  .on("mouseover", mouseover)
+  .on("mousemove", mousemove)
+  .on("mouseleave", mouseleave)
 })
 
 
