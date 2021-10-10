@@ -1,8 +1,7 @@
 import * as d3 from "d3";
 import vegaEmbed from "vega-embed";
 
-//getting code from: https://codepen.io/ames/pen/vLVavK
-//https://bost.ocks.org/mike/bubble-map/
+//getting lots of code and insight from: https://www.d3-graph-gallery.com/index.html
 
 
 // Size 
@@ -15,7 +14,7 @@ var maxRadiusRange = 260000;
 
 // Map and projection
 var projection = d3.geoMercator()
-    .center([-96, 39])                // GPS of location to zoom on
+    .center([-96, 37])                // GPS of location to zoom on
     .scale(588)                       // This is like the zoom
     .translate([ width/2, height/2 ])
 
@@ -29,7 +28,7 @@ console.log("IN HERE");
  var Tooltip = d3.select("#my_dataviz")
  .append("div")
  .attr("class", "tooltip")
- .style("opacity", 1)
+ .style("opacity", 0)
  .style("background-color", "white")
  .style("border", "solid")
  .style("border-width", "2px")
@@ -172,27 +171,27 @@ svg
 
 
 
-d3.select("#d3-div").append("p").text("hello from D3");
+// d3.select("#d3-div").append("p").text("hello from D3");
 
-vegaEmbed("#vega-div", {
-  $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-  description: "A simple bar chart with embedded data.",
-  data: {
-    values: [
-      { a: "A", b: 28 },
-      { a: "B", b: 55 },
-      { a: "C", b: 43 },
-      { a: "D", b: 91 },
-      { a: "E", b: 81 },
-      { a: "F", b: 53 },
-      { a: "G", b: 19 },
-      { a: "H", b: 87 },
-      { a: "I", b: 52 },
-    ],
-  },
-  mark: "bar",
-  encoding: {
-    x: { field: "a", type: "nominal", axis: { labelAngle: 0 } },
-    y: { field: "b", type: "quantitative" },
-  },
-});
+// vegaEmbed("#vega-div", {
+//   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+//   description: "A simple bar chart with embedded data.",
+//   data: {
+//     values: [
+//       { a: "A", b: 28 },
+//       { a: "B", b: 55 },
+//       { a: "C", b: 43 },
+//       { a: "D", b: 91 },
+//       { a: "E", b: 81 },
+//       { a: "F", b: 53 },
+//       { a: "G", b: 19 },
+//       { a: "H", b: 87 },
+//       { a: "I", b: 52 },
+//     ],
+//   },
+//   mark: "bar",
+//   encoding: {
+//     x: { field: "a", type: "nominal", axis: { labelAngle: 0 } },
+//     y: { field: "b", type: "quantitative" },
+//   },
+// });
