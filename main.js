@@ -7,7 +7,7 @@ import vegaEmbed from "vega-embed";
 
 // Size 
 var width = 650;
-var height = 600;
+var height = 400;
 
 //adjusting the size of the circle for both the bubble map and the key to use
 var minRadiusRange = 1;
@@ -18,101 +18,6 @@ var projection = d3.geoMercator()
     .center([-96, 39])                // GPS of location to zoom on
     .scale(588)                       // This is like the zoom
     .translate([ width/2, height/2 ])
-
-
-// Create data for circles:
-var markers = [
-  {
-    "FIRE_YEAR": 1996,
-    "NWCG_CAUSE_CLASSIFICATION": "Human",
-    "NWCG_GENERAL_CAUSE": "Arson/incendiarism",
-    "FIRE_SIZE": 83323,
-    "LATITUDE": 39.25833333,
-    "LONGITUDE": -122.9166667,
-    "STATE": "CA"
-  },
-  {
-    "FIRE_YEAR": 1999,
-    "NWCG_CAUSE_CLASSIFICATION": "Human",
-    "NWCG_GENERAL_CAUSE": "Arson/incendiarism",
-    "FIRE_SIZE": 158000,
-    "LATITUDE": 26.2337,
-    "LONGITUDE": -80.7665,
-    "STATE": "FL"
-  },
-  {
-    "FIRE_YEAR": 2000,
-    "NWCG_CAUSE_CLASSIFICATION": "Human",
-    "NWCG_GENERAL_CAUSE": "Arson/incendiarism",
-    "FIRE_SIZE": 83508,
-    "LATITUDE": 43.73166667,
-    "LONGITUDE": -103.8866667,
-    "STATE": "SD"
-  },
-  {
-    "FIRE_YEAR": 2002,
-    "NWCG_CAUSE_CLASSIFICATION": "Human",
-    "NWCG_GENERAL_CAUSE": "Arson/incendiarism",
-    "FIRE_SIZE": 259158.9,
-    "LATITUDE": 34.1084,
-    "LONGITUDE": -110.4859,
-    "STATE": "AZ"
-  },
-  {
-    "FIRE_YEAR": 2002,
-    "NWCG_CAUSE_CLASSIFICATION": "Human",
-    "NWCG_GENERAL_CAUSE": "Arson/incendiarism",
-    "FIRE_SIZE": 209704.1,
-    "LATITUDE": 34.1362,
-    "LONGITUDE": -110.7029,
-    "STATE": "AZ"
-  },
-  {
-    "FIRE_YEAR": 2002,
-    "NWCG_CAUSE_CLASSIFICATION": "Human",
-    "NWCG_GENERAL_CAUSE": "Arson/incendiarism",
-    "FIRE_SIZE": 189688,
-    "LATITUDE": 62.6994,
-    "LONGITUDE": -155.6523,
-    "STATE": "AK"
-  },
-  {
-    "FIRE_YEAR": 2003,
-    "NWCG_CAUSE_CLASSIFICATION": "Human",
-    "NWCG_GENERAL_CAUSE": "Arson/incendiarism",
-    "FIRE_SIZE": 91281,
-    "LATITUDE": 34.19694444,
-    "LONGITUDE": -117.2761111,
-    "STATE": "CA"
-  },
-  {
-    "FIRE_YEAR": 2009,
-    "NWCG_CAUSE_CLASSIFICATION": "Human",
-    "NWCG_GENERAL_CAUSE": "Arson/incendiarism",
-    "FIRE_SIZE": 160371,
-    "LATITUDE": 34.2425,
-    "LONGITUDE": -118.1888889,
-    "STATE": "CA"
-  },
-  {
-    "FIRE_YEAR": 2012,
-    "NWCG_CAUSE_CLASSIFICATION": "Human",
-    "NWCG_GENERAL_CAUSE": "Arson/incendiarism",
-    "FIRE_SIZE": 107847,
-    "LATITUDE": 39.3231,
-    "LONGITUDE": -112.3881,
-    "STATE": "UT"
-  },
-  {
-    "FIRE_YEAR": 2013,
-    "NWCG_CAUSE_CLASSIFICATION": "Human",
-    "NWCG_GENERAL_CAUSE": "Arson/incendiarism",
-    "FIRE_SIZE": 87154.4,
-    "LATITUDE": 64.68,
-    "LONGITUDE": -146.58,
-    "STATE": "AK"
-  }
-];
 
 d3.json("assets/geojson/USA.geojson").then(function(data){
 //d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(function(data){
@@ -136,8 +41,6 @@ console.log("IN HERE");
       Tooltip.style("opacity", 1)
     }
     var mousemove = function(event, d) {
-      console.log(event);
-      console.log(event.x);
       Tooltip
         .html(d.FIRE_SIZE + "<br>" + "long: " + d.LONGITUDE + "<br>" + "lat: " + d.LATITUDE)
         .style("left", (event.x)+30 + "px")
@@ -154,8 +57,8 @@ var svg = d3.select("#my_dataviz")
   .attr("height", height)
 
 var color = d3.scaleOrdinal()
-      .domain(["1996", "1999", "2000", "2002","2003","2009","2012","2013" ])
-      .range([ "#F6DDCC", "#F5CBA7", "#EB984E", "#E67E22", "#CA6F1E", "#A04000", "#873600","#6E2C00"])
+      .domain(["arson_incendiarism", "debris_and_open_burning", "equipment_and_vehicle_use", "power_generation","recreation_and_ceremony"])
+      .range([  "#F5CBA7", "#EB984E", "#E67E22", "#A04000","#6E2C00"])
 
  // Add a scale for bubble size
  var size = d3.scaleLinear()
@@ -180,29 +83,52 @@ svg
   .selectAll("myCircles")
   .data(markers)
   .enter()
+  .filter(function(d) { return (d.NWCG_GENERAL_CAUSE == "Arson/incendiarism" 
+                                || d.NWCG_GENERAL_CAUSE == "Equipment and vehicle use" 
+                                || d.NWCG_GENERAL_CAUSE == "Recreation and ceremony") })
   .append("circle")
+    .attr("class" , d => d.CAUSE__ABRV )
     .attr("cx", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[0] })
     .attr("cy", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[1] })
     .attr("r", function(d){ return size(d.FIRE_SIZE) })
-    .style("fill", function(d){ return color(d.FIRE_YEAR) })
-    .attr("stroke", function(d){ return color(d.FIRE_YEAR) })
+    .style("fill", function(d){ return color(d.CAUSE__ABRV) })
+    .attr("stroke", function(d){ return color(d.CAUSE__ABRV) })
     .attr("stroke-width", 3)
     .attr("fill-opacity", .4)
   .on("mouseover", mouseover)
   .on("mousemove", mousemove)
   .on("mouseleave", mouseleave)
 
+  function update(){
+    // For each check box:
+    d3.selectAll(".checkbox").each(function(d){
+      let cb = d3.select(this);
+      let grp = cb.property("value");
+
+      // If the box is check, I show the group
+      if(cb.property("checked")){
+        console.log("showing group");
+        console.log(grp);
+        svg.selectAll("."+grp).transition().duration(1000).style("opacity", 1).attr("r", function(d){ return size(d.FIRE_SIZE) })
+
+      // Otherwise I hide it
+      }else{
+        svg.selectAll("."+grp).transition().duration(1000).style("opacity", 0).attr("r", 0)
+      }
+    })
+  }
+
+  // When a button change, I run the update function
+  d3.selectAll(".checkbox").on("change",update);
+
+  // And I initialize it at the beginning
+  update();
+
 //now I'm making the key
-
-// var svg = d3.select("#my_dataviz")
-//   .append("svg")
-//     .attr("width", 50)
-//     .attr("height", 50)
-
 var valuesToShow = [minRadiusRange, maxRadiusRange/2, maxRadiusRange]
 var xCircle = 50
 var xLabel = 100
-var yCircle = 480
+var yCircle = 380
 
 
 svg
@@ -235,7 +161,7 @@ svg
     .append("text")
       .attr('x', xLabel)
       .attr('y', function(d){ return yCircle - size(d)*1.5 } )
-      .text( function(d){ if(d == maxRadiusRange){return d+" acres"}else{return d} } )
+      .text( function(d){ if(d == maxRadiusRange){return d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+" acres"}else{return d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} } )
       .style("font-size", 12)
       .attr('alignment-baseline', 'middle')
 

@@ -1,0 +1,63 @@
+FOD_ID,NWCG_REPORTING_UNIT_NAME,FIRE_YEAR,DISCOVERY_DATE,NWCG_CAUSE_CLASSIFICATION,NWCG_GENERAL_CAUSE,FIRE_SIZE,LATITUDE,LONGITUDE,STATE
+95746,Mendocino National Forest,1996,8/11/1996 0:00,Human,Arson/incendiarism,83323.0,39.25833333,-122.9166667,CA
+96608,Los Padres National Forest,1996,8/15/1996 0:00,Human,Equipment and vehicle use,106668.0,35.42,-120.4227778,CA
+190849,Warm Springs Agency,1996,8/10/1996 0:00,Human,Equipment and vehicle use,118230.0,44.9832,-121.3512,OR
+176981,Miccosukee Tribe,1999,4/19/1999 0:00,Human,Arson/incendiarism,158000.0,26.2337,-80.7665,FL
+135944,Black Hills National Forest,2000,8/24/2000 0:00,Human,Arson/incendiarism,83508.0,43.73166667,-103.8866667,SD
+338058,Butte Field Office,2000,8/15/2000 0:00,Human,Equipment and vehicle use,81220.0,46.20297,-111.27376,MT
+375430,Hanford Reach National Monument,2000,6/27/2000 0:00,Human,Equipment and vehicle use,163884.0,46.57194444,-119.7727778,WA
+311024,Alaska Fire Service,2001,6/20/2001 0:00,Human,Debris and open burning,84730.0,64.3329,-148.9524,AK
+311025,Alaska Fire Service,2001,6/20/2001 0:00,Human,Missing data/not specified/undetermined,112112.0,64.6618,-148.2055,AK
+153920,Sequoia National Forest,2002,7/21/2002 0:00,Human,Recreation and ceremony,150696.0,35.87361111,-118.4580556,CA
+155922,Pike and San Isabel National Forest,2002,6/8/2002 0:00,Human,Missing data/not specified/undetermined,137760.0,39.0575,-105.4083333,CO
+302872,Fort Apache Agency,2002,6/18/2002 0:00,Human,Arson/incendiarism,259158.9,34.1084,-110.4859,AZ
+302873,Fort Apache Agency,2002,6/20/2002 0:00,Human,Arson/incendiarism,209704.1,34.1362,-110.7029,AZ
+311078,Alaska Fire Service,2002,5/22/2002 0:00,Human,Arson/incendiarism,189688.0,62.6994,-155.6523,AK
+311080,Alaska Fire Service,2002,5/23/2002 0:00,Human,Equipment and vehicle use,115328.0,65.4376,-148.8181,AK
+162278,San Bernardino National Forest,2003,10/25/2003 0:00,Human,Arson/incendiarism,91281.0,34.19694444,-117.2761111,CA
+163218,Coronado National Forest,2003,6/17/2003 0:00,Human,Missing data/not specified/undetermined,82440.0,32.43,-110.7716667,AZ
+165380,Cleveland National Forest,2003,10/25/2003 0:00,Human,Recreation and ceremony,280059.0,32.98555556,-116.7275,CA
+7449,Cibola National Forest,2006,3/12/2006 0:00,Human,Missing data/not specified/undetermined,427696.0,35.21666667,-100.9333333,TX
+14907,Los Padres National Forest,2006,9/4/2006 0:00,Human,Debris and open burning,162702.0,34.63222222,-118.7697222,CA
+362516,Lake Meredith National Recreation Area,2006,3/12/2006 0:00,Human,Missing data/not specified/undetermined,479549.0,35.6678,-101.3708,TX
+604603,New Mexico State Forestry Division,2006,3/12/2006 0:00,Human,Missing data/not specified/undetermined,92390.0,33.05825,-103.6025,NM
+1276845,Alaska Fire Service,2006,6/7/2006 0:00,Human,Debris and open burning,118520.1,64.37,-149.03,AK
+18897,Superior National Forest,2007,5/5/2007 0:00,Human,Recreation and ceremony,75484.0,48.06888889,-90.81138889,MN
+24951,Los Padres National Forest,2007,7/4/2007 0:00,Human,Equipment and vehicle use,240207.0,34.77916667,-120.09,CA
+26492,Cleveland National Forest,2007,10/21/2007 0:00,Human,Power generation/transmission/distribution,197990.0,33.07444444,-116.7111111,CA
+383904,San Diego National Wildlife Refuge,2007,10/21/2007 0:00,Human,Recreation and ceremony,90440.0,32.608768,-116.577142,CA
+384128,Okefenokee National Wildlife Refuge,2007,4/16/2007 0:00,Human,Missing data/not specified/undetermined,191474.0,30.80277778,-82.2725,GA
+27729,Los Padres National Forest,2008,6/8/2008 0:00,Human,Recreation and ceremony,81378.0,36.10527778,-121.4308333,CA
+706908,Texas A & M Forest Service,2008,2/25/2008 0:00,Human,Missing data/not specified/undetermined,220000.0,31.74216,-101.0438,TX
+707282,Texas A & M Forest Service,2008,4/30/2008 0:00,Human,Missing data/not specified/undetermined,98168.0,30.63117,-101.5342,TX
+39377,Los Padres National Forest,2009,8/8/2009 0:00,Human,Missing data/not specified/undetermined,91622.0,34.94972222,-119.9777778,CA
+41500,Angeles National Forest,2009,8/26/2009 0:00,Human,Arson/incendiarism,160371.0,34.2425,-118.1888889,CA
+1468514,Alaska Regional Office,2010,5/17/2010 0:00,Human,Recreation and ceremony,91885.0,62.395,-153.5033,AK
+1474384,Idaho Falls District,2010,7/13/2010 0:00,Human,Missing data/not specified/undetermined,108855.0,43.52969,-112.88078,ID
+20026006,Apache-Sitgreaves National Forest,2011,5/29/2011 0:00,Human,Recreation and ceremony,538049.0,33.60611111,-109.4497222,AZ
+20026572,Coronado National Forest,2011,5/8/2011 0:00,Human,Missing data/not specified/undetermined,222954.0,31.81972222,-109.2111111,AZ
+201112027,Gila Cliff Dwellings National Monument,2011,4/28/2011 0:00,Human,Recreation and ceremony,88835.0,33.14369,-108.36869,NM
+201178356,New Mexico State Forestry Division,2011,6/26/2011 0:00,Human,Power generation/transmission/distribution,156593.0,35.811667,-106.536667,NM
+201337585,Texas A & M Forest Service,2011,4/6/2011 0:00,Human,Equipment and vehicle use,122500.0,33.11793333,-100.325,TX
+201337611,Texas A & M Forest Service,2011,4/9/2011 0:00,Human,Missing data/not specified/undetermined,314444.0,30.84951667,-104.0460222,TX
+201337815,Texas A & M Forest Service,2011,4/25/2011 0:00,Human,Missing data/not specified/undetermined,175000.0,30.1635,-101.2471667,TX
+201337903,Texas A & M Forest Service,2011,5/6/2011 0:00,Human,Missing data/not specified/undetermined,89200.0,33.60996575,-100.6924122,TX
+201432957,Boise National Forest,2012,8/3/2012 0:00,Human,Equipment and vehicle use,146832.0,43.71111111,-115.3655556,ID
+201434383,Plumas National Forest,2012,7/29/2012 0:00,Human,Recreation and ceremony,75431.0,40.00694444,-121.2713889,CA
+201510635,Richfield Field Office,2012,6/27/2012 0:00,Human,Arson/incendiarism,107847.0,39.3231,-112.3881,UT
+201766413,Stanislaus National Forest,2013,8/17/2013 0:00,Human,Missing data/not specified/undetermined,255858.0,37.86055556,-120.0830556,CA
+201770099,Alaska Fire Service,2013,6/19/2013 0:00,Human,Arson/incendiarism,87154.4,64.68,-146.58,AK
+201815308,Washington State Department of Natural Resources Headquarters,2013,7/27/2013 0:00,Human,Missing data/not specified/undetermined,80053.0,47.2982,-120.1225,WA
+300156672,Eldorado National Forest,2014,9/13/2014 0:00,Human,Missing data/not specified/undetermined,97717.0,38.7925,-120.6022222,CA
+300208089,Alaska Fire Service,2015,6/20/2015 0:00,Human,Missing data/not specified/undetermined,75135.0,62.58,-158.02,AK
+300217045,Colville Agency,2015,8/13/2015 0:00,Human,Equipment and vehicle use,218138.0,48.33814,-119.00175,WA
+400002883,Boise National Forest,2016,7/18/2016 0:00,Human,Missing data/not specified/undetermined,188404.0,43.95027778,-115.7619444,ID
+400003169,Los Padres National Forest,2016,7/22/2016 0:00,Human,Recreation and ceremony,132127.0,36.46083333,-121.9005556,CA
+400031182,Hanford Reach National Monument,2016,7/30/2016 0:00,Human,Equipment and vehicle use,171915.0,46.569326,-120.080828,WA
+400009652,Los Padres National Forest,2017,12/4/2017 0:00,Human,Missing data/not specified/undetermined,281893.0,34.42527778,-119.0602778,CA
+400009841,Okanogan-Wenatchee National Forest,2017,7/23/2017 0:00,Human,Missing data/not specified/undetermined,127498.0,48.85527778,-120.4136111,WA
+400015902,Central California District,2017,7/16/2017 0:00,Human,Firearms and explosives use,81826.0,37.61965,-120.2158,CA
+400016424,Northern California District,2017,7/11/2017 0:00,Human,Equipment and vehicle use,83599.0,40.07486,-120.14819,NV
+400024693,Winnemucca District Office,2017,7/3/2017 0:00,Human,Missing data/not specified/undetermined,98960.1,39.762111,-119.252656,NV
+400142021,Texas A & M Forest Service,2017,3/7/2017 0:00,Human,Missing data/not specified/undetermined,135000.0,35.31808333,-100.5388333,TX
+400142232,Texas A & M Forest Service,2017,3/6/2017 0:00,Human,Missing data/not specified/undetermined,318156.0,36.0865,-100.531,TX
