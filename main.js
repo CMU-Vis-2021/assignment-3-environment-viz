@@ -17,6 +17,21 @@ var projection = d3.geoMercator()
     .scale(588)                       // This is like the zoom
     .translate([ width/2, height/2 ])
 
+
+var dataset;  //Global var
+var url = "https://www.notion.so/katelyncmorrison/Classes-1c8d37e3c382436d8e68e88e428c8bfe#bdcd26ddbd8a4ec7b6b13ac9bd1c57d7"
+
+d3.csv(url, function(error, data) {
+    // If error is not null, something went wrong.
+    if (error) {
+          console.log(error);  //Log the error.
+    } else {
+          console.log(data);   //Log the data.
+          dataset = data; // Give the data a global scope
+          //Call some other functions that generate the visualization
+    }
+});
+
 d3.json("assets/geojson/USA.geojson").then(function(data){
 
   // create a tooltip
