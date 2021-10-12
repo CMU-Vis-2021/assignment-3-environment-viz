@@ -18,20 +18,13 @@ var projection = d3.geoMercator()
     .translate([ width/2, height/2 ])
 
 
-var dataset;  //Global var
-var url = "https://drive.google.com/file/d/1CFROQE2413R7-ML2dLwOY-Wg3-BkqE2f/view?usp=sharing"
-// var url = "http://raw.githubusercontent.com/katelyn98/PersonalWebsite/master/FiresQueriedComma.csv"
+//just testing the data loading method
+// d3.json("assets/firedata.json").then((table) => {
+//   console.log(table);
+// });
 
-d3.csv(url, function(error, data) {
-    // If error is not null, something went wrong.
-    if (error) {
-          console.log(error);  //Log the error.
-    } else {
-          console.log(data);   //Log the data.
-          dataset = data; // Give the data a global scope
-          //Call some other functions that generate the visualization
-    }
-});
+let firedata = d3.json("assets/firedata.json")
+
 
 d3.json("assets/geojson/USA.geojson").then(function(data){
 
