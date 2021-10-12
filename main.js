@@ -24,6 +24,7 @@ var projection = d3.geoMercator()
 d3.csv("assets/firedata.csv").then((table)=>{
   d3.json("assets/geojson/USA.geojson").then(function(data){
 
+    //********SLIDER CODE************//
     //setting the date range for the range slider
     var minDateRange = new Date("2000-01-01"),
         maxDateRange = new Date("2018-12-31")
@@ -81,8 +82,10 @@ d3.csv("assets/firedata.csv").then((table)=>{
         .text(formatDate(minDateRange))
         .attr("transform", "translate(0," + (-25) + ")");
 
+    //*********END OF SLIDER CODE****************//
 
-    // create a tooltip
+
+    //************TOOLTIP CODE*************//
     var Tooltip = d3.select("#my_dataviz")
     .append("div")
     .attr("class", "tooltip")
@@ -111,6 +114,8 @@ d3.csv("assets/firedata.csv").then((table)=>{
     var mouseleave = function(event, d) {
       Tooltip.style("opacity", 0)
     }
+    //***********END OF TOOLTIP CODE*********//
+
 
     var svg = d3.select("#my_dataviz")
       .append("svg")
@@ -119,24 +124,7 @@ d3.csv("assets/firedata.csv").then((table)=>{
 
     var color = d3.scaleOrdinal()
       .domain(categories)
-      .range(d3.schemeCategory10); //can try to set up specific colors for the legend later
-
-    // svg
-    //   .selectAll("legend")
-    //   .data(table)
-    //   .enter()
-    //     .append('g')
-    //     .append("text")
-    //       .attr('x', function(d,i){ return 30 + i*60})
-    //       .attr('y', 30)
-    //       .text(function(d) { return d.NWCG_GENERAL_CAUSE; })
-    //       .style("fill", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
-    //       .style("font-size", 15)
-    //     .on("click", function(d){
-    //       // is the element currently visible ?
-    //       currentOpacity = d3.selectAll("." + d.NWCG_GENERAL_CAUSE).style("opacity")
-    //       // Change the opacity: from 0 to 1 or from 1 to 0
-    //       d3.selectAll("." + d.NWCG_GENERAL_CAUSE).transition().style("opacity", currentOpacity == 1 ? 0:1)
+      .range(d3.schemeSet2); //can try to set up specific colors for the legend later
 
      // Add a scale for bubble size
      var size = d3.scaleLinear()
@@ -159,7 +147,7 @@ d3.csv("assets/firedata.csv").then((table)=>{
     // Add circles:
     svg
       .selectAll("myCircles")
-      .data(table.slice(150,650))
+      .data(table.slice(150,650)) //currently only viewing small range
       .enter()
       .append("circle")
         .attr("class" , d => d.NWCG_GENERAL_CAUSE)
