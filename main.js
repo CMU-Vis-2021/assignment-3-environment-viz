@@ -24,6 +24,40 @@ var projection = d3.geoMercator()
 d3.csv("assets/firedata.csv").then((table)=>{
   d3.json("assets/geojson/USA.geojson").then(function(data){
 
+    //defining color for categories and legend later
+    var color = d3.scaleOrdinal()
+      .domain(categories)
+      .range(d3.schemeSet2); //can try to set up specific colors for the legend later
+
+    //**********LEGEND CODE**********//
+    var svgLegend = d3.select("#legend")
+      .append("svg")
+      .attr("width", 400)
+      .attr("height", 405)
+
+    svgLegend.selectAll("legenddots")
+      .data(categories)
+      .enter()
+      .append("circle")
+        .attr("cx", 100)
+        .attr("cy", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+        .attr("r", 7)
+        .style("fill", function(d){ return color(d)})
+
+    // Add one dot in the legend for each name.
+    svgLegend.selectAll("legendlabels")
+      .data(categories)
+      .enter()
+      .append("text")
+        .attr("x", 120)
+        .attr("y", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+        .style("fill", function(d){ return color(d)})
+        .text(function(d){ return d})
+        .attr("text-anchor", "left")
+        .style("alignment-baseline", "middle")
+    //********END OF LEGEND CODE*******//
+
+
     //********SLIDER CODE************//
     //setting the date range for the range slider
     var minDateRange = new Date("2000-01-01"),
@@ -122,16 +156,12 @@ d3.csv("assets/firedata.csv").then((table)=>{
       .attr("width", width)
       .attr("height", height)
 
-    var color = d3.scaleOrdinal()
-      .domain(categories)
-      .range(d3.schemeSet2); //can try to set up specific colors for the legend later
-
      // Add a scale for bubble size
      var size = d3.scaleLinear()
      .domain([minRadiusRange,maxRadiusRange])  // What's in the data
      .range([ 2, 25])  // Size in pixel
 
-    // Draw the map
+    //******* DRAW THE MAP*******//
     svg.append("g")
         .selectAll("path")
         .data(data.features)
@@ -144,7 +174,7 @@ d3.csv("assets/firedata.csv").then((table)=>{
         .style("stroke", "black")
         .style("opacity", .3)
 
-    // Add circles:
+    // Adding datapoints from firedata.csv:
     svg
       .selectAll("myCircles")
       .data(table.slice(150,650)) //currently only viewing small range
@@ -161,6 +191,19 @@ d3.csv("assets/firedata.csv").then((table)=>{
       .on("mouseover", mouseover)
       .on("mousemove", mousemove)
       .on("mouseleave", mouseleave)
+
+    // function update(){
+    //   // For each check box:
+    //   d3.selectAll("legend")
+    //     .data(table.slice(150,650))
+    //     .enter()
+    //     .on("click", d=> {
+    //       currentOpacity = d3.select
+    //     })
+    // }
+
+    //*********End of drawing map*******//
+
 
     //now I'm making the key
     var valuesToShow = [minRadiusRange, maxRadiusRange/2, maxRadiusRange]
