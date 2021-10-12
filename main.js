@@ -19,7 +19,8 @@ var projection = d3.geoMercator()
 
 
 var dataset;  //Global var
-var url = "https://www.notion.so/katelyncmorrison/Classes-1c8d37e3c382436d8e68e88e428c8bfe#bdcd26ddbd8a4ec7b6b13ac9bd1c57d7"
+var url = "https://drive.google.com/file/d/1CFROQE2413R7-ML2dLwOY-Wg3-BkqE2f/view?usp=sharing"
+// var url = "http://raw.githubusercontent.com/katelyn98/PersonalWebsite/master/FiresQueriedComma.csv"
 
 d3.csv(url, function(error, data) {
     // If error is not null, something went wrong.
