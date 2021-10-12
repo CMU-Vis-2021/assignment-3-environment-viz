@@ -17,9 +17,6 @@ var projection = d3.geoMercator()
     .scale(588)                       // This is like the zoom
     .translate([ width/2, height/2 ])
 
-// var firedata = d3.csv("assets/firedata.csv").then((table)=>{
-//   console.log(table.slice(0,5));
-// });
 d3.csv("assets/firedata.csv").then((table)=>{
   d3.json("assets/geojson/USA.geojson").then(function(data){
 
@@ -38,12 +35,17 @@ d3.csv("assets/firedata.csv").then((table)=>{
     const mouseover = function(event, d) {
       Tooltip.style("opacity", 1)
     }
+
     var mousemove = function(event, d) {
       Tooltip
-        .html("Acres burned: " + d.FIRE_SIZE + "<br>" + "Longitude: " + d.LONGITUDE + "<br>" + "Latitude: " + d.LATITUDE)
+        .html("Acres burned: " + d.FIRE_SIZE 
+          + "<br>" + "Longitude: " + d.LONGITUDE 
+          + "<br>" + "Latitude: " + d.LATITUDE
+          + "<br>" + "Cause of fire: " + d.NWCG_GENERAL_CAUSE)
         .style("left", (event.x)+30 + "px")
         .style("top", (event.y)-30 + "px")
     }
+
     var mouseleave = function(event, d) {
       Tooltip.style("opacity", 0)
     }
@@ -53,8 +55,12 @@ d3.csv("assets/firedata.csv").then((table)=>{
       .attr("width", width)
       .attr("height", height)
 
+    // var color = d3.scaleOrdinal()
+    //       .domain(["arson_incendiarism", "debris_and_open_burning", "equipment_and_vehicle_use", "power_generation","recreation_and_ceremony"])
+    //       .range([  "#F5CBA7", "#EB984E", "#E67E22", "#A04000","#6E2C00"])
+
     var color = d3.scaleOrdinal()
-          .domain(["arson_incendiarism", "debris_and_open_burning", "equipment_and_vehicle_use", "power_generation","recreation_and_ceremony"])
+          .domain(["Arson/incendiarism", "Equipment and vehicle use", "Debris and open burning", "Recreation and ceremony","Smoking"])
           .range([  "#F5CBA7", "#EB984E", "#E67E22", "#A04000","#6E2C00"])
 
      // Add a scale for bubble size
@@ -80,16 +86,16 @@ d3.csv("assets/firedata.csv").then((table)=>{
       .selectAll("myCircles")
       .data(table)
       .enter()
-      .filter(function(d) { return (d.NWCG_GENERAL_CAUSE == "Arson/incendiarism" 
-                                    || d.NWCG_GENERAL_CAUSE == "Equipment and vehicle use" 
-                                    || d.NWCG_GENERAL_CAUSE == "Recreation and ceremony") })
+      // .filter(function(d) { return (d.NWCG_GENERAL_CAUSE == "Arson/incendiarism" 
+      //                               || d.NWCG_GENERAL_CAUSE == "Equipment and vehicle use" 
+      //                               || d.NWCG_GENERAL_CAUSE == "Recreation and ceremony") })
       .append("circle")
-        .attr("class" , d => d.CAUSE__ABRV )
+        .attr("class" , d => d.NWCG_GENERAL_CAUSE)
         .attr("cx", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[0] })
         .attr("cy", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[1] })
         .attr("r", function(d){ return size(d.FIRE_SIZE) })
-        .style("fill", function(d){ return color(d.CAUSE__ABRV) })
-        .attr("stroke", function(d){ return color(d.CAUSE__ABRV) })
+        .style("fill", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
+        .attr("stroke", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
         .attr("stroke-width", 3)
         .attr("fill-opacity", .4)
       .on("mouseover", mouseover)
