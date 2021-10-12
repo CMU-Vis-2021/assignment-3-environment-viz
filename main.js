@@ -2,8 +2,8 @@ import * as d3 from "d3";
 import vegaEmbed from "vega-embed";
 
 //getting lots of code and insight from: https://www.d3-graph-gallery.com/index.html
-//legend code insights from: https://www.d3-graph-gallery.com/graph/custom_legend.html
-//scale code insights from: https://bl.ocks.org/officeofjane/9b9e606e9876e34385cc4aeab188ed73
+//legend code insights from: https://www.d3-graph-gallery.com/graph/custom_legend.html and https://www.d3-graph-gallery.com/graph/connectedscatter_legend.html
+//range slider code insights from: https://bl.ocks.org/officeofjane/9b9e606e9876e34385cc4aeab188ed73 
 
 // Size 
 var width = 650;
@@ -179,7 +179,7 @@ d3.csv("assets/firedata.csv").then((table)=>{
     // Adding datapoints from firedata.csv:
     svg
       .selectAll("myCircles")
-      .data(table.slice(150,650)) //currently only viewing small range
+      .data(table) //currently only viewing small range
       .enter()
       .append("circle")
         .attr("class" , d => d.NWCG_GENERAL_CAUSE)
@@ -202,7 +202,7 @@ d3.csv("assets/firedata.csv").then((table)=>{
     //       // is the element currently visible ?
     //       currentOpacity = d3.selectAll("." + d.NWCG_GENERAL_CAUSE).style("opacity")
     //       // Change the opacity: from 0 to 1 or from 1 to 0
-    //       d3.selectAll("." + d.NWCG_GENERAL_CAUSE).transition().style("opacity", currentOpacity == 1 ? 0:1)
+    //       d3.selectAll("." + d.NWCG_GENERAL_CAUSE).transition().duration(900).style("opacity", currentOpacity == 1 ? 0:1)
     //     })
     // }
 
