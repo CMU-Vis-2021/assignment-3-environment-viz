@@ -11,14 +11,76 @@ var height = 400;
 var minRadiusRange = 1;
 var maxRadiusRange = 260000;
 
+//Defining categories for legend
+var categories = ['Debris and open burning', 'Arson/incendiarism', 'Equipment and vehicle use','Recreation and ceremony', 'Misuse of fire by a minor', 'Smoking', 'Railroad operations and maintenance', 'Power generation/transmission/distribution', 'Fireworks', 'Other causes', 'Firearms and explosives use']
+
 // Map and projection
 var projection = d3.geoMercator()
     .center([-96, 37])                // GPS of location to zoom on
     .scale(588)                       // This is like the zoom
     .translate([ width/2, height/2 ])
 
+
 d3.csv("assets/firedata.csv").then((table)=>{
   d3.json("assets/geojson/USA.geojson").then(function(data){
+
+    //setting the date range for the range slider
+    var minDateRange = new Date("2000-01-01"),
+        maxDateRange = new Date("2018-12-31")
+
+    var formatDateIntoYear = d3.timeFormat("%Y");
+    var formatDate = d3.timeFormat("%b %Y");
+    var parseDate = d3.timeParse("%m/%d/%y");
+
+    var svgSlider = d3.select("#slider")
+        .append("svg")
+        .attr("width", 650)
+        .attr("height", 50);
+
+    var dateRange = d3.scaleTime()
+      .domain([minDateRange,maxDateRange])
+      .range([0,600])
+      .clamp(true)
+
+    var slider = svgSlider.append("g")
+      .attr("class", "slider")
+      .attr("transform", "translate(" + 10 + "," + 50 / 4 + ")");
+
+    // Add slider
+    slider.append("line")
+        .attr("class", "track")
+        .attr("x1", dateRange.range()[0])
+        .attr("x2", dateRange.range()[1])
+      .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
+        .attr("class", "track-inset")
+      .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
+        .attr("class", "track-overlay")
+        .call(d3.drag()
+            .on("start.interrupt", function() { slider.interrupt(); })
+            .on("start drag", function() { update(dateRange.invert(d3.event.dateRange)); }));
+
+    slider.append("g", ".track-overlay")
+        .attr("class", "ticks")
+        .attr("transform", "translate(0," + 18 + ")")
+      .selectAll("text")
+        .data(dateRange.ticks(10))
+        .enter()
+        .append("text")
+        .attr("x", dateRange)
+        .attr("y", 10)
+        .attr("text-anchor", "middle")
+        .text(function(d) { return formatDateIntoYear(d); });
+
+    var handle = slider.insert("circle", ".track-overlay")
+        .attr("class", "handle")
+        .attr("r", 9);
+
+    var label = slider.append("text")  
+        .attr("class", "label")
+        .attr("text-anchor", "middle")
+        .text(formatDate(minDateRange))
+        .attr("transform", "translate(0," + (-25) + ")");
+
 
     // create a tooltip
     var Tooltip = d3.select("#my_dataviz")
@@ -55,13 +117,26 @@ d3.csv("assets/firedata.csv").then((table)=>{
       .attr("width", width)
       .attr("height", height)
 
-    // var color = d3.scaleOrdinal()
-    //       .domain(["arson_incendiarism", "debris_and_open_burning", "equipment_and_vehicle_use", "power_generation","recreation_and_ceremony"])
-    //       .range([  "#F5CBA7", "#EB984E", "#E67E22", "#A04000","#6E2C00"])
-
     var color = d3.scaleOrdinal()
-          .domain(["Arson/incendiarism", "Equipment and vehicle use", "Debris and open burning", "Recreation and ceremony","Smoking"])
-          .range([  "#F5CBA7", "#EB984E", "#E67E22", "#A04000","#6E2C00"])
+      .domain(categories)
+      .range(d3.schemeCategory10); //can try to set up specific colors for the legend later
+
+    // svg
+    //   .selectAll("legend")
+    //   .data(table)
+    //   .enter()
+    //     .append('g')
+    //     .append("text")
+    //       .attr('x', function(d,i){ return 30 + i*60})
+    //       .attr('y', 30)
+    //       .text(function(d) { return d.NWCG_GENERAL_CAUSE; })
+    //       .style("fill", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
+    //       .style("font-size", 15)
+    //     .on("click", function(d){
+    //       // is the element currently visible ?
+    //       currentOpacity = d3.selectAll("." + d.NWCG_GENERAL_CAUSE).style("opacity")
+    //       // Change the opacity: from 0 to 1 or from 1 to 0
+    //       d3.selectAll("." + d.NWCG_GENERAL_CAUSE).transition().style("opacity", currentOpacity == 1 ? 0:1)
 
      // Add a scale for bubble size
      var size = d3.scaleLinear()
@@ -84,11 +159,8 @@ d3.csv("assets/firedata.csv").then((table)=>{
     // Add circles:
     svg
       .selectAll("myCircles")
-      .data(table)
+      .data(table.slice(150,650))
       .enter()
-      // .filter(function(d) { return (d.NWCG_GENERAL_CAUSE == "Arson/incendiarism" 
-      //                               || d.NWCG_GENERAL_CAUSE == "Equipment and vehicle use" 
-      //                               || d.NWCG_GENERAL_CAUSE == "Recreation and ceremony") })
       .append("circle")
         .attr("class" , d => d.NWCG_GENERAL_CAUSE)
         .attr("cx", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[0] })
@@ -101,31 +173,6 @@ d3.csv("assets/firedata.csv").then((table)=>{
       .on("mouseover", mouseover)
       .on("mousemove", mousemove)
       .on("mouseleave", mouseleave)
-
-      function update(){
-        // For each check box:
-        d3.selectAll(".checkbox").each(function(d){
-          let cb = d3.select(this);
-          let grp = cb.property("value");
-
-          // If the box is check, I show the group
-          if(cb.property("checked")){
-            console.log("showing group");
-            console.log(grp);
-            svg.selectAll("."+grp).transition().duration(1000).style("opacity", 1).attr("r", function(d){ return size(d.FIRE_SIZE) })
-
-          // Otherwise I hide it
-          }else{
-            svg.selectAll("."+grp).transition().duration(1000).style("opacity", 0).attr("r", 0)
-          }
-        })
-      }
-
-      // When a button change, I run the update function
-      d3.selectAll(".checkbox").on("change",update);
-
-      // And I initialize it at the beginning
-      update();
 
     //now I'm making the key
     var valuesToShow = [minRadiusRange, maxRadiusRange/2, maxRadiusRange]
@@ -167,66 +214,7 @@ d3.csv("assets/firedata.csv").then((table)=>{
           .text( function(d){ if(d == maxRadiusRange){return d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+" acres"}else{return d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} } )
           .style("font-size", 12)
           .attr('alignment-baseline', 'middle')
-  })
+
+  });
 });
-
-
-
-//setting the date range for the range slider
-var minDateRange = new Date("1993-01-01"),
-    maxDateRange = new Date("2017-12-31")
-
-var formatDateIntoYear = d3.timeFormat("%Y");
-var formatDate = d3.timeFormat("%b %Y");
-var parseDate = d3.timeParse("%m/%d/%y");
-
-var svgSlider = d3.select("#slider")
-    .append("svg")
-    .attr("width", 650)
-    .attr("height", 50);
-
-var dateRange = d3.scaleTime()
-  .domain([minDateRange,maxDateRange])
-  .range([0,600])
-  .clamp(true)
-
-var slider = svgSlider.append("g")
-  .attr("class", "slider")
-  .attr("transform", "translate(" + 10 + "," + 50 / 4 + ")");
-
-// Add slider
-slider.append("line")
-    .attr("class", "track")
-    .attr("x1", dateRange.range()[0])
-    .attr("x2", dateRange.range()[1])
-  .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
-    .attr("class", "track-inset")
-  .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
-    .attr("class", "track-overlay")
-    .call(d3.drag()
-        .on("start.interrupt", function() { slider.interrupt(); })
-        .on("start drag", function() { update(dateRange.invert(d3.event.dateRange)); }));
-
-slider.append("g", ".track-overlay")
-    .attr("class", "ticks")
-    .attr("transform", "translate(0," + 18 + ")")
-  .selectAll("text")
-    .data(dateRange.ticks(10))
-    .enter()
-    .append("text")
-    .attr("x", dateRange)
-    .attr("y", 10)
-    .attr("text-anchor", "middle")
-    .text(function(d) { return formatDateIntoYear(d); });
-
-var handle = slider.insert("circle", ".track-overlay")
-    .attr("class", "handle")
-    .attr("r", 9);
-
-var label = slider.append("text")  
-    .attr("class", "label")
-    .attr("text-anchor", "middle")
-    .text(formatDate(minDateRange))
-    .attr("transform", "translate(0," + (-25) + ")");
-
 
