@@ -2,6 +2,8 @@ import * as d3 from "d3";
 import vegaEmbed from "vega-embed";
 
 //getting lots of code and insight from: https://www.d3-graph-gallery.com/index.html
+//legend code insights from: https://www.d3-graph-gallery.com/graph/custom_legend.html
+//scale code insights from: https://bl.ocks.org/officeofjane/9b9e606e9876e34385cc4aeab188ed73
 
 // Size 
 var width = 650;
@@ -32,15 +34,15 @@ d3.csv("assets/firedata.csv").then((table)=>{
     //**********LEGEND CODE**********//
     var svgLegend = d3.select("#legend")
       .append("svg")
-      .attr("width", 400)
-      .attr("height", 405)
+      .attr("width", 300)
+      .attr("height", 300)
 
     svgLegend.selectAll("legenddots")
       .data(categories)
       .enter()
       .append("circle")
-        .attr("cx", 100)
-        .attr("cy", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+        .attr("cx", 10)
+        .attr("cy", function(d,i){ return 10 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
         .attr("r", 7)
         .style("fill", function(d){ return color(d)})
 
@@ -49,8 +51,8 @@ d3.csv("assets/firedata.csv").then((table)=>{
       .data(categories)
       .enter()
       .append("text")
-        .attr("x", 120)
-        .attr("y", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+        .attr("x", 25)
+        .attr("y", function(d,i){ return 10 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
         .style("fill", function(d){ return color(d)})
         .text(function(d){ return d})
         .attr("text-anchor", "left")
@@ -151,6 +153,7 @@ d3.csv("assets/firedata.csv").then((table)=>{
     //***********END OF TOOLTIP CODE*********//
 
 
+    //******* DRAW THE MAP*******//
     var svg = d3.select("#my_dataviz")
       .append("svg")
       .attr("width", width)
@@ -161,7 +164,6 @@ d3.csv("assets/firedata.csv").then((table)=>{
      .domain([minRadiusRange,maxRadiusRange])  // What's in the data
      .range([ 2, 25])  // Size in pixel
 
-    //******* DRAW THE MAP*******//
     svg.append("g")
         .selectAll("path")
         .data(data.features)
@@ -193,12 +195,14 @@ d3.csv("assets/firedata.csv").then((table)=>{
       .on("mouseleave", mouseleave)
 
     // function update(){
-    //   // For each check box:
     //   d3.selectAll("legend")
     //     .data(table.slice(150,650))
     //     .enter()
     //     .on("click", d=> {
-    //       currentOpacity = d3.select
+    //       // is the element currently visible ?
+    //       currentOpacity = d3.selectAll("." + d.NWCG_GENERAL_CAUSE).style("opacity")
+    //       // Change the opacity: from 0 to 1 or from 1 to 0
+    //       d3.selectAll("." + d.NWCG_GENERAL_CAUSE).transition().style("opacity", currentOpacity == 1 ? 0:1)
     //     })
     // }
 
