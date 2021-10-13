@@ -1,5 +1,5 @@
-import * as d3 from "d3";
-import vegaEmbed from "vega-embed";
+// import * as d3 from "d3";
+// import vegaEmbed from "vega-embed";
 
 //getting lots of code and insight from: https://www.d3-graph-gallery.com/index.html
 //legend code insights from: https://www.d3-graph-gallery.com/graph/custom_legend.html and https://www.d3-graph-gallery.com/graph/connectedscatter_legend.html
@@ -22,6 +22,18 @@ var projection = d3.geoMercator()
     .scale(588)                       // This is like the zoom
     .translate([ width/2, height/2 ])
 
+//setting the date range for the range slider
+var minDateRange = new Date("2000-01-01"),
+    maxDateRange = new Date("2018-12-31")
+
+var formatDateIntoYear = d3.timeFormat("%Y");
+var formatDate = d3.timeFormat("%b %Y");
+var parseDate = d3.timeParse("%m/%d/%y");
+
+var x = d3.scaleTime()
+      .domain([minDateRange,maxDateRange])
+      .range([0,600])
+      .clamp(true)
 
 d3.csv("assets/firedata.csv").then((table)=>{
   d3.json("assets/geojson/USA.geojson").then(function(data){
@@ -61,23 +73,11 @@ d3.csv("assets/firedata.csv").then((table)=>{
 
 
     //********SLIDER CODE************//
-    //setting the date range for the range slider
-    var minDateRange = new Date("2000-01-01"),
-        maxDateRange = new Date("2018-12-31")
-
-    var formatDateIntoYear = d3.timeFormat("%Y");
-    var formatDate = d3.timeFormat("%b %Y");
-    var parseDate = d3.timeParse("%m/%d/%y");
 
     var svgSlider = d3.select("#slider")
         .append("svg")
         .attr("width", 650)
         .attr("height", 50);
-
-    var dateRange = d3.scaleTime()
-      .domain([minDateRange,maxDateRange])
-      .range([0,600])
-      .clamp(true)
 
     var slider = svgSlider.append("g")
       .attr("class", "slider")
@@ -86,24 +86,24 @@ d3.csv("assets/firedata.csv").then((table)=>{
     // Add slider
     slider.append("line")
         .attr("class", "track")
-        .attr("x1", dateRange.range()[0])
-        .attr("x2", dateRange.range()[1])
+        .attr("x1", x.range()[0])
+        .attr("x2", x.range()[1])
       .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
         .attr("class", "track-inset")
       .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
         .attr("class", "track-overlay")
         .call(d3.drag()
             .on("start.interrupt", function() { slider.interrupt(); })
-            .on("start drag", function() { update(dateRange.invert(d3.event.dateRange)); }));
+            .on("start drag", function() { update(x.invert(d3.event.x)); }));
 
     slider.append("g", ".track-overlay")
         .attr("class", "ticks")
         .attr("transform", "translate(0," + 18 + ")")
       .selectAll("text")
-        .data(dateRange.ticks(10))
+        .data(x.ticks(10))
         .enter()
         .append("text")
-        .attr("x", dateRange)
+        .attr("x", x)
         .attr("y", 10)
         .attr("text-anchor", "middle")
         .text(function(d) { return formatDateIntoYear(d); });
@@ -176,35 +176,42 @@ d3.csv("assets/firedata.csv").then((table)=>{
         .style("stroke", "black")
         .style("opacity", .3)
 
-    // Adding datapoints from firedata.csv:
-    svg
-      .selectAll("myCircles")
-      .data(table) //currently only viewing small range
-      .enter()
-      .append("circle")
-        .attr("class" , d => d.NWCG_GENERAL_CAUSE)
-        .attr("cx", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[0] })
-        .attr("cy", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[1] })
-        .attr("r", function(d){ return size(d.FIRE_SIZE) })
-        .style("fill", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
-        .attr("stroke", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
-        .attr("stroke-width", 3)
-        .attr("fill-opacity", .4)
-      .on("mouseover", mouseover)
-      .on("mousemove", mousemove)
-      .on("mouseleave", mouseleave)
+    function update(h){
+      // d3.selectAll("legend")
+      //   .data(table.slice(150,650))
+      //   .enter()
+      //   .on("click", d=> {
+      //     // is the element currently visible ?
+      //     currentOpacity = d3.selectAll("." + d.NWCG_GENERAL_CAUSE).style("opacity")
+      //     // Change the opacity: from 0 to 1 or from 1 to 0
+      //     d3.selectAll("." + d.NWCG_GENERAL_CAUSE).transition().duration(900).style("opacity", currentOpacity == 1 ? 0:1)
+      //   })
 
-    // function update(){
-    //   d3.selectAll("legend")
-    //     .data(table.slice(150,650))
-    //     .enter()
-    //     .on("click", d=> {
-    //       // is the element currently visible ?
-    //       currentOpacity = d3.selectAll("." + d.NWCG_GENERAL_CAUSE).style("opacity")
-    //       // Change the opacity: from 0 to 1 or from 1 to 0
-    //       d3.selectAll("." + d.NWCG_GENERAL_CAUSE).transition().duration(900).style("opacity", currentOpacity == 1 ? 0:1)
-    //     })
-    // }
+      handle.attr("cx", x(h));
+      label
+        .attr("x", x(h));
+        console.log(formatDateIntoYear(h));
+
+      var yearFilter = formatDateIntoYear(h);
+
+      // Adding datapoints from firedata.csv:
+      svg
+        .selectAll("myCircles")
+        .data(table.slice(150, 1340)) //currently only viewing small range
+        .enter()
+        .append("circle")
+          .attr("class" , d => d.NWCG_GENERAL_CAUSE)
+          .attr("cx", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[0] })
+          .attr("cy", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[1] })
+          .attr("r", function(d){ return size(d.FIRE_SIZE) })
+          .style("fill", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
+          .attr("stroke", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
+          .attr("stroke-width", 3)
+          .attr("fill-opacity", .4)
+        .on("mouseover", mouseover)
+        .on("mousemove", mousemove)
+        .on("mouseleave", mouseleave)
+    }
 
     //*********End of drawing map*******//
 
