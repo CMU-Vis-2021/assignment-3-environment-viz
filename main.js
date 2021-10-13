@@ -122,66 +122,70 @@ d3.csv("assets/firedata.csv").then((table)=>{
 
 
     //************TOOLTIP CODE*************//
-    var Tooltip = d3.select("#my_dataviz")
-    .append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0)
-    .style("background-color", "white")
-    .style("border", "solid")
-    .style("border-width", "2px")
-    .style("border-radius", "5px")
-    .style("padding", "5px")
-   
-    // Three function that change the tooltip when user hover / move / leave a cell
-    const mouseover = function(event, d) {
-      Tooltip.style("opacity", 1)
-    }
+    
 
-    var mousemove = function(event, d) {
-      Tooltip
-        .html("Acres burned: " + d.FIRE_SIZE 
-          + "<br>" + "Longitude: " + d.LONGITUDE 
-          + "<br>" + "Latitude: " + d.LATITUDE
-          + "<br>" + "Cause of fire: " + d.NWCG_GENERAL_CAUSE)
-        .style("left", (event.x)+30 + "px")
-        .style("top", (event.y)-30 + "px")
-    }
-
-    var mouseleave = function(event, d) {
-      Tooltip.style("opacity", 0)
-    }
-    //***********END OF TOOLTIP CODE*********//
-
-
-    //******* DRAW THE MAP*******//
-    var svg = d3.select("#my_dataviz")
-      .append("svg")
-      .attr("width", width)
-      .attr("height", height)
-
-     // Add a scale for bubble size
-     var size = d3.scaleLinear()
-     .domain([minRadiusRange,maxRadiusRange])  // What's in the data
-     .range([ 2, 25])  // Size in pixel
-
-    svg.append("g")
-        .selectAll("path")
-        .data(data.features)
-        .enter()
-        .append("path")
-          .attr("fill", "#b8b8b8")
-          .attr("d", d3.geoPath()
-              .projection(projection)
-          )
-        .style("stroke", "black")
-        .style("opacity", .3)
-
+    // Adding datapoints from firedata.csv:
     function mapData(data, filterYear){
+        var Tooltip = d3.select("#my_dataviz")
+        .append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0)
+        .style("background-color", "white")
+        .style("border", "solid")
+        .style("border-width", "2px")
+        .style("border-radius", "5px")
+        .style("padding", "5px")
+       
+        // Three function that change the tooltip when user hover / move / leave a cell
+        const mouseover = function(event, d) {
+          Tooltip.style("opacity", 1)
+        }
+
+        var mousemove = function(event, d) {
+          Tooltip
+            .html("Acres burned: " + d.FIRE_SIZE 
+              + "<br>" + "Longitude: " + d.LONGITUDE 
+              + "<br>" + "Latitude: " + d.LATITUDE
+              + "<br>" + "Cause of fire: " + d.NWCG_GENERAL_CAUSE)
+            .style("left", (event.x)+30 + "px")
+            .style("top", (event.y)-30 + "px")
+        }
+
+        var mouseleave = function(event, d) {
+          Tooltip.style("opacity", 0)
+        }
+        //***********END OF TOOLTIP CODE*********//
+
+
+        //******* DRAW THE MAP*******//
+        var svg = d3.select("#my_dataviz")
+          .append("svg")
+          .attr("width", width)
+          .attr("height", height)
+
+         // Add a scale for bubble size
+         var size = d3.scaleLinear()
+         .domain([minRadiusRange,maxRadiusRange])  // What's in the data
+         .range([ 2, 25])  // Size in pixel
+
+        svg.append("g")
+            .selectAll("path")
+            .data(data.features)
+            .enter()
+            .append("path")
+              .attr("fill", "#b8b8b8")
+              .attr("d", d3.geoPath()
+                  .projection(projection)
+              )
+            .style("stroke", "black")
+            .style("opacity", .3)
+
+      console.log(filterYear);
       svg
         .selectAll("myCircles")
-        .data(data.slice(150, 1340)) //currently only viewing small range
+        .data(data) //currently only viewing small range
         .enter()
-        .filter(d=> {return d.FIRE_YEAR == filterYear});
+        .filter(function(d) { return (d.FIRE_YEAR == filterYear) })
         .append("circle")
           .attr("class" , d => d.NWCG_GENERAL_CAUSE)
           .attr("cx", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[0] })
@@ -195,9 +199,8 @@ d3.csv("assets/firedata.csv").then((table)=>{
         .on("mousemove", mousemove)
         .on("mouseleave", mouseleave)
     }
-    // Adding datapoints from firedata.csv:
       
-    mapData(table, 2001)
+    mapData(table, 2011)
 
 
     function update(h){
@@ -218,6 +221,7 @@ d3.csv("assets/firedata.csv").then((table)=>{
 
       var yearFilter = formatDateIntoYear(h);
 
+      mapData(table, yearFilter)
       
     }
 
