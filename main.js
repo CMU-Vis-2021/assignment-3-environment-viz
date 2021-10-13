@@ -4,7 +4,9 @@
 //getting lots of code and insight from: https://www.d3-graph-gallery.com/index.html
 //legend code insights from: https://www.d3-graph-gallery.com/graph/custom_legend.html and https://www.d3-graph-gallery.com/graph/connectedscatter_legend.html
 //range slider code insights from: https://bl.ocks.org/officeofjane/9b9e606e9876e34385cc4aeab188ed73 
+//bubble map insight from: https://www.d3-graph-gallery.com/graph/bubblemap_basic.html
 
+//***************DECLARE VARIABLES***************//
 // Size 
 var width = 650;
 var height = 400;
@@ -30,6 +32,7 @@ var formatDateIntoYear = d3.timeFormat("%Y");
 var formatDate = d3.timeFormat("%b %Y");
 var parseDate = d3.timeParse("%m/%d/%y");
 
+//scale for range slider
 var x = d3.scaleTime()
       .domain([minDateRange,maxDateRange])
       .range([0,600])
@@ -40,22 +43,47 @@ var color = d3.scaleOrdinal()
   .domain(categories)
   .range(["#ff0000", "#ff8000", "#ffff00", "#80ff00", "#00ff00", "#00ff80", "#00ffff", "#0080ff", "#0000ff", "#8000ff", "#ff00ff", "#ff0080"]); //can try to set up specific colors for the legend later
 
-var yearFilter = 2018;
+//default year for range slider
+var yearFilter = 2000;
+
+//create slide variables
+var svgSlider = d3.select("#slider")
+        .append("svg")
+        .attr("width", 650)
+        .attr("height", 50);
+
+var slider = svgSlider.append("g")
+  .attr("class", "slider")
+  .attr("transform", "translate(" + 10 + "," + 50 / 4 + ")");
 
 // Add a scale for bubble size
 var size = d3.scaleLinear()
 .domain([minRadiusRange,maxRadiusRange])  // What's in the data
 .range([ 2, 25])  // Size in pixel
 
-d3.csv("assets/fire75000causehuman.csv").then((table)=>{
-  d3.json("assets/geojson/USA.geojson").then(function(data){
 
-    //**********LEGEND CODE**********//
-    var svgLegend = d3.select("#legend")
+//define tooltip details
+var Tooltip = d3.select("#my_dataviz")
+    .append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0)
+    .style("background-color", "white")
+    .style("border", "solid")
+    .style("border-width", "2px")
+    .style("border-radius", "5px")
+    .style("padding", "5px")
+
+//create legend svg
+var svgLegend = d3.select("#legend")
       .append("svg")
       .attr("width", 300)
       .attr("height", 300)
 
+//***************************************************//
+
+
+//******************DECLARING FUNCTIONS*****************//
+function drawLegend(){
     svgLegend.selectAll("legenddots")
       .data(categories)
       .enter()
@@ -76,46 +104,34 @@ d3.csv("assets/fire75000causehuman.csv").then((table)=>{
         .text(function(d){ return d})
         .attr("text-anchor", "left")
         .style("alignment-baseline", "middle")
-    //********END OF LEGEND CODE*******//
-
-        //************TOOLTIP CODE*************//
-    var Tooltip = d3.select("#my_dataviz")
-    .append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0)
-    .style("background-color", "white")
-    .style("border", "solid")
-    .style("border-width", "2px")
-    .style("border-radius", "5px")
-    .style("padding", "5px")
+}
 
 
+//***************************************************//
+
+drawLegend()
+
+//draw map
+d3.csv("assets/fire75000causehuman.csv").then((table)=>{
+  d3.json("assets/geojson/USA.geojson").then(function(data){
 
     var svg = d3.select("#my_dataviz")
         .append("svg")
         .attr("width", width)
         .attr("height", height)
 
-      svg.append("g")
-          .selectAll("path")
-          .data(data.features)
-          .enter()
-          .append("path")
-            .attr("fill", "#b8b8b8")
-            .attr("d", d3.geoPath()
-                .projection(projection)
-            )
-          .style("stroke", "black")
-          .style("opacity", .3)
-
-    var svgSlider = d3.select("#slider")
-        .append("svg")
-        .attr("width", 650)
-        .attr("height", 50);
-
-    var slider = svgSlider.append("g")
-      .attr("class", "slider")
-      .attr("transform", "translate(" + 10 + "," + 50 / 4 + ")");
+    //draw base map    
+    svg.append("g")
+        .selectAll("path")
+        .data(data.features)
+        .enter()
+        .append("path")
+          .attr("fill", "#b8b8b8")
+          .attr("d", d3.geoPath()
+              .projection(projection)
+          )
+        .style("stroke", "black")
+        .style("opacity", .3)
 
     // Add slider
     slider.append("line")
@@ -152,10 +168,6 @@ d3.csv("assets/fire75000causehuman.csv").then((table)=>{
         .text(formatDate(minDateRange))
         .attr("transform", "translate(0," + (-25) + ")");
 
-    // var newData = table.filter(function(d) {
-    //     return d.FIRE_YEAR == yearFilter;
-    //   })
-
     function update(h, oldData){
 
       handle.attr("cx", x(h));
@@ -182,32 +194,7 @@ d3.csv("assets/fire75000causehuman.csv").then((table)=>{
       console.log("In the DrawData function")
       console.log(yearFilter);
 
-      // Three function that change the tooltip when user hover / move / leave a cell
-      const mouseover = function(event, d) {
-        Tooltip.style("opacity", 1)
-      }
-
-      var mousemove = function(event, d) {
-        // console.log(event)
-        Tooltip
-          .html("Fire year: " + event.DISCOVERY_DATE
-            + "<br>" + "Acres burned: " + event.FIRE_SIZE 
-            + "<br>" + "Latitude: " + event.LATITUDE
-            + "<br>" + "Longitude: " + event.LONGITUDE
-            + "<br>" + "State: " + event.STATE
-            // + "<br>" + "County: " + event.FIPS_NAME
-            + "<br>" + "Cause of fire: " + event.NWCG_GENERAL_CAUSE)
-          .style("left", 100 + "px")
-          .style("top", 350 + "px")
-      }
-
-      var mouseleave = function(event, d) {
-        Tooltip.style("opacity", 0)
-      }
-
       var firedatasvg = svg.selectAll("circle").data(newData)
-
-
       
       firedatasvg
         .enter()
@@ -223,9 +210,24 @@ d3.csv("assets/fire75000causehuman.csv").then((table)=>{
           .attr("stroke", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
           .attr("stroke-width", 3)
           .attr("fill-opacity", .4)
-        .on("mouseover", mouseover)
-        .on("mousemove", mousemove)
-        .on("mouseleave", mouseleave)
+        .on("mouseover", function(event, d){
+          Tooltip.style("opacity", 1)
+        })
+        .on("mousemove", function(event, d){
+          Tooltip
+          .html("Fire year: " + event.DISCOVERY_DATE
+            + "<br>" + "Acres burned: " + event.FIRE_SIZE 
+            + "<br>" + "Latitude: " + event.LATITUDE
+            + "<br>" + "Longitude: " + event.LONGITUDE
+            + "<br>" + "State: " + event.STATE
+            // + "<br>" + "County: " + event.FIPS_NAME
+            + "<br>" + "Cause of fire: " + event.NWCG_GENERAL_CAUSE)
+          .style("left", 100 + "px")
+          .style("top", 350 + "px")
+        })
+        .on("mouseleave", function(event, d){
+          Tooltip.style("opacity", 0)
+        })
 
       firedatasvg.exit().remove()
     }
