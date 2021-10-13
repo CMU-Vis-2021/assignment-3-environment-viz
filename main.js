@@ -35,44 +35,64 @@ var x = d3.scaleTime()
       .range([0,600])
       .clamp(true)
 
+//defining color for categories and legend later
+var color = d3.scaleOrdinal()
+  .domain(categories)
+  .range(d3.schemeSet2); //can try to set up specific colors for the legend later
+
+var yearFilter = 2018;
+
+// Add a scale for bubble size
+var size = d3.scaleLinear()
+.domain([minRadiusRange,maxRadiusRange])  // What's in the data
+.range([ 2, 25])  // Size in pixel
+
 d3.csv("assets/firedata.csv").then((table)=>{
   d3.json("assets/geojson/USA.geojson").then(function(data){
 
-    //defining color for categories and legend later
-    var color = d3.scaleOrdinal()
-      .domain(categories)
-      .range(d3.schemeSet2); //can try to set up specific colors for the legend later
-
     //**********LEGEND CODE**********//
-    var svgLegend = d3.select("#legend")
-      .append("svg")
-      .attr("width", 300)
-      .attr("height", 300)
+    // var svgLegend = d3.select("#legend")
+    //   .append("svg")
+    //   .attr("width", 300)
+    //   .attr("height", 300)
 
-    svgLegend.selectAll("legenddots")
-      .data(categories)
-      .enter()
-      .append("circle")
-        .attr("cx", 10)
-        .attr("cy", function(d,i){ return 10 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
-        .attr("r", 7)
-        .style("fill", function(d){ return color(d)})
+    // svgLegend.selectAll("legenddots")
+    //   .data(categories)
+    //   .enter()
+    //   .append("circle")
+    //     .attr("cx", 10)
+    //     .attr("cy", function(d,i){ return 10 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+    //     .attr("r", 7)
+    //     .style("fill", function(d){ return color(d)})
 
-    // Add one dot in the legend for each name.
-    svgLegend.selectAll("legendlabels")
-      .data(categories)
-      .enter()
-      .append("text")
-        .attr("x", 25)
-        .attr("y", function(d,i){ return 10 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
-        .style("fill", function(d){ return color(d)})
-        .text(function(d){ return d})
-        .attr("text-anchor", "left")
-        .style("alignment-baseline", "middle")
+    // // Add one dot in the legend for each name.
+    // svgLegend.selectAll("legendlabels")
+    //   .data(categories)
+    //   .enter()
+    //   .append("text")
+    //     .attr("x", 25)
+    //     .attr("y", function(d,i){ return 10 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+    //     .style("fill", function(d){ return color(d)})
+    //     .text(function(d){ return d})
+    //     .attr("text-anchor", "left")
+    //     .style("alignment-baseline", "middle")
     //********END OF LEGEND CODE*******//
+    var svg = d3.select("#my_dataviz")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height)
 
-
-    //********SLIDER CODE************//
+      svg.append("g")
+          .selectAll("path")
+          .data(data.features)
+          .enter()
+          .append("path")
+            .attr("fill", "#b8b8b8")
+            .attr("d", d3.geoPath()
+                .projection(projection)
+            )
+          .style("stroke", "black")
+          .style("opacity", .3)
 
     var svgSlider = d3.select("#slider")
         .append("svg")
@@ -94,7 +114,7 @@ d3.csv("assets/firedata.csv").then((table)=>{
         .attr("class", "track-overlay")
         .call(d3.drag()
             .on("start.interrupt", function() { slider.interrupt(); })
-            .on("start drag", function() { update(x.invert(d3.event.x)); }));
+            .on("start drag", function() { update(x.invert(d3.event.x), table); }));
 
     slider.append("g", ".track-overlay")
         .attr("class", "ticks")
@@ -118,74 +138,41 @@ d3.csv("assets/firedata.csv").then((table)=>{
         .text(formatDate(minDateRange))
         .attr("transform", "translate(0," + (-25) + ")");
 
-    //*********END OF SLIDER CODE****************//
+    // var newData = table.filter(function(d) {
+    //     return d.FIRE_YEAR == yearFilter;
+    //   })
 
+    function update(h, oldData){
 
-    //************TOOLTIP CODE*************//
-    
+      handle.attr("cx", x(h));
+      label
+        .attr("x", x(h));
 
-    // Adding datapoints from firedata.csv:
-    function mapData(data, filterYear){
-        var Tooltip = d3.select("#my_dataviz")
-        .append("div")
-        .attr("class", "tooltip")
-        .style("opacity", 0)
-        .style("background-color", "white")
-        .style("border", "solid")
-        .style("border-width", "2px")
-        .style("border-radius", "5px")
-        .style("padding", "5px")
-       
-        // Three function that change the tooltip when user hover / move / leave a cell
-        const mouseover = function(event, d) {
-          Tooltip.style("opacity", 1)
-        }
+        console.log("In the update function");
+        console.log(formatDateIntoYear(h));
 
-        var mousemove = function(event, d) {
-          Tooltip
-            .html("Acres burned: " + d.FIRE_SIZE 
-              + "<br>" + "Longitude: " + d.LONGITUDE 
-              + "<br>" + "Latitude: " + d.LATITUDE
-              + "<br>" + "Cause of fire: " + d.NWCG_GENERAL_CAUSE)
-            .style("left", (event.x)+30 + "px")
-            .style("top", (event.y)-30 + "px")
-        }
+      yearFilter = formatDateIntoYear(h);
 
-        var mouseleave = function(event, d) {
-          Tooltip.style("opacity", 0)
-        }
-        //***********END OF TOOLTIP CODE*********//
+      console.log("Table before filter")
+      console.log(oldData.slice(0,15))
 
+      var newData = oldData.filter(function(d) {
+        return d.FIRE_YEAR == yearFilter;
+      })
 
-        //******* DRAW THE MAP*******//
-        var svg = d3.select("#my_dataviz")
-          .append("svg")
-          .attr("width", width)
-          .attr("height", height)
+      console.log("Table after filter")
+      console.log(newData.slice(0,15))
 
-         // Add a scale for bubble size
-         var size = d3.scaleLinear()
-         .domain([minRadiusRange,maxRadiusRange])  // What's in the data
-         .range([ 2, 25])  // Size in pixel
+      // drawData(newData, data)
 
-        svg.append("g")
-            .selectAll("path")
-            .data(data.features)
-            .enter()
-            .append("path")
-              .attr("fill", "#b8b8b8")
-              .attr("d", d3.geoPath()
-                  .projection(projection)
-              )
-            .style("stroke", "black")
-            .style("opacity", .3)
+      console.log("In the DrawData function")
+      console.log(yearFilter);
 
-      console.log(filterYear);
-      svg
-        .selectAll("myCircles")
-        .data(data) //currently only viewing small range
+      var firedatasvg = svg.selectAll("circle").data(newData)
+      
+      firedatasvg
         .enter()
-        .filter(function(d) { return (d.FIRE_YEAR == filterYear) })
+        // .filter(function(d) { return (d.FIRE_YEAR == yearFilter) })
         .append("circle")
           .attr("class" , d => d.NWCG_GENERAL_CAUSE)
           .attr("cx", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[0] })
@@ -195,35 +182,49 @@ d3.csv("assets/firedata.csv").then((table)=>{
           .attr("stroke", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
           .attr("stroke-width", 3)
           .attr("fill-opacity", .4)
-        .on("mouseover", mouseover)
-        .on("mousemove", mousemove)
-        .on("mouseleave", mouseleave)
+
+      firedatasvg.exit().remove()
     }
-      
-    mapData(table, 2011)
+    //************TOOLTIP CODE*************//
+    // var Tooltip = d3.select("#my_dataviz")
+    // .append("div")
+    // .attr("class", "tooltip")
+    // .style("opacity", 0)
+    // .style("background-color", "white")
+    // .style("border", "solid")
+    // .style("border-width", "2px")
+    // .style("border-radius", "5px")
+    // .style("padding", "5px")
+   
+    // // Three function that change the tooltip when user hover / move / leave a cell
+    // const mouseover = function(event, d) {
+    //   Tooltip.style("opacity", 1)
+    // }
+
+    // var mousemove = function(event, d) {
+    //   Tooltip
+    //     .html("Acres burned: " + d.FIRE_SIZE 
+    //       + "<br>" + "Longitude: " + d.LONGITUDE 
+    //       + "<br>" + "Latitude: " + d.LATITUDE
+    //       + "<br>" + "Cause of fire: " + d.NWCG_GENERAL_CAUSE)
+    //     .style("left", (event.x)+30 + "px")
+    //     .style("top", (event.y)-30 + "px")
+    // }
+
+    // var mouseleave = function(event, d) {
+    //   Tooltip.style("opacity", 0)
+    // }
+    //***********END OF TOOLTIP CODE*********//
 
 
-    function update(h){
-      // d3.selectAll("legend")
-      //   .data(table.slice(150,650))
-      //   .enter()
-      //   .on("click", d=> {
-      //     // is the element currently visible ?
-      //     currentOpacity = d3.selectAll("." + d.NWCG_GENERAL_CAUSE).style("opacity")
-      //     // Change the opacity: from 0 to 1 or from 1 to 0
-      //     d3.selectAll("." + d.NWCG_GENERAL_CAUSE).transition().duration(900).style("opacity", currentOpacity == 1 ? 0:1)
-      //   })
+    //******* DRAW THE MAP*******//
+    
+    // Adding datapoints from firedata.csv:
+    
+    
 
-      handle.attr("cx", x(h));
-      label
-        .attr("x", x(h));
-        console.log(formatDateIntoYear(h));
 
-      var yearFilter = formatDateIntoYear(h);
-
-      mapData(table, yearFilter)
-      
-    }
+    
 
     //*********End of drawing map*******//
 
