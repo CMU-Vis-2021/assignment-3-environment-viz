@@ -77,6 +77,20 @@ d3.csv("assets/fire75000causehuman.csv").then((table)=>{
         .attr("text-anchor", "left")
         .style("alignment-baseline", "middle")
     //********END OF LEGEND CODE*******//
+
+        //************TOOLTIP CODE*************//
+    var Tooltip = d3.select("#my_dataviz")
+    .append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0)
+    .style("background-color", "white")
+    .style("border", "solid")
+    .style("border-width", "2px")
+    .style("border-radius", "5px")
+    .style("padding", "5px")
+
+
+
     var svg = d3.select("#my_dataviz")
         .append("svg")
         .attr("width", width)
@@ -120,7 +134,7 @@ d3.csv("assets/fire75000causehuman.csv").then((table)=>{
         .attr("class", "ticks")
         .attr("transform", "translate(0," + 18 + ")")
       .selectAll("text")
-        .data(x.ticks(10))
+        .data(x.ticks(15))
         .enter()
         .append("text")
         .attr("x", x)
@@ -168,6 +182,27 @@ d3.csv("assets/fire75000causehuman.csv").then((table)=>{
       console.log("In the DrawData function")
       console.log(yearFilter);
 
+      // Three function that change the tooltip when user hover / move / leave a cell
+      const mouseover = function(event, d) {
+        Tooltip.style("opacity", 1)
+      }
+
+      var mousemove = function(event, d) {
+        console.log(event)
+        Tooltip
+          .html("Fire year: " + event.FIRE_YEAR
+            + "<br>" + "Acres burned: " + event.FIRE_SIZE 
+            + "<br>" + "Longitude: " + event.LONGITUDE 
+            + "<br>" + "Latitude: " + event.LATITUDE
+            + "<br>" + "Cause of fire: " + event.NWCG_GENERAL_CAUSE)
+          .style("left", (event.x)+30 + "px")
+          .style("top", (event.y)-30 + "px")
+      }
+
+      var mouseleave = function(event, d) {
+        Tooltip.style("opacity", 0)
+      }
+
       var firedatasvg = svg.selectAll("circle").data(newData)
       
       firedatasvg
@@ -182,52 +217,12 @@ d3.csv("assets/fire75000causehuman.csv").then((table)=>{
           .attr("stroke", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
           .attr("stroke-width", 3)
           .attr("fill-opacity", .4)
+        .on("mouseover", mouseover)
+        .on("mousemove", mousemove)
+        .on("mouseleave", mouseleave)
 
       firedatasvg.exit().remove()
     }
-    //************TOOLTIP CODE*************//
-    // var Tooltip = d3.select("#my_dataviz")
-    // .append("div")
-    // .attr("class", "tooltip")
-    // .style("opacity", 0)
-    // .style("background-color", "white")
-    // .style("border", "solid")
-    // .style("border-width", "2px")
-    // .style("border-radius", "5px")
-    // .style("padding", "5px")
-   
-    // // Three function that change the tooltip when user hover / move / leave a cell
-    // const mouseover = function(event, d) {
-    //   Tooltip.style("opacity", 1)
-    // }
-
-    // var mousemove = function(event, d) {
-    //   Tooltip
-    //     .html("Acres burned: " + d.FIRE_SIZE 
-    //       + "<br>" + "Longitude: " + d.LONGITUDE 
-    //       + "<br>" + "Latitude: " + d.LATITUDE
-    //       + "<br>" + "Cause of fire: " + d.NWCG_GENERAL_CAUSE)
-    //     .style("left", (event.x)+30 + "px")
-    //     .style("top", (event.y)-30 + "px")
-    // }
-
-    // var mouseleave = function(event, d) {
-    //   Tooltip.style("opacity", 0)
-    // }
-    //***********END OF TOOLTIP CODE*********//
-
-
-    //******* DRAW THE MAP*******//
-    
-    // Adding datapoints from firedata.csv:
-    
-    
-
-
-    
-
-    //*********End of drawing map*******//
-
 
     //now I'm making the key
     var valuesToShow = [minRadiusRange, maxRadiusRange/2, maxRadiusRange]
