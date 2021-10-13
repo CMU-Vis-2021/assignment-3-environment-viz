@@ -47,35 +47,35 @@ var size = d3.scaleLinear()
 .domain([minRadiusRange,maxRadiusRange])  // What's in the data
 .range([ 2, 25])  // Size in pixel
 
-d3.csv("assets/firedata.csv").then((table)=>{
+d3.csv("assets/fire75000causehuman.csv").then((table)=>{
   d3.json("assets/geojson/USA.geojson").then(function(data){
 
     //**********LEGEND CODE**********//
-    // var svgLegend = d3.select("#legend")
-    //   .append("svg")
-    //   .attr("width", 300)
-    //   .attr("height", 300)
+    var svgLegend = d3.select("#legend")
+      .append("svg")
+      .attr("width", 300)
+      .attr("height", 300)
 
-    // svgLegend.selectAll("legenddots")
-    //   .data(categories)
-    //   .enter()
-    //   .append("circle")
-    //     .attr("cx", 10)
-    //     .attr("cy", function(d,i){ return 10 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
-    //     .attr("r", 7)
-    //     .style("fill", function(d){ return color(d)})
+    svgLegend.selectAll("legenddots")
+      .data(categories)
+      .enter()
+      .append("circle")
+        .attr("cx", 10)
+        .attr("cy", function(d,i){ return 10 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+        .attr("r", 7)
+        .style("fill", function(d){ return color(d)})
 
-    // // Add one dot in the legend for each name.
-    // svgLegend.selectAll("legendlabels")
-    //   .data(categories)
-    //   .enter()
-    //   .append("text")
-    //     .attr("x", 25)
-    //     .attr("y", function(d,i){ return 10 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
-    //     .style("fill", function(d){ return color(d)})
-    //     .text(function(d){ return d})
-    //     .attr("text-anchor", "left")
-    //     .style("alignment-baseline", "middle")
+    // Add one dot in the legend for each name.
+    svgLegend.selectAll("legendlabels")
+      .data(categories)
+      .enter()
+      .append("text")
+        .attr("x", 25)
+        .attr("y", function(d,i){ return 10 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+        .style("fill", function(d){ return color(d)})
+        .text(function(d){ return d})
+        .attr("text-anchor", "left")
+        .style("alignment-baseline", "middle")
     //********END OF LEGEND CODE*******//
     var svg = d3.select("#my_dataviz")
         .append("svg")
