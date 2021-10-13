@@ -176,6 +176,30 @@ d3.csv("assets/firedata.csv").then((table)=>{
         .style("stroke", "black")
         .style("opacity", .3)
 
+    function mapData(data, filterYear){
+      svg
+        .selectAll("myCircles")
+        .data(data.slice(150, 1340)) //currently only viewing small range
+        .enter()
+        .filter(d=> {return d.FIRE_YEAR == filterYear});
+        .append("circle")
+          .attr("class" , d => d.NWCG_GENERAL_CAUSE)
+          .attr("cx", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[0] })
+          .attr("cy", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[1] })
+          .attr("r", function(d){ return size(d.FIRE_SIZE) })
+          .style("fill", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
+          .attr("stroke", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
+          .attr("stroke-width", 3)
+          .attr("fill-opacity", .4)
+        .on("mouseover", mouseover)
+        .on("mousemove", mousemove)
+        .on("mouseleave", mouseleave)
+    }
+    // Adding datapoints from firedata.csv:
+      
+    mapData(table, 2001)
+
+
     function update(h){
       // d3.selectAll("legend")
       //   .data(table.slice(150,650))
@@ -194,23 +218,7 @@ d3.csv("assets/firedata.csv").then((table)=>{
 
       var yearFilter = formatDateIntoYear(h);
 
-      // Adding datapoints from firedata.csv:
-      svg
-        .selectAll("myCircles")
-        .data(table.slice(150, 1340)) //currently only viewing small range
-        .enter()
-        .append("circle")
-          .attr("class" , d => d.NWCG_GENERAL_CAUSE)
-          .attr("cx", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[0] })
-          .attr("cy", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[1] })
-          .attr("r", function(d){ return size(d.FIRE_SIZE) })
-          .style("fill", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
-          .attr("stroke", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
-          .attr("stroke-width", 3)
-          .attr("fill-opacity", .4)
-        .on("mouseover", mouseover)
-        .on("mousemove", mousemove)
-        .on("mouseleave", mouseleave)
+      
     }
 
     //*********End of drawing map*******//
