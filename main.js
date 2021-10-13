@@ -14,7 +14,7 @@ var minRadiusRange = 1;
 var maxRadiusRange = 260000;
 
 //Defining categories for legend
-var categories = ['Debris and open burning', 'Arson/incendiarism', 'Equipment and vehicle use','Recreation and ceremony', 'Misuse of fire by a minor', 'Smoking', 'Railroad operations and maintenance', 'Power generation/transmission/distribution', 'Fireworks', 'Other causes', 'Firearms and explosives use']
+var categories = ['Debris and open burning', 'Arson/incendiarism', 'Equipment and vehicle use','Recreation and ceremony', 'Misuse of fire by a minor', 'Smoking', 'Railroad operations and maintenance', 'Power generation/transmission/distribution', 'Fireworks', 'Other causes', 'Firearms and explosives use', 'Missing data/not specified/undetermined']
 
 // Map and projection
 var projection = d3.geoMercator()
@@ -38,7 +38,7 @@ var x = d3.scaleTime()
 //defining color for categories and legend later
 var color = d3.scaleOrdinal()
   .domain(categories)
-  .range(d3.schemeSet2); //can try to set up specific colors for the legend later
+  .range(["#ff0000", "#ff8000", "#ffff00", "#80ff00", "#00ff00", "#00ff80", "#00ffff", "#0080ff", "#0000ff", "#8000ff", "#ff00ff", "#ff0080"]); //can try to set up specific colors for the legend later
 
 var yearFilter = 2018;
 
@@ -134,7 +134,7 @@ d3.csv("assets/fire75000causehuman.csv").then((table)=>{
         .attr("class", "ticks")
         .attr("transform", "translate(0," + 18 + ")")
       .selectAll("text")
-        .data(x.ticks(15))
+        .data(x.ticks(20))
         .enter()
         .append("text")
         .attr("x", x)
@@ -188,15 +188,17 @@ d3.csv("assets/fire75000causehuman.csv").then((table)=>{
       }
 
       var mousemove = function(event, d) {
-        console.log(event)
+        // console.log(event)
         Tooltip
-          .html("Fire year: " + event.FIRE_YEAR
+          .html("Fire year: " + event.DISCOVERY_DATE
             + "<br>" + "Acres burned: " + event.FIRE_SIZE 
-            + "<br>" + "Longitude: " + event.LONGITUDE 
             + "<br>" + "Latitude: " + event.LATITUDE
+            + "<br>" + "Longitude: " + event.LONGITUDE
+            + "<br>" + "State: " + event.STATE
+            // + "<br>" + "County: " + event.FIPS_NAME
             + "<br>" + "Cause of fire: " + event.NWCG_GENERAL_CAUSE)
-          .style("left", (event.x)+30 + "px")
-          .style("top", (event.y)-30 + "px")
+          .style("left", 100 + "px")
+          .style("top", 350 + "px")
       }
 
       var mouseleave = function(event, d) {
@@ -204,6 +206,8 @@ d3.csv("assets/fire75000causehuman.csv").then((table)=>{
       }
 
       var firedatasvg = svg.selectAll("circle").data(newData)
+
+
       
       firedatasvg
         .enter()
@@ -213,7 +217,9 @@ d3.csv("assets/fire75000causehuman.csv").then((table)=>{
           .attr("cx", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[0] })
           .attr("cy", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[1] })
           .attr("r", function(d){ return size(d.FIRE_SIZE) })
-          .style("fill", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
+          .style("fill", function(d){ 
+            return color(d.NWCG_GENERAL_CAUSE) 
+          })
           .attr("stroke", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
           .attr("stroke-width", 3)
           .attr("fill-opacity", .4)
