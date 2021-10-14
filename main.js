@@ -14,7 +14,7 @@ var margin = {top: 20, right: 30, bottom: 100, left: 130};
 var currentMapYear = '2000';
 
 var categories = ['Debris and open burning', 'Arson/incendiarism', 'Equipment and vehicle use','Recreation and ceremony', 'Misuse of fire by a minor', 'Smoking', 'Railroad operations and maintenance', 'Power generation/transmission/distribution', 'Fireworks', 'Other causes', 'Firearms and explosives use', 'Missing data/not specified/undetermined']
-var colorrange = ["#ff0000", "#ff8000", "#ffff00", "#80ff00", "#00ff00", "#00ff80", "#00ffff", "#0080ff", "#0000ff", "#8000ff", "#ff00ff", "#ff0080"]
+var colorrange = ["#ff0000", "#ff8000", "#ffff00", "#80ff00", "#00ff00", "#00ff80", "#00ffff", "#0080ff", "#0000ff", "#8000ff", "#ff00ff", "#ff0080"] //we can change these colors later :)
 
 //adjusting the size of the circle for both the bubble map and the key to use
 var minRadiusRange = 1;
@@ -53,7 +53,7 @@ var color = d3.scaleOrdinal()
  .range([ 2, 25])  // Size in pixel
 
 
-d3.csv("assets/fire5000causehuman.csv").then((table)=>{
+d3.csv("assets/firesfinaldata.csv").then((table)=>{
 
 
 d3.json("assets/geojson/USA.geojson").then(function(data){
@@ -81,7 +81,7 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
   .enter()
   //.filter(function(d) { return (d.FIRE_YEAR== "2002") })
   .append("circle")
-    .attr("class" , d => "year"+d.FIRE_YEAR+" dataCircles "+ d.NWCG_GENERAL_CAUSE+""+d.FIRE_YEAR )
+    .attr("class" , d => "year"+d.FIRE_YEAR+" dataCircles "+ d.VALUE+""+d.FIRE_YEAR )
     .attr("cx", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[0] })
     .attr("cy", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[1] })
     .attr("r", function(d){ return size(d.FIRE_SIZE) })
