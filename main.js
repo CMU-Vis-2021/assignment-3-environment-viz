@@ -13,7 +13,7 @@ var margin = {top: 20, right: 30, bottom: 100, left: 130};
 
 var currentMapYear = '2000';
 
-var categories = ["arson_incendiarism", "equipment_and_vehicle_use","recreation_and_ceremony"];
+var categories = ["arson_incendiarism", "debris_and_open_burning", "equipment_and_vehicle_use", "power_generation","recreation_and_ceremony"];
 
 //adjusting the size of the circle for both the bubble map and the key to use
 var minRadiusRange = 1;
@@ -24,7 +24,7 @@ var projection = d3.geoMercator()
     .center([-96, 37])                // GPS of location to zoom on
     .scale(588)                       // This is like the zoom
     .translate([ width/2, height/2 ])
-d3.csv("assets/firedata.csv").then((table)=>{
+d3.csv("assets/fire5000causehuman.csv").then((table)=>{
 
 
 d3.json("assets/geojson/USA.geojson").then(function(data){
@@ -43,22 +43,7 @@ console.log("IN HERE");
  .style("border-width", "2px")
  .style("border-radius", "5px")
  .style("padding", "5px")
- 
-    // Three function that change the tooltip when user hover / move / leave a cell
-    const mouseover = function(event, d) {
-      Tooltip.style("opacity", 1);
-      Tooltip.style("display", "block");
-    }
-    var mousemove = function(event, d) {
-      Tooltip
-        .html(d.FIRE_SIZE + "<br>Category: "+d.CAUSE__ABRV+"<br>" + "long: " + d.LONGITUDE + "<br>" + "lat: " + d.LATITUDE)
-        .style("left", (event.x)+30 + "px")
-        .style("top", (event.y)-30 + "px")
-    }
-    var mouseleave = function(event, d) {
-      Tooltip.style("opacity", 0);
-      Tooltip.style("display", "none");
-    }
+
 
 
 var svg = d3.select("#my_dataviz")
@@ -89,24 +74,34 @@ var color = d3.scaleOrdinal()
     .style("opacity", .3)
 
   // Add circles:
-  console.log(markers)
   svg
   .selectAll("myCircles")
   .data(table)
   .enter()
   //.filter(function(d) { return (d.FIRE_YEAR== "2002") })
   .append("circle")
-    .attr("class" , d => "year"+d.FIRE_YEAR+" dataCircles "+ d.CAUSE__ABRV+""+d.FIRE_YEAR )
+    .attr("class" , d => "year"+d.FIRE_YEAR+" dataCircles "+ d.NWCG_GENERAL_CAUSE+""+d.FIRE_YEAR )
     .attr("cx", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[0] })
     .attr("cy", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[1] })
     .attr("r", function(d){ return size(d.FIRE_SIZE) })
-    .style("fill", function(d){ return color(d.CAUSE__ABRV) })
-    .attr("stroke", function(d){ return color(d.CAUSE__ABRV) })
+    .style("fill", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
+    .attr("stroke", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
     .attr("stroke-width", 3)
     .attr("fill-opacity", .4)
-  .on("mouseover", mouseover)
-  .on("mousemove", mousemove)
-  .on("mouseleave", mouseleave)
+  .on("mouseover", function(event, d) {
+      Tooltip.style("opacity", 1);
+      Tooltip.style("display", "block");
+    })
+  .on("mousemove", function(event, d) {
+      Tooltip
+        .html("Fire year: " + d.FIRE_YEAR + "<br>Acres burned: " + d.FIRE_SIZE + "<br>Cause of fire: "+ d.NWCG_GENERAL_CAUSE+"<br>State: " + d.STATE + "<br>County: " + d.FIPS_NAME)
+        .style("left", (event.x)+30 + "px")
+        .style("top", (event.y)-30 + "px")
+    })
+  .on("mouseleave", function(event, d) {
+      Tooltip.style("opacity", 0);
+      Tooltip.style("display", "none");
+    })
   
 
   //now we make the bar chart
