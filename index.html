@@ -6,20 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment 3</title>
     
-    <script type="module" crossorigin src="./assets/index.50e4af5c.js"></script>
-    <link rel="stylesheet" href="./assets/index.447d9d9c.css">
+    <script type="module" crossorigin src="./assets/index.39d15750.js"></script>
+    <link rel="modulepreload" href="./assets/vendor.8e39a08d.js">
+    <link rel="stylesheet" href="./assets/index.f3665eec.css">
   </head>
   <body>
     <h1>How have human-made fires changed over the years?</h1>
     
     <h2>Most fire incidents are concentrated to the west of the country</h2>
-    <div id="slider"></div>
     <div id="my_dataviz"><p class= "hover-instruct"><img class="icon" alt = "search icon" src = "./assets/search.f1647707.svg">Hover for more information</p></div>
-    <div id="legend"></div>
-  
+      
+    <div class="row align-items-center">
+      <div class="col-sm-2"><p id="value-time"></p></div>
+      <div class="col-sm"><div id="slider-time"></div></div>
+    </div>
 
-    <!-- Using an older version of D3 specifically to have a dragging functionality that we would like -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script> 
+   <input type="range" min="2000" max="2018" value="2000" class="slider" id="myRange">
+      <p>Year Shown: <span id="yearShown">2000</span></p>
+
+    <div>
+      <input type="checkbox" class="checkbox" value="arson_incendiarism" checked><label>Arson/incendiarism</label>
+      <input type="checkbox" class="checkbox" value="equipment_and_vehicle_use" checked><label>Equipment and vehicle use</label>
+      <input type="checkbox" class="checkbox" value="recreation_and_ceremony" checked><label>Recreation and ceremony</label>
+    </div>
+
+
+    <!-- <h2>Assignment 3</h2>
+    <div id="d3-div"></div>
+    <div id="vega-div"></div> -->
+
+    <!-- This script contains a json of our data -->
+    <script type="text/javascript" src="./assets/data.js"></script>
     <!-- This script takes the data and puts it through d3 -->
     
   </body>
