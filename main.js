@@ -110,6 +110,13 @@ var color = d3.scaleOrdinal()
       let cb = d3.select(this);
       let newYear = cb.property("value")
       let grp = "year"+newYear;
+      currentMapYear = newYear;
+      
+      let allButtons = document.getElementsByClassName("button");
+          for (let i = 0; i <= allButtons.length-1 ;i++){
+            allButtons[i].classList.remove('active');
+          }
+          
       svg.selectAll(".dataCircles").transition().duration(1000).style("opacity", 0).attr("r",0);
       // show the group that the slider indicates
         svg.selectAll("."+grp).transition().duration(1000).style("opacity", 1).attr("r", function(d){ return size(d.FIRE_SIZE) })

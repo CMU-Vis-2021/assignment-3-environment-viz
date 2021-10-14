@@ -70,3 +70,6 @@ circle:hover{
   background: #04AA6D;
   cursor: pointer;
 }
+.active{
+  font-weight: bold;
+}
