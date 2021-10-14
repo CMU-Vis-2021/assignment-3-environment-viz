@@ -13,8 +13,10 @@ var margin = {top: 20, right: 30, bottom: 100, left: 130};
 
 var currentMapYear = '2000';
 
-var categories = ['Debris and open burning', 'Arson/incendiarism', 'Equipment and vehicle use','Recreation and ceremony', 'Misuse of fire by a minor', 'Smoking', 'Railroad operations and maintenance', 'Power generation/transmission/distribution', 'Fireworks', 'Other causes', 'Firearms and explosives use', 'Missing data/not specified/undetermined']
+// var categories = ['Debris and open burning', 'Arson/incendiarism', 'Equipment and vehicle use','Recreation and ceremony', 'Misuse of fire by a minor', 'Smoking', 'Railroad operations and maintenance', 'Power generation/transmission/distribution', 'Fireworks', 'Other causes', 'Firearms and explosives use', 'Missing data/not specified/undetermined']
 var colorrange = ["#ff0000", "#ff8000", "#ffff00", "#80ff00", "#00ff00", "#00ff80", "#00ffff", "#0080ff", "#0000ff", "#8000ff", "#ff00ff", "#ff0080"] //we can change these colors later :)
+var categories = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']
+
 
 //adjusting the size of the circle for both the bubble map and the key to use
 var minRadiusRange = 1;
@@ -81,12 +83,12 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
   .enter()
   //.filter(function(d) { return (d.FIRE_YEAR== "2002") })
   .append("circle")
-    .attr("class" , d => "year"+d.FIRE_YEAR+" dataCircles "+ d.VALUE+""+d.FIRE_YEAR )
+    .attr("class" , d => "year"+d.FIRE_YEAR+" dataCircles val"+ d.VALUE+""+d.FIRE_YEAR )
     .attr("cx", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[0] })
     .attr("cy", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[1] })
     .attr("r", function(d){ return size(d.FIRE_SIZE) })
-    .style("fill", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
-    .attr("stroke", function(d){ return color(d.NWCG_GENERAL_CAUSE) })
+    .style("fill", function(d){ return color(d.VALUE) })
+    .attr("stroke", function(d){ return color(d.VALUE) })
     .attr("stroke-width", 3)
     .attr("fill-opacity", .4)
   .on("mouseover", function(event, d) {
@@ -186,25 +188,31 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
 
       svg.selectAll(".dataCircles").transition().duration(1000).style("opacity", 0).attr("r",0);
       // show the group that the slider indicates
-        svg.selectAll("."+grp).transition().duration(1000).style("opacity", 1).attr("r", function(d){ return size(d.FIRE_SIZE) })
+      svg.selectAll("."+grp).transition().duration(1000).style("opacity", 1).attr("r", function(d){ return size(d.FIRE_SIZE) })
       // Otherwise I hide it
     })
   }
 
-  function updateBar(){
+  function updateBar(e){
     // For each check box:
-    d3.selectAll(".button").each(function(d){
+    d3.selectAll(".checkbox").each(function(d){
       let cb = d3.select(this);
-      let grp = cb.property("value")
-      console.log(this.classList.contains("active"));
+      console.log(cb)
+      let ctgry = cb.property("value")
+      let grp = "val" + ctgry
+      console.log("group")
+      console.log(grp)
+      console.log("map year")
+      console.log(currentMapYear)
 
-      if(this.classList.contains("active")!=true){
-        console.log("NOT SELECTED");
-        svg.selectAll("."+grp+""+currentMapYear).transition().duration(1000).style("opacity", 0).attr("r", 0)
+      if(cb.property("checked")){
+        console.log("SELECTED", "."+grp+""+currentMapYear);
+        svg.selectAll("."+grp+""+currentMapYear).transition().duration(1000).style("opacity", 1).attr("r", function(d){ return size(d.FIRE_SIZE) })
+        
        }
       else{
-        console.log("SELECTED");
-        svg.selectAll("."+grp+""+currentMapYear).transition().duration(1000).style("opacity", 1).attr("r", function(d){ return size(d.FIRE_SIZE) })
+        console.log("NOT SELECTED");
+        svg.selectAll("."+grp+""+currentMapYear).transition().duration(1000).style("opacity", 0).attr("r", 0)
       }
     })
   }
@@ -213,8 +221,8 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
   d3.selectAll(".slider").on("change",updateSlider);
 
   // When the bar chart is clicked, I run function
-  d3.selectAll(".button").on("click",updateBar);
-
+  // d3.selectAll(".button").on("click",updateBar);
+  d3.selectAll(".checkbox").on("change",updateBar);
 
   // And I initialize it at the beginning
   updateSlider();
