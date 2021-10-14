@@ -8,6 +8,9 @@ import vegaEmbed from "vega-embed";
 // Size 
 var width = 650;
 var height = 400;
+var widthBar = 450;
+var heightBar = 200;
+var margin = {top: 20, right: 30, bottom: 40, left: 130};
 
 var currentMapYear = '2000';
 
@@ -103,7 +106,77 @@ var color = d3.scaleOrdinal()
   .on("mouseover", mouseover)
   .on("mousemove", mousemove)
   .on("mouseleave", mouseleave)
+  
 
+  //now we make the bar chart
+  var svgBar = d3.select("#my_dataviz")
+  .append("svg")
+    .attr("width", widthBar + margin.left + margin.right)
+    .attr("height", heightBar + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+  
+  // Add X axis of the bar chart
+  var x = d3.scaleLinear()
+    .domain([0, 540000])
+    .range([ 0, widthBar]);
+  //add x axis to the bar chart svg
+  const xAxis = svgBar.append("g")
+    .attr("transform", "translate(0," + heightBar + ")")
+    .call(d3.axisBottom(x))
+    .selectAll("text")
+      .attr("transform", "translate(-10,0)rotate(-45)")
+      .style("text-anchor", "end");
+  
+  // Y axis
+  var y = d3.scaleBand()
+    .range([ 0, heightBar ])
+    .domain(markers.map(d => d.CAUSE__ABRV))
+    .padding(.1);
+  //add y axis to the bar chart svg
+  const yAxis = svgBar.append("g")
+    .call(d3.axisLeft(y))
+  
+  //now we add the bars, wooooooo
+  function updateBarChart(selectedYear){
+
+    console.log("UPDATING BAR");
+    let yearData = markers.filter( function(d){return d.FIRE_YEAR==selectedYear});
+    console.log(yearData);
+    // Y axis
+    y.domain(yearData.map(function(d) { return d.CAUSE__ABRV; } ) )
+    yAxis.transition().duration(1000).call(d3.axisLeft(y) ) 
+
+    // Add X axis
+    x.domain([0, d3.max(yearData, function(d) { return d.FIRE_SIZE }) ]);
+    xAxis.transition().duration(1000).call(d3.axisBottom(x));
+
+    // map data to existing bars
+    var bars = svgBar.selectAll("rect")
+                  .data(yearData)
+
+    bars
+      .join("rect")
+      .transition()
+      .duration(1000)
+        .attr("x", x(0) )
+        .attr("y", d => y(d.CAUSE__ABRV) )
+        .attr("width", d => x(d.FIRE_SIZE))
+        .attr("height", y.bandwidth() )
+        .attr("fill", "#efa768")
+  }
+  updateBarChart(2000);
+  // svgBar.selectAll("myRect")
+  //   .data(markers)
+  //   .join("rect")
+  //   .attr("x", x(0) )
+  //   .attr("onclick", "barClicked()" )
+  //   .attr("y", d => y(d.CAUSE__ABRV))
+  //   .attr("width", d => x(d.FIRE_SIZE))
+  //   .attr("height", y.bandwidth())
+  //   .attr("fill", "#efa768")
+        
   function updateSlider(){
     // For each check box:
     d3.selectAll(".slider").each(function(d){
@@ -112,6 +185,7 @@ var color = d3.scaleOrdinal()
       let grp = "year"+newYear;
       currentMapYear = newYear;
       
+      updateBarChart(currentMapYear);
       let allButtons = document.getElementsByClassName("button");
           for (let i = 0; i <= allButtons.length-1 ;i++){
             allButtons[i].classList.remove('active');
