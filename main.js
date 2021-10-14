@@ -9,8 +9,8 @@ import vegaEmbed from "vega-embed";
 var width = 650;
 var height = 400;
 var widthBar = 450;
-var heightBar = 200;
-var margin = {top: 20, right: 30, bottom: 40, left: 130};
+var heightBar = 250;
+var margin = {top: 20, right: 30, bottom: 100, left: 130};
 
 var currentMapYear = '2000';
 
@@ -119,31 +119,31 @@ var color = d3.scaleOrdinal()
   
   // Add X axis of the bar chart
   var x = d3.scaleLinear()
-    .domain([0, 540000])
+    //.domain([0, 540000])
     .range([ 0, widthBar]);
   //add x axis to the bar chart svg
   const xAxis = svgBar.append("g")
-    .attr("transform", "translate(0," + heightBar + ")")
-    .call(d3.axisBottom(x))
-    .selectAll("text")
-      .attr("transform", "translate(-10,0)rotate(-45)")
-      .style("text-anchor", "end");
-  
+    .attr("transform", "translate(0," + heightBar + ")");
+    //.call(d3.axisBottom(x))
+    //.selectAll("text")
+    //  .attr("transform", "translate(-10,0)rotate(-45)")
+    //  .style("text-anchor", "end");
+
   // Y axis
   var y = d3.scaleBand()
     .range([ 0, heightBar ])
-    .domain(markers.map(d => d.CAUSE__ABRV))
+    // .domain(markers.map(d => d.CAUSE__ABRV))
     .padding(.1);
   //add y axis to the bar chart svg
-  const yAxis = svgBar.append("g")
-    .call(d3.axisLeft(y))
+  const yAxis = svgBar.append("g");
+       //.attr("transform", `translate(0,${widthBar})`);
+    // .call(d3.axisLeft(y))
   
   //now we add the bars, wooooooo
   function updateBarChart(selectedYear){
 
-    console.log("UPDATING BAR");
+    //only get the subset of data for the year shown
     let yearData = markers.filter( function(d){return d.FIRE_YEAR==selectedYear});
-    console.log(yearData);
     // Y axis
     y.domain(yearData.map(function(d) { return d.CAUSE__ABRV; } ) )
     yAxis.transition().duration(1000).call(d3.axisLeft(y) ) 
@@ -151,6 +151,8 @@ var color = d3.scaleOrdinal()
     // Add X axis
     x.domain([0, d3.max(yearData, function(d) { return d.FIRE_SIZE }) ]);
     xAxis.transition().duration(1000).call(d3.axisBottom(x));
+    // xAxis.selectAll("g")
+    //      .call(d3.axisBottom(x)) 
 
     // map data to existing bars
     var bars = svgBar.selectAll("rect")
@@ -160,22 +162,16 @@ var color = d3.scaleOrdinal()
       .join("rect")
       .transition()
       .duration(1000)
+        .attr("class", function(d) { return "fire"+d.FIRE_SIZE } )
         .attr("x", x(0) )
         .attr("y", d => y(d.CAUSE__ABRV) )
         .attr("width", d => x(d.FIRE_SIZE))
         .attr("height", y.bandwidth() )
         .attr("fill", "#efa768")
+
   }
+  //initializing the bar chart by calling the function we made above with the year we want to show first
   updateBarChart(2000);
-  // svgBar.selectAll("myRect")
-  //   .data(markers)
-  //   .join("rect")
-  //   .attr("x", x(0) )
-  //   .attr("onclick", "barClicked()" )
-  //   .attr("y", d => y(d.CAUSE__ABRV))
-  //   .attr("width", d => x(d.FIRE_SIZE))
-  //   .attr("height", y.bandwidth())
-  //   .attr("fill", "#efa768")
         
   function updateSlider(){
     // For each check box:
