@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment 3</title>
     <link rel="stylesheet" href="./style.css" />
+    <script>
+      var selectedCategory = "";
+      function toggleActive(button){
+          let allButtons = document.getElementsByClassName("button");
+          for (let i = 0; i <= allButtons.length-1 ;i++){
+            allButtons[i].classList.remove('active');
+          }
+          button.classList.add('active');
+          selectedCategory = button.value;
+        }
+    </script>
   </head>
   <body>
     <h1>How have human-made fires changed over the years?</h1>
@@ -22,9 +33,9 @@
       <p>Year Shown: <span id="yearShown">2000</span></p>
 
     <div>
-      <input type="checkbox" class="checkbox" value="arson_incendiarism" checked><label>Arson/incendiarism</label>
-      <input type="checkbox" class="checkbox" value="equipment_and_vehicle_use" checked><label>Equipment and vehicle use</label>
-      <input type="checkbox" class="checkbox" value="recreation_and_ceremony" checked><label>Recreation and ceremony</label>
+      <input type="button" class="button" onclick= "toggleActive(this)" value="arson_incendiarism" checked><label>Arson/incendiarism</label>
+      <input type="button" class="button" onclick= "toggleActive(this)" value="equipment_and_vehicle_use" checked><label>Equipment and vehicle use</label>
+      <input type="button" class="button" onclick= "toggleActive(this)" value="recreation_and_ceremony" checked><label>Recreation and ceremony</label>
     </div>
 
 

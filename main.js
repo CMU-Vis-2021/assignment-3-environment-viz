@@ -4,11 +4,14 @@ import vegaEmbed from "vega-embed";
 //getting lots of code and insight from: https://www.d3-graph-gallery.com/index.html
 
 
+
 // Size 
 var width = 650;
 var height = 400;
 
-var currentMapYear = 0;
+var currentMapYear = '2000';
+
+var categories = ["arson_incendiarism", "equipment_and_vehicle_use","recreation_and_ceremony"];
 
 //adjusting the size of the circle for both the bubble map and the key to use
 var minRadiusRange = 1;
@@ -39,16 +42,18 @@ console.log("IN HERE");
  
     // Three function that change the tooltip when user hover / move / leave a cell
     const mouseover = function(event, d) {
-      Tooltip.style("opacity", 1)
+      Tooltip.style("opacity", 1);
+      Tooltip.style("display", "block");
     }
     var mousemove = function(event, d) {
       Tooltip
-        .html(d.FIRE_SIZE + "<br>" + "long: " + d.LONGITUDE + "<br>" + "lat: " + d.LATITUDE)
+        .html(d.FIRE_SIZE + "<br>Category: "+d.CAUSE__ABRV+"<br>" + "long: " + d.LONGITUDE + "<br>" + "lat: " + d.LATITUDE)
         .style("left", (event.x)+30 + "px")
         .style("top", (event.y)-30 + "px")
     }
     var mouseleave = function(event, d) {
-      Tooltip.style("opacity", 0)
+      Tooltip.style("opacity", 0);
+      Tooltip.style("display", "none");
     }
 
 
@@ -87,7 +92,7 @@ var color = d3.scaleOrdinal()
   .enter()
   //.filter(function(d) { return (d.FIRE_YEAR== "2002") })
   .append("circle")
-    .attr("class" , d => "year"+d.FIRE_YEAR+" dataCircles" )
+    .attr("class" , d => "year"+d.FIRE_YEAR+" dataCircles "+ d.CAUSE__ABRV+""+d.FIRE_YEAR )
     .attr("cx", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[0] })
     .attr("cy", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[1] })
     .attr("r", function(d){ return size(d.FIRE_SIZE) })
@@ -99,31 +104,59 @@ var color = d3.scaleOrdinal()
   .on("mousemove", mousemove)
   .on("mouseleave", mouseleave)
 
-  function update(){
+  function updateSlider(){
     // For each check box:
     d3.selectAll(".slider").each(function(d){
       let cb = d3.select(this);
       let newYear = cb.property("value")
       let grp = "year"+newYear;
-      // console.log("grp = ");
-      // console.log(grp);
-      // console.log(cb);
       svg.selectAll(".dataCircles").transition().duration(1000).style("opacity", 0).attr("r",0);
       // show the group that the slider indicates
-        console.log("newYear = "+newYear);
-        console.log(grp);
         svg.selectAll("."+grp).transition().duration(1000).style("opacity", 1).attr("r", function(d){ return size(d.FIRE_SIZE) })
-      
       // Otherwise I hide it
-      
     })
   }
 
-  // When a button change, I run the update function
-  d3.selectAll(".slider").on("change",update);
+  function updateBar(){
+    // For each check box:
+    d3.selectAll(".button").each(function(d){
+      let cb = d3.select(this);
+      let grp = cb.property("value")
+      console.log(this.classList.contains("active"));
+
+      if(this.classList.contains("active")!=true){
+        console.log("NOT SELECTED");
+        svg.selectAll("."+grp+""+currentMapYear).transition().duration(1000).style("opacity", 0).attr("r", 0)
+         //if(categories[i] != (cb.property("value"))
+          //  svg.selectAll("."+grp).transition().duration(1000).style("opacity", 1).attr("r", function(d){ return size(d.FIRE_SIZE) })
+       }
+      else{
+        console.log("SELECTED");
+        svg.selectAll("."+grp+""+currentMapYear).transition().duration(1000).style("opacity", 1).attr("r", function(d){ return size(d.FIRE_SIZE) })
+      }
+      // If the box is check, I show the group
+      // if(cb.class("checked")){
+      //   console.log("checked");
+      //   svg.selectAll("."+grp).transition().duration(1000).style("opacity", 1).attr("r", function(d){ return size(d.FIRE_SIZE) })
+
+      // Otherwise I hide it
+      // }else{
+      //   console.log("UNchecked");
+      //   svg.selectAll("."+grp).transition().duration(1000).style("opacity", 0).attr("r", 0)
+      // }
+    })
+  }
+
+  // When the slider changes, I run a function
+  d3.selectAll(".slider").on("change",updateSlider);
+
+  // When the bar chart is clicked, I run function
+  d3.selectAll(".button").on("click",updateBar);
+
 
   // And I initialize it at the beginning
-  update();
+  updateSlider();
+  //updateBar();
 
   //now I'm making the key
   var valuesToShow = [minRadiusRange, maxRadiusRange/2, maxRadiusRange]
@@ -179,6 +212,7 @@ myRange.oninput = function() {
   // console.log(this.value)
   yearShown.innerHTML = this.value;
 }
+
 
 
 
