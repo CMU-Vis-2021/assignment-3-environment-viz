@@ -4,7 +4,6 @@ import vegaEmbed from "vega-embed";
 //getting lots of code and insight from: https://www.d3-graph-gallery.com/index.html
 
 
-
 // Size 
 var width = 650;
 var height = 400;
@@ -25,6 +24,8 @@ var projection = d3.geoMercator()
     .center([-96, 37])                // GPS of location to zoom on
     .scale(588)                       // This is like the zoom
     .translate([ width/2, height/2 ])
+d3.csv("assets/firedata.csv").then((table)=>{
+
 
 d3.json("assets/geojson/USA.geojson").then(function(data){
 //d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(function(data){
@@ -91,7 +92,7 @@ var color = d3.scaleOrdinal()
   console.log(markers)
   svg
   .selectAll("myCircles")
-  .data(markers)
+  .data(table)
   .enter()
   //.filter(function(d) { return (d.FIRE_YEAR== "2002") })
   .append("circle")
@@ -268,7 +269,7 @@ var color = d3.scaleOrdinal()
   //Handling the timeline slider
     
 })
-
+});
 
 
 var yearShown = document.getElementById("yearShown");
