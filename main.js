@@ -13,7 +13,8 @@ var margin = {top: 20, right: 30, bottom: 100, left: 130};
 
 var currentMapYear = '2000';
 
-var categories = ["arson_incendiarism", "debris_and_open_burning", "equipment_and_vehicle_use", "power_generation","recreation_and_ceremony"];
+var categories = ['Debris and open burning', 'Arson/incendiarism', 'Equipment and vehicle use','Recreation and ceremony', 'Misuse of fire by a minor', 'Smoking', 'Railroad operations and maintenance', 'Power generation/transmission/distribution', 'Fireworks', 'Other causes', 'Firearms and explosives use', 'Missing data/not specified/undetermined']
+var colorrange = ["#ff0000", "#ff8000", "#ffff00", "#80ff00", "#00ff00", "#00ff80", "#00ffff", "#0080ff", "#0000ff", "#8000ff", "#ff00ff", "#ff0080"]
 
 //adjusting the size of the circle for both the bubble map and the key to use
 var minRadiusRange = 1;
@@ -24,16 +25,9 @@ var projection = d3.geoMercator()
     .center([-96, 37])                // GPS of location to zoom on
     .scale(588)                       // This is like the zoom
     .translate([ width/2, height/2 ])
-d3.csv("assets/fire5000causehuman.csv").then((table)=>{
 
 
-d3.json("assets/geojson/USA.geojson").then(function(data){
-//d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(function(data){
-console.log("IN HERE");
-// Filter data
-//data.features = data.features.filter( function(d){return d.properties.name=="USA"});
-
- // create a tooltip
+// create a tooltip
  var Tooltip = d3.select("#my_dataviz")
  .append("div")
  .attr("class", "tooltip")
@@ -44,21 +38,28 @@ console.log("IN HERE");
  .style("border-radius", "5px")
  .style("padding", "5px")
 
-
-
 var svg = d3.select("#my_dataviz")
   .append("svg")
   .attr("width", width)
   .attr("height", height)
 
 var color = d3.scaleOrdinal()
-      .domain(["arson_incendiarism", "debris_and_open_burning", "equipment_and_vehicle_use", "power_generation","recreation_and_ceremony"])
-      .range([  "#F5CBA7", "#EB984E", "#E67E22", "#A04000","#6E2C00"])
+      .domain(categories)
+      .range(colorrange)
 
  // Add a scale for bubble size
  var size = d3.scaleLinear()
  .domain([minRadiusRange,maxRadiusRange])  // What's in the data
  .range([ 2, 25])  // Size in pixel
+
+
+d3.csv("assets/fire5000causehuman.csv").then((table)=>{
+
+
+d3.json("assets/geojson/USA.geojson").then(function(data){
+
+// Filter data
+//data.features = data.features.filter( function(d){return d.properties.name=="USA"});
 
   // Draw the map
   svg.append("g")
@@ -139,9 +140,9 @@ var color = d3.scaleOrdinal()
   function updateBarChart(selectedYear){
 
     //only get the subset of data for the year shown
-    let yearData = markers.filter( function(d){return d.FIRE_YEAR==selectedYear});
+    let yearData = table.filter( function(d){return d.FIRE_YEAR==selectedYear});
     // Y axis
-    y.domain(yearData.map(function(d) { return d.CAUSE__ABRV; } ) )
+    y.domain(yearData.map(function(d) { return d.NWCG_GENERAL_CAUSE; } ) )
     yAxis.transition().duration(1000).call(d3.axisLeft(y) ) 
 
     // Add X axis
@@ -160,7 +161,7 @@ var color = d3.scaleOrdinal()
       .duration(1000)
         .attr("class", function(d) { return "fire"+d.FIRE_SIZE } )
         .attr("x", x(0) )
-        .attr("y", d => y(d.CAUSE__ABRV) )
+        .attr("y", d => y(d.NWCG_GENERAL_CAUSE) )
         .attr("width", d => x(d.FIRE_SIZE))
         .attr("height", y.bandwidth() )
         .attr("fill", "#efa768")
@@ -259,9 +260,6 @@ var color = d3.scaleOrdinal()
       .text( function(d){ if(d == maxRadiusRange){return d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+" acres"}else{return d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} } )
       .style("font-size", 12)
       .attr('alignment-baseline', 'middle')
-
-
-  //Handling the timeline slider
     
 })
 });
@@ -273,31 +271,3 @@ myRange.oninput = function() {
   // console.log(this.value)
   yearShown.innerHTML = this.value;
 }
-
-
-
-
-// d3.select("#d3-div").append("p").text("hello from D3");
-
-// vegaEmbed("#vega-div", {
-//   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-//   description: "A simple bar chart with embedded data.",
-//   data: {
-//     values: [
-//       { a: "A", b: 28 },
-//       { a: "B", b: 55 },
-//       { a: "C", b: 43 },
-//       { a: "D", b: 91 },
-//       { a: "E", b: 81 },
-//       { a: "F", b: 53 },
-//       { a: "G", b: 19 },
-//       { a: "H", b: 87 },
-//       { a: "I", b: 52 },
-//     ],
-//   },
-//   mark: "bar",
-//   encoding: {
-//     x: { field: "a", type: "nominal", axis: { labelAngle: 0 } },
-//     y: { field: "b", type: "quantitative" },
-//   },
-// });
