@@ -13,8 +13,7 @@ var margin = {top: 20, right: 30, bottom: 100, left: 130};
 
 var currentMapYear = '2000';
 
-// var categories = ['Debris and open burning', 'Arson/incendiarism', 'Equipment and vehicle use','Recreation and ceremony', 'Misuse of fire by a minor', 'Smoking', 'Railroad operations and maintenance', 'Power generation/transmission/distribution', 'Fireworks', 'Other causes', 'Firearms and explosives use', 'Missing data/not specified/undetermined']
-var colorrange = ["#ff0000", "#ff8000", "#ffff00", "#80ff00", "#00ff00", "#00ff80", "#00ffff", "#0080ff", "#0000ff", "#8000ff", "#ff00ff", "#ff0080"] //we can change these colors later :)
+var colorrange = ["#7c0202", "#b64d24", "#b86213", "#e18820", "#de9b10", "#f3c523", "#7c5201", "#fac45a", "#0000ff", "#8000ff", "#ff00ff", "#ff0080"] //we can change these colors later :)
 var categories = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']
 
 
@@ -166,7 +165,10 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
         .attr("y", d => y(d.NWCG_GENERAL_CAUSE) )
         .attr("width", d => x(d.FIRE_SIZE))
         .attr("height", y.bandwidth() )
-        .attr("fill", "#efa768")
+        .style("fill", function(d){ return color(d.VALUE) })
+    .attr("stroke", function(d){ return color(d.VALUE) })
+    .attr("stroke-width", 3)
+    .attr("fill-opacity", .4)
 
   }
   //initializing the bar chart by calling the function we made above with the year we want to show first
