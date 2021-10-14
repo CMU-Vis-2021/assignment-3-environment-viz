@@ -116,7 +116,7 @@ var color = d3.scaleOrdinal()
           for (let i = 0; i <= allButtons.length-1 ;i++){
             allButtons[i].classList.remove('active');
           }
-          
+
       svg.selectAll(".dataCircles").transition().duration(1000).style("opacity", 0).attr("r",0);
       // show the group that the slider indicates
         svg.selectAll("."+grp).transition().duration(1000).style("opacity", 1).attr("r", function(d){ return size(d.FIRE_SIZE) })
@@ -134,23 +134,11 @@ var color = d3.scaleOrdinal()
       if(this.classList.contains("active")!=true){
         console.log("NOT SELECTED");
         svg.selectAll("."+grp+""+currentMapYear).transition().duration(1000).style("opacity", 0).attr("r", 0)
-         //if(categories[i] != (cb.property("value"))
-          //  svg.selectAll("."+grp).transition().duration(1000).style("opacity", 1).attr("r", function(d){ return size(d.FIRE_SIZE) })
        }
       else{
         console.log("SELECTED");
         svg.selectAll("."+grp+""+currentMapYear).transition().duration(1000).style("opacity", 1).attr("r", function(d){ return size(d.FIRE_SIZE) })
       }
-      // If the box is check, I show the group
-      // if(cb.class("checked")){
-      //   console.log("checked");
-      //   svg.selectAll("."+grp).transition().duration(1000).style("opacity", 1).attr("r", function(d){ return size(d.FIRE_SIZE) })
-
-      // Otherwise I hide it
-      // }else{
-      //   console.log("UNchecked");
-      //   svg.selectAll("."+grp).transition().duration(1000).style("opacity", 0).attr("r", 0)
-      // }
     })
   }
 

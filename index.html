@@ -22,15 +22,11 @@
     <h1>How have human-made fires changed over the years?</h1>
     
     <h2>Most fire incidents are concentrated to the west of the country</h2>
-    <div id="my_dataviz"><p class= "hover-instruct"><img class="icon" alt = "search icon" src = "assets/search.svg">Hover for more information</p></div>
-      
-    <div class="row align-items-center">
-      <div class="col-sm-2"><p id="value-time"></p></div>
-      <div class="col-sm"><div id="slider-time"></div></div>
-    </div>
+    <input type="range" min="2000" max="2018" value="2000" class="slider" id="myRange">
+    <span style = "text-align: left;width: 50%;display: inline-block;">2000</span><span style = "text-align: right;width: 50%;display: inline-block;">2018</span>
+    <p class = "yearLabel">Year shown: <span id="yearShown">2000</span></p>
 
-   <input type="range" min="2000" max="2018" value="2000" class="slider" id="myRange">
-      <p>Year Shown: <span id="yearShown">2000</span></p>
+    <div id="my_dataviz"><p class= "hover-instruct"><img class="icon" alt = "search icon" src = "assets/search.svg">Hover for more information</p></div>
 
     <div>
       <input type="button" class="button" onclick= "toggleActive(this)" value="arson_incendiarism" checked><label>Arson/incendiarism</label>
