@@ -8,6 +8,8 @@ import vegaEmbed from "vega-embed";
 var width = 650;
 var height = 400;
 
+var currentMapYear = 0;
+
 //adjusting the size of the circle for both the bubble map and the key to use
 var minRadiusRange = 1;
 var maxRadiusRange = 260000;
@@ -64,8 +66,8 @@ var color = d3.scaleOrdinal()
  .domain([minRadiusRange,maxRadiusRange])  // What's in the data
  .range([ 2, 25])  // Size in pixel
 
-// Draw the map
-svg.append("g")
+  // Draw the map
+  svg.append("g")
     .selectAll("path")
     .data(data.features)
     .enter()
@@ -77,16 +79,15 @@ svg.append("g")
     .style("stroke", "black")
     .style("opacity", .3)
 
-// Add circles:
-svg
+  // Add circles:
+  console.log(markers)
+  svg
   .selectAll("myCircles")
   .data(markers)
   .enter()
-  .filter(function(d) { return (d.NWCG_GENERAL_CAUSE == "Arson/incendiarism" 
-                                || d.NWCG_GENERAL_CAUSE == "Equipment and vehicle use" 
-                                || d.NWCG_GENERAL_CAUSE == "Recreation and ceremony") })
+  //.filter(function(d) { return (d.FIRE_YEAR== "2002") })
   .append("circle")
-    .attr("class" , d => d.CAUSE__ABRV )
+    .attr("class" , d => "year"+d.FIRE_YEAR+" dataCircles" )
     .attr("cx", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[0] })
     .attr("cy", function(d){ return projection([d.LONGITUDE, d.LATITUDE])[1] })
     .attr("r", function(d){ return size(d.FIRE_SIZE) })
@@ -100,37 +101,38 @@ svg
 
   function update(){
     // For each check box:
-    d3.selectAll(".checkbox").each(function(d){
+    d3.selectAll(".slider").each(function(d){
       let cb = d3.select(this);
-      let grp = cb.property("value");
-
-      // If the box is check, I show the group
-      if(cb.property("checked")){
-        console.log("showing group");
+      let newYear = cb.property("value")
+      let grp = "year"+newYear;
+      // console.log("grp = ");
+      // console.log(grp);
+      // console.log(cb);
+      svg.selectAll(".dataCircles").transition().duration(1000).style("opacity", 0).attr("r",0);
+      // show the group that the slider indicates
+        console.log("newYear = "+newYear);
         console.log(grp);
         svg.selectAll("."+grp).transition().duration(1000).style("opacity", 1).attr("r", function(d){ return size(d.FIRE_SIZE) })
-
+      
       // Otherwise I hide it
-      }else{
-        svg.selectAll("."+grp).transition().duration(1000).style("opacity", 0).attr("r", 0)
-      }
+      
     })
   }
 
   // When a button change, I run the update function
-  d3.selectAll(".checkbox").on("change",update);
+  d3.selectAll(".slider").on("change",update);
 
   // And I initialize it at the beginning
   update();
 
-//now I'm making the key
-var valuesToShow = [minRadiusRange, maxRadiusRange/2, maxRadiusRange]
-var xCircle = 50
-var xLabel = 100
-var yCircle = 380
+  //now I'm making the key
+  var valuesToShow = [minRadiusRange, maxRadiusRange/2, maxRadiusRange]
+  var xCircle = 50
+  var xLabel = 100
+  var yCircle = 380
 
 
-svg
+  svg
   .selectAll("legend")
   .data(valuesToShow)
   .enter()
@@ -140,7 +142,7 @@ svg
     .attr("r", function(d){ return size(d) })
     .style("fill", "none")
     .attr("stroke", "black")
-svg
+  svg
     .selectAll("legend")
     .data(valuesToShow)
     .enter()
@@ -153,7 +155,7 @@ svg
       .style('stroke-dasharray', ('2,2'))
   
   // Add legend: labels
-svg
+  svg
     .selectAll("legend")
     .data(valuesToShow)
     .enter()
@@ -165,9 +167,18 @@ svg
       .attr('alignment-baseline', 'middle')
 
 
+  //Handling the timeline slider
     
 })
 
+
+
+var yearShown = document.getElementById("yearShown");
+myRange.oninput = function() {
+  // console.log(this)
+  // console.log(this.value)
+  yearShown.innerHTML = this.value;
+}
 
 
 

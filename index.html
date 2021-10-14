@@ -12,6 +12,15 @@
     
     <h2>Most fire incidents are concentrated to the west of the country</h2>
     <div id="my_dataviz"><p class= "hover-instruct"><img class="icon" alt = "search icon" src = "assets/search.svg">Hover for more information</p></div>
+      
+    <div class="row align-items-center">
+      <div class="col-sm-2"><p id="value-time"></p></div>
+      <div class="col-sm"><div id="slider-time"></div></div>
+    </div>
+
+   <input type="range" min="2000" max="2018" value="2000" class="slider" id="myRange">
+      <p>Year Shown: <span id="yearShown">2000</span></p>
+
     <div>
       <input type="checkbox" class="checkbox" value="arson_incendiarism" checked><label>Arson/incendiarism</label>
       <input type="checkbox" class="checkbox" value="equipment_and_vehicle_use" checked><label>Equipment and vehicle use</label>
