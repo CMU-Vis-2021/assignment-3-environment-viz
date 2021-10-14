@@ -1,4 +1,4 @@
-import * as d3 from "d3";
+import * as d3 from 'https://unpkg.com/d3?module';
 import vegaEmbed from "vega-embed";
 
 //getting code from: https://codepen.io/ames/pen/vLVavK
