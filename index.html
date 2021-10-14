@@ -6,21 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment 3</title>
     
-    <script>
-      var selectedCategory = "";
-      function toggleActive(button){
-          let allButtons = document.getElementsByClassName("button");
-          for (let i = 0; i <= allButtons.length-1 ;i++){
-            allButtons[i].classList.remove('active');
-          }
-          button.classList.add('active');
-          selectedCategory = button.value;
-        }
-        function barClicked(){
-            console.log("Bar was clicked!!!");
-        }
-    </script>
-    <script type="module" crossorigin src="./assets/index.726a51e4.js"></script>
+    
+    <script type="module" crossorigin src="./assets/index.3b6cfc71.js"></script>
     <link rel="modulepreload" href="./assets/vendor.050cab8a.js">
     <link rel="stylesheet" href="./assets/index.5b6de88b.css">
   </head>
@@ -35,18 +22,18 @@
     <div id="my_dataviz"><p class= "hover-instruct"><img class="icon" alt = "search icon" src = "./assets/search.f1647707.svg">Hover for more information</p></div>
 
     <div>
-      <input type="button" class="button" onclick= "toggleActive(this)" value="2" checked><label>Arson/incendiarism</label>
-      <input type="button" class="button" onclick= "toggleActive(this)" value="3" checked><label>Equipment and vehicle use</label>
-      <input type="button" class="button" onclick= "toggleActive(this)" value="4" checked><label>Recreation and ceremony</label>
-      <input type="button" class="button" onclick= "toggleActive(this)" value="1" checked><label>Debris and open burning</label>
-      <input type="button" class="button" onclick= "toggleActive(this)" value="5" checked><label>Misuse of fire by a minor</label>
-      <input type="button" class="button" onclick= "toggleActive(this)" value="7" checked><label>Railroad operations and maintenance</label>
-      <input type="button" class="button" onclick= "toggleActive(this)" value="8" checked><label>Power generation/transmission/distribution</label>
-      <input type="button" class="button" onclick= "toggleActive(this)" value="9" checked><label>Fireworks</label>
-      <input type="button" class="button" onclick= "toggleActive(this)" value="6" checked><label>Smoking</label>
-      <input type="button" class="button" onclick= "toggleActive(this)" value="11" checked><label>Firearms and explosives use</label>
-      <input type="button" class="button" onclick= "toggleActive(this)" value="10" checked><label>Other causes</label>
-      <input type="button" class="button" onclick= "toggleActive(this)" value="0" checked><label>Missing data/not specified/undetermined</label>
+      <input type="checkbox" class="checkbox" value="2" checked><label>Arson/incendiarism</label>
+      <input type="checkbox" class="checkbox" value="3" checked><label>Equipment and vehicle use</label>
+      <input type="checkbox" class="checkbox" value="4" checked><label>Recreation and ceremony</label>
+      <input type="checkbox" class="checkbox" value="1" checked><label>Debris and open burning</label>
+      <input type="checkbox" class="checkbox" value="5" checked><label>Misuse of fire by a minor</label>
+      <input type="checkbox" class="checkbox" value="7" checked><label>Railroad operations and maintenance</label>
+      <input type="checkbox" class="checkbox" value="8" checked><label>Power generation/transmission/distribution</label>
+      <input type="checkbox" class="checkbox" value="9" checked><label>Fireworks</label>
+      <input type="checkbox" class="checkbox" value="6" checked><label>Smoking</label>
+      <input type="checkbox" class="checkbox" value="11" checked><label>Firearms and explosives use</label>
+      <input type="checkbox" class="checkbox" value="10" checked><label>Other causes</label>
+      <input type="checkbox" class="checkbox" value="0" checked><label>Missing data/not specified/undetermined</label>
     </div>
 
     <!-- This script takes the data and puts it through d3 -->
