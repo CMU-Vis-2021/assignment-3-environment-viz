@@ -6,9 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment 3</title>
     
-    <script type="module" crossorigin src="./assets/index.39d15750.js"></script>
+    <script>
+      var selectedCategory = "";
+      function toggleActive(button){
+          let allButtons = document.getElementsByClassName("button");
+          for (let i = 0; i <= allButtons.length-1 ;i++){
+            allButtons[i].classList.remove('active');
+          }
+          button.classList.add('active');
+          selectedCategory = button.value;
+        }
+    </script>
+    <script type="module" crossorigin src="./assets/index.461438f4.js"></script>
     <link rel="modulepreload" href="./assets/vendor.8e39a08d.js">
-    <link rel="stylesheet" href="./assets/index.f3665eec.css">
+    <link rel="stylesheet" href="./assets/index.5848da19.css">
   </head>
   <body>
     <h1>How have human-made fires changed over the years?</h1>
@@ -25,9 +36,9 @@
       <p>Year Shown: <span id="yearShown">2000</span></p>
 
     <div>
-      <input type="checkbox" class="checkbox" value="arson_incendiarism" checked><label>Arson/incendiarism</label>
-      <input type="checkbox" class="checkbox" value="equipment_and_vehicle_use" checked><label>Equipment and vehicle use</label>
-      <input type="checkbox" class="checkbox" value="recreation_and_ceremony" checked><label>Recreation and ceremony</label>
+      <input type="button" class="button" onclick= "toggleActive(this)" value="arson_incendiarism" checked><label>Arson/incendiarism</label>
+      <input type="button" class="button" onclick= "toggleActive(this)" value="equipment_and_vehicle_use" checked><label>Equipment and vehicle use</label>
+      <input type="button" class="button" onclick= "toggleActive(this)" value="recreation_and_ceremony" checked><label>Recreation and ceremony</label>
     </div>
 
 
