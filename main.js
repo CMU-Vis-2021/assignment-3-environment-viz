@@ -1,5 +1,5 @@
 import * as d3 from 'https://unpkg.com/d3?module'
-import vegaEmbed from "vega-embed";
+// import vegaEmbed from "vega-embed";
 
 //getting lots of code and insight from: https://www.d3-graph-gallery.com/index.html
 
