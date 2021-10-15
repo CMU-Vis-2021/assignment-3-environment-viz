@@ -104,39 +104,61 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
       Tooltip.style("opacity", 0);
       Tooltip.style("display", "none");
     })
-  
+
+   //this is nothing important, just a very hacky way to add spacing between the map and bar chart
+   d3.select("#my_dataviz")
+   .append("svg")
+     .attr("width", width)
+     .attr("height", 60)
 
   //now we make the bar chart
   var svgBar = d3.select("#my_dataviz")
   .append("svg")
     .attr("width", widthBar + margin.left + margin.right)
     .attr("height", heightBar + margin.top + margin.bottom)
+    .attr("class","overflow-viz")
   .append("g")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
   
   // Add X axis of the bar chart
   var x = d3.scaleLinear()
-    //.domain([0, 540000])
     .range([ 0, widthBar]);
   //add x axis to the bar chart svg
   const xAxis = svgBar.append("g")
     .attr("transform", "translate(0," + heightBar + ")");
-    //.call(d3.axisBottom(x))
-    //.selectAll("text")
-    //  .attr("transform", "translate(-10,0)rotate(-45)")
-    //  .style("text-anchor", "end");
+
 
   // Y axis
   var y = d3.scaleBand()
     .range([ 0, heightBar ])
-    // .domain(markers.map(d => d.CAUSE__ABRV))
     .padding(.1);
   //add y axis to the bar chart svg
   const yAxis = svgBar.append("g");
-       //.attr("transform", `translate(0,${widthBar})`);
-    // .call(d3.axisLeft(y))
+
+  svgBar.append("text")
+    .attr("x", (widthBar / 2)-35)             
+    .attr("y", 0 - (margin.top*2.5))
+    .attr("text-anchor", "middle")  
+    .style("font-size", "16px") 
+    .style("font-weight", "bold") 
+    .text("Human-made fires by cause");
+  svgBar.append("text")
+    .attr("x", (widthBar / 2)-35)             
+    .attr("y", 0 - (margin.top*1.3))
+    .attr("text-anchor", "middle")  
+    .style("font-size", "14px") 
+    .style("color", "grey")
+    .style("opacity", ".6") 
+    .text("Click on bar to focus");
   
+  svgBar.append("text")
+    .attr("x", (widthBar / 2))             
+    .attr("y", heightBar + (margin.top *2.4))
+    .attr("text-anchor", "middle")  
+    .style("font-size", "12px") 
+    .style("font-weight", "bold") 
+    .text("Fire acres");
   //now we add the bars, wooooooo
   function updateBarChart(selectedYear){
 
@@ -147,7 +169,7 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
     yAxis.transition().duration(1000).call(d3.axisLeft(y) ) 
 
     // Add X axis
-    x.domain([0, d3.max(yearData, function(d) { return d.FIRE_SIZE }) ]);
+    x.domain([0, d3.max(yearData, function(d) { return parseInt(d.FIRE_SIZE) }) ]);
     xAxis.transition().duration(1000).call(d3.axisBottom(x));
     // xAxis.selectAll("g")
     //      .call(d3.axisBottom(x)) 
@@ -168,7 +190,7 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
         .style("fill", function(d){ return color(d.VALUE) })
     .attr("stroke", function(d){ return color(d.VALUE) })
     .attr("stroke-width", 3)
-    .attr("fill-opacity", .4)
+    // .attr("fill-opacity", .4)
 
   }
   //initializing the bar chart by calling the function we made above with the year we want to show first
