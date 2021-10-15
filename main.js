@@ -340,24 +340,37 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
 
   // Map and projection
   var projection2 = d3.geoMercator()
-    .center([-112, 32])                // GPS of location to zoom on
-    .scale(1500)                       // This is like the zoom
+    .center([-86, 27])                // GPS of location to zoom on
+    .scale(200)                       // This is like the zoom
     .translate([ width/2, height/2 ])
 
   console.log(data.features)
 
-  state.features = data.features.filter( function(d){return d.properties.NAME=="Arizona"} )
+  state.features = data.features.filter( function(d){return d.properties.NAME=="Alabama"} )
   console.log(state.features)
 
+  var stateplot = Statesvg.selectAll("path")
+                  .data(state.features)
+
+  stateplot
+  .join("path")
+  .transition()
+  .duration(1000)
+    .attr("fill", "#b8b8b8")
+      .attr("d", d3.geoPath()
+          .projection(projection2)
+      )
+  .style("stroke", "black")
+  .style("opacity", .3)     
   
   // A function that update the chart
     function updateState(selectedGroup) {
 
       // Create new data with the selection?
-      const stateFilter = data.features.filter(function(d){return d.properties.NAME==selectedGroup})
+      state.features = data.features.filter(function(d){return d.properties.NAME==selectedGroup})
 
-      var stateplot = Statesvg.selectAll("path")
-                  .data(stateFilter)
+      stateplot = Statesvg.selectAll("path")
+                  .data(state.features)
 
       stateplot
       .join("path")
@@ -372,62 +385,20 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
       // Give these new data to update line
     }
 
-    updateState("Arizona")
+    updateState("Alabama")
 
     // When the button is changed, run the updateChart function
-    d3.select("#selectButton").on("change", function(event,d) {
+    d3.select("#stateSelect").on("change", function(event,d) {
         // recover the option that has been chosen
         const selectedOption = d3.select(this).property("value")
+        console.log(d)
+        console.log(event)
         // run the updateChart function with this selected option
         updateState(selectedOption)
     })
-    // // When the button is changed, run the updateChart function
-    // d3.select("#stateSelect").on("change", function(event,d) {
-    //     // recover the option that has been chosen
-    //     const selectedOption = d3.select(this).property("value")
-    //     console.log(selectedOption)
-    //     // run the updateChart function with this selected option
-    //     updateState(selectedOption)
-    // })
 
 })
 });
-
-// function updateBarChart(selectedYear){
-
-//     //only get the subset of data for the year shown
-//     let yearData = table.filter( function(d){return d.FIRE_YEAR==selectedYear});
-//     // Y axis
-//     y.domain(yearData.map(function(d) { return d.NWCG_GENERAL_CAUSE; } ) )
-//     yAxis.transition().duration(1000).call(d3.axisLeft(y) ) 
-
-//     // Add X axis
-//     x.domain([0, d3.max(yearData, function(d) { return d.FIRE_SIZE }) ]);
-//     xAxis.transition().duration(1000).call(d3.axisBottom(x));
-//     // xAxis.selectAll("g")
-//     //      .call(d3.axisBottom(x)) 
-
-//     // map data to existing bars
-//     var bars = svgBar.selectAll("rect")
-//                   .data(yearData)
-
-//     bars
-//       .join("rect")
-//       .transition()
-//       .duration(1000)
-//         .attr("class", function(d) { return "fire"+d.FIRE_SIZE } )
-//         .attr("x", x(0) )
-//         .attr("y", d => y(d.NWCG_GENERAL_CAUSE) )
-//         .attr("width", d => x(d.FIRE_SIZE))
-//         .attr("height", y.bandwidth() )
-//         .style("fill", function(d){ return color(d.VALUE) })
-//     .attr("stroke", function(d){ return color(d.VALUE) })
-//     .attr("stroke-width", 3)
-//     .attr("fill-opacity", .4)
-
-//   }
-//   //initializing the bar chart by calling the function we made above with the year we want to show first
-//   updateBarChart(2000);
 
 var yearShown = document.getElementById("yearShown");
 myRange.oninput = function() {
