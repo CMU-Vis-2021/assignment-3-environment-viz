@@ -85,4 +85,8 @@ circle:hover{
 }
 text{
   fill:black!important;
+  font-size: 12px;
+}
+.overflow-viz{
+  overflow: visible;
 }
