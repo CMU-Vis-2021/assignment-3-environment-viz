@@ -86,3 +86,8 @@ circle:hover{
 text{
   fill:black!important;
 }
+
+
+hr.state-separater {
+  border-top:  4px dashed slategrey;
+}

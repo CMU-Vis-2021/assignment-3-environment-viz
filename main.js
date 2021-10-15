@@ -15,7 +15,60 @@ var currentMapYear = '2000';
 
 var colorrange = ["#7c0202", "#b64d24", "#b86213", "#e18820", "#de9b10", "#f3c523", "#7c5201", "#fac45a", "#fd860b", "#ffdc6c", "#ff4901", "#a43407"] //we can change these colors later :)
 var categories = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']
-
+var statesDict = {"AL": "Alabama",
+              "AK": "Alaska",
+              "AZ": "Arizona",
+              "AR": "Arkansas",
+              "CA": "California",
+              "CO": "Colorado",
+              "CT": "Connecticut",
+              "DE": "Delaware",
+              "FL": "Florida",
+              "GA": "Georgia",
+              "HI": "Hawaii",
+              "ID": "Idaho",
+              "IL": "Illinois",
+              "IN": "Indiana",
+              "IA": "Iowa",
+              "KS": "Kansas",
+              "KY": "Kentucky",
+              "LA": "Louisiana",
+              "ME": "Maine",
+              "MD": "Maryland",
+              "MA": "Massachusetts",
+              "MI": "Michigan",
+              "MN": "Minnesota",
+              "MS": "Mississippi",
+              "MO": "Missouri",
+              "MT": "Montana",
+              "NE": "Nebraska",
+              "NV": "Nevada",
+              "NH": "New Hampshire",
+              "NJ": "New Jersey",
+              "NM": "New Mexico",
+              "NY": "New York",
+              "NC": "North Carolina",
+              "ND": "North Dakota",
+              "OH": "Ohio",
+              "OK": "Oklahoma",
+              "OR": "Oregon",
+              "PA": "Pennsylvania",
+              "RI": "Rhode Island",
+              "SC": "South Carolina",
+              "SD": "South Dakota",
+              "TN": "Tennessee",
+              "TX": "Texas",
+              "UT": "Utah",
+              "VT": "Vermont",
+              "VA": "Virgina",
+              "WA": "Washington",
+              "WV": "West Virginia",
+              "WI": "Wisconsin",
+              "WY": "Wyoming"
+            }
+var states = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virgina","Washington","West Virginia","Wisconsin","Wyoming"]
+var stateacr = ["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"]
+            
 
 //adjusting the size of the circle for both the bubble map and the key to use
 var minRadiusRange = 1;
@@ -270,10 +323,111 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
       .text( function(d){ if(d == maxRadiusRange){return d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+" acres"}else{return d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} } )
       .style("font-size", 12)
       .attr('alignment-baseline', 'middle')
-    
+
+
+  var Statesvg = d3.select("#state")
+  .append("svg")
+  .attr("width", 440)
+  .attr("height", 300)
+
+  d3.select("#stateSelect")
+        .selectAll('myStates')
+        .data(states)
+        .enter()
+        .append('option')
+        .text(function (d) { return d; }) // text showed in the menu
+        .attr("value", function (d) { return d; }) // corresponding value returned by the button
+
+  // Map and projection
+  var projection2 = d3.geoMercator()
+    .center([-112, 32])                // GPS of location to zoom on
+    .scale(1500)                       // This is like the zoom
+    .translate([ width/2, height/2 ])
+
+  console.log(data.features)
+
+  state.features = data.features.filter( function(d){return d.properties.NAME=="Arizona"} )
+  console.log(state.features)
+
+  
+  // A function that update the chart
+    function updateState(selectedGroup) {
+
+      // Create new data with the selection?
+      const stateFilter = data.features.filter(function(d){return d.properties.NAME==selectedGroup})
+
+      var stateplot = Statesvg.selectAll("path")
+                  .data(stateFilter)
+
+      stateplot
+      .join("path")
+      .transition()
+      .duration(1000)
+        .attr("fill", "#b8b8b8")
+          .attr("d", d3.geoPath()
+              .projection(projection2)
+          )
+      .style("stroke", "black")
+      .style("opacity", .3)      
+      // Give these new data to update line
+    }
+
+    updateState("Arizona")
+
+    // When the button is changed, run the updateChart function
+    d3.select("#selectButton").on("change", function(event,d) {
+        // recover the option that has been chosen
+        const selectedOption = d3.select(this).property("value")
+        // run the updateChart function with this selected option
+        updateState(selectedOption)
+    })
+    // // When the button is changed, run the updateChart function
+    // d3.select("#stateSelect").on("change", function(event,d) {
+    //     // recover the option that has been chosen
+    //     const selectedOption = d3.select(this).property("value")
+    //     console.log(selectedOption)
+    //     // run the updateChart function with this selected option
+    //     updateState(selectedOption)
+    // })
+
 })
 });
 
+// function updateBarChart(selectedYear){
+
+//     //only get the subset of data for the year shown
+//     let yearData = table.filter( function(d){return d.FIRE_YEAR==selectedYear});
+//     // Y axis
+//     y.domain(yearData.map(function(d) { return d.NWCG_GENERAL_CAUSE; } ) )
+//     yAxis.transition().duration(1000).call(d3.axisLeft(y) ) 
+
+//     // Add X axis
+//     x.domain([0, d3.max(yearData, function(d) { return d.FIRE_SIZE }) ]);
+//     xAxis.transition().duration(1000).call(d3.axisBottom(x));
+//     // xAxis.selectAll("g")
+//     //      .call(d3.axisBottom(x)) 
+
+//     // map data to existing bars
+//     var bars = svgBar.selectAll("rect")
+//                   .data(yearData)
+
+//     bars
+//       .join("rect")
+//       .transition()
+//       .duration(1000)
+//         .attr("class", function(d) { return "fire"+d.FIRE_SIZE } )
+//         .attr("x", x(0) )
+//         .attr("y", d => y(d.NWCG_GENERAL_CAUSE) )
+//         .attr("width", d => x(d.FIRE_SIZE))
+//         .attr("height", y.bandwidth() )
+//         .style("fill", function(d){ return color(d.VALUE) })
+//     .attr("stroke", function(d){ return color(d.VALUE) })
+//     .attr("stroke-width", 3)
+//     .attr("fill-opacity", .4)
+
+//   }
+//   //initializing the bar chart by calling the function we made above with the year we want to show first
+//   updateBarChart(2000);
 
 var yearShown = document.getElementById("yearShown");
 myRange.oninput = function() {
@@ -281,3 +435,4 @@ myRange.oninput = function() {
   // console.log(this.value)
   yearShown.innerHTML = this.value;
 }
+
