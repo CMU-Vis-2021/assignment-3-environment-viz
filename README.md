@@ -21,7 +21,7 @@ Our aim was to use the US Forest Service's [Spatial Wildfire Occurence Data for 
 ### Colors
 We based our color choices on a spectrum of orange and reds to better connect the data with fires. The legend up top helps users keep in mind the complicated color spectrum but alo repeat this labeling through out the pice by allowing users to hover on colors in the map to read the label and also repeating the categories on the bar chart. This repition of colors and labels hopefully helps the user contextualize the different types of fires in the U.S. without having to completely memorize the legend. 
 
-In other areas of the design, We pulled back color in order to let the data points stand strong. The maps and text were all made with greys and blacks.
+In other areas of the design, we pulled back color in order to let the data points stand strong. The maps and text were all made with greys and blacks.
 
 ### Text
 We tried to use minimal text to both explain the function of the interactions and also walk our reader through the data. We used titles, and subheads to weave a story through the data and also used small grey print to offer instructions on how a user may interact with the visuals. 
@@ -29,34 +29,34 @@ We tried to use minimal text to both explain the function of the interactions an
 In terms of labelling, we elected to pull back labellings on the map and bar chart in order to make the labels on the tooltips and the interactions more readable. This way, labels on the map are not competing for attention between the tooltip and the colored data points.
 
 ### Data
-For readability and user-friendliness, we elected to remove the data pertaining to states that were not shown in the map: Alaska and Hawaii. This way, when users interact with the bar chart, they will not see data points that they cannot match to something they observe on the map. Hawaii did not have much fires but removing Alaska left out a few major data points. To make this known to the user, we included a caveat at the bottom of the map expressing that some fires were not shown.
+For readability and user-friendliness, we elected to remove the data pertaining to states that were not shown in the US map: Alaska and Hawaii. This way, when users interact with the bar chart, they will not see data points that they cannot match to something they observe on the map. Hawaii did not have any fires, but removing Alaska left out a few major data points. To make this known to the user, we included an extra visualization at the bottom that shows data based on an individual state that the user can choose. 
 
 ### Slider
 The slider allows the user to filter the dataset by year. This functionality can highlight potential trends or outliers within and across years. In terms of the placement of the slider, we decided that it should be placed above the US map in order to emphasize that the points on the map are only a subset of the entire dataset (i.e., filtered by year). The colors used for this feature were chosen to match the overall theme of fires. 
 
 ### Map and bar chart
-The map and bar chart were placed overtop eachother to visually show a connection between the two. The animations also highlight this connection because, when the user interacts with the slider, they can immediately see that both the map and bar-chart animate and can thus form a connection between the two.
+The map and bar chart were placed next to eachother to visually show a connection between the two. The animations also highlight this connection because, when the user interacts with the slider, they can immediately see that both the map and bar-chart animate changes and thus highlight a connection between the two visuals.
 
 ### Choose your State
-We seperated the 'Choose-your-state' feature with a dotted line and a subhead. This way, the connection tot he other charts is severed and the user can make a visual distinction that the bottom map does not reflect whatever state they see the top map in. It also helps that while the top two visuals animate in time with eachother, the state visual does not. 
+We seperated the 'Choose-your-state' feature with a dotted line and a subhead. This way, the connection to the other charts is severed and the user can make a visual distinction that the bottom map does not reflect whatever state they see the top map in. It also helps make it known to the reader that while the top two visuals animate in time with eachother, the state visual does not. 
 
 ## Development Process
 
 ### Slider
-Developing the slider was a challenge since it had to update both the map and the bar chart. The largest hurdle was getting it to update the map properly. After trying an implementation in d3, we settled for implementing a browser native slider instead. We then gave it a function to run on every change that was implemented inside our D3 function. this function, in turn, checked on the year the slider was pointing at and updated the data shown in the visuals to match.
+Developing the slider was a challenge since it had to update both the map and the bar chart. The largest hurdle was getting it to update the map properly. After trying an implementation in d3, we settled for implementing a browser native slider instead. We then gave it a function to run on every change that was implemented inside our D3 function. this function, in turn, checked on the year the slider was pointing at and updated the data shown in the visuals to match. Implementing the slider was definitely a team effort where one of us tried implementing the functionality in D3 while the other tried implementing it in HTML. This functionality probably took 6 hours to complete including debugging time. 
 
 ### Map
+Creating the US map was one of the first successes in our devleopment process. Due to the numerous tutorials and documentation on generating a US map in D3, this process did not take very long to implement. Aside from plotting the US map, we had to plot the fire data on the map in the correct location. Again, there was a lot of documentation on this kind of feature which helped our implementation.
 
 ### Bar chart
 After creating the slider, the bar chart click-and-filter function was not too hard to implement because it relied on the same logic as the slider. Once a bar was created, the D3 creation also gave it an eventListener which activated a function whenever a bar was clicked. This function took the data, filtered it by the year on the slider, added categories together, and finally updated the visualized data ont he bar charts.
 
 ### Choose your State
-
+This feature required a dropdown box to select a state, a visualization of the chosen state, circles at the appropriate location of fires for that state, a legend to represent the different causes of fires, and a details-on-demand feature. First, we created the visualization of a state and then from there we implemented the dropdown box feature and connected it to the visualization of a state. This took approximately 4 - 6 hours to complete. The next step was to map the appropriate fire data to the selected state. This process took approximately 3-4 hours including debugging. Next we added the details-on-demand feature for each observation. This took longer than it should have because we spent time debugging the tooltip feature which ultimately didn't work. Implementing the details-on-demand feature and the color legend took approximately 6 hours all together including debugging.
 
 ## Ideas that didn't work
 * D3 native slider
   - An advantage to having a slider made in d3 is that all of the years would have been spread out and labelled beneathe the slider. As it stands, we had trouble implementing a slider in d3 and so had to settle for an browser-native slider. Because of this, we had no way to map labels to the slider and therefore used simple HTML and CSS to label the beginning and end of the slider. To let users see what year they've chosen, we implented a simple changing label beneathe the slider, again using vanilla HTML and javascript. 
-
 * Multiple Tooltips
   - Having a tooltip for the US map visualization allows the user to probe the different data points (i.e., retrieve details on demand). We wanted to incorporate this same feature with the state map visualization, but had difficulty declaring another tooltip due to them having the same class name. This issue has been resolved for now by just modifying the HTML below the state map visualization.
 
