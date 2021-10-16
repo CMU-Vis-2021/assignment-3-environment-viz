@@ -109,7 +109,7 @@ var stateProjs = {"Alabama": [-82, 30, 1000],
  "Rhode Island": [-70, 41, 3500],
  "South Carolina": [-79, 32, 1600],
  "South Dakota": [-99, 43, 1400],
- "Tennessee": [-85, 34, 1700],
+ "Tennessee": [-82, 34, 1700],
  "Texas": [-95, 30, 1000],
  "Utah": [-110, 37, 1400],
  "Vermont": [-71, 43, 1800],
@@ -374,8 +374,8 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
 
   var Statesvg = d3.select("#state")
   .append("svg")
-  .attr("width", 500)
-  .attr("height", 400)
+  .attr("width", 400)
+  .attr("height", 300)
 
   d3.select("#stateSelect")
         .selectAll('myStates')
@@ -411,6 +411,26 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
     .style("stroke", "black")
     .style("opacity", .3)     
 
+let selectElem = document.querySelector("#hover_Text");
+selectElem.innerHTML = "Year of Fire: <br> Cause of Fire: <br> Number of acres burned: <br>Location of Fire:";
+
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+  function setHover(d) {
+    if (!d) {
+      selectElem.innerHTML = "Year of Fire: <br> Cause of Fire: <br> Number of acres burned: <br>Location of Fire:";
+      return;
+    }
+
+    selectElem.innerHTML = `Year of Fire: ${d.year} <br>
+    Cause of Fire: ${d.cause} <br> 
+    Number of acres burned: ${numberWithCommas(d.acres)} 
+    <br>
+    Location of Fire: ${d.county}, ${d.state}`;
+  }
+
 
       // Add circles:
       Statesvg.selectAll("myCircles")
@@ -424,20 +444,18 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
         .attr("stroke", function(d){ return color(d.VALUE) })
         .attr("stroke-width", 3)
         .attr("fill-opacity", .4)
-      .on("mouseover", function(event, d) {
-          Tooltip.style("opacity", 1);
-          Tooltip.style("display", "block");
-        })
-      .on("mousemove", function(event, d) {
-          Tooltip
-            .html("Fire year: " + d.FIRE_YEAR + "<br>Acres burned: " + d.FIRE_SIZE + "<br>Cause of fire: "+ d.NWCG_GENERAL_CAUSE+"<br>State: " + d.STATE + "<br>County: " + d.FIPS_NAME)
-            .style("left", (event.x)+5 + "px")
-            .style("top", (event.y)-5 + "px")
-        })
-      .on("mouseleave", function(event, d) {
-          Tooltip.style("opacity", 0);
-          Tooltip.style("display", "none");
-        })
+      .on("mouseover", function (_, d) {
+        setHover({
+        acres: d.FIRE_SIZE,
+        state: d.STATE,
+        year: d.FIRE_YEAR,
+        county: d.FIPS_NAME,
+        cause: d.NWCG_GENERAL_CAUSE
+        });
+      })
+    .on("mouseout", function (_) {
+      setHover();
+    });
     
     var currentSelection = "Texas"
   // A function that update the chart
