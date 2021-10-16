@@ -288,6 +288,7 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
     // xAxis.selectAll("g")
     //      .call(d3.axisBottom(x)) 
 
+    //inspired by: https://www.codegrepper.com/code-examples/javascript/javascript+group+by+sum+array+reduce
     var result = [];
     yearData.reduce(function(res, value) {
       if (!res[value.NWCG_GENERAL_CAUSE]) {
