@@ -236,8 +236,8 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
   var x = d3.scaleLinear()
     .range([ 0, widthBar]);
   //add x axis to the bar chart svg
-  const xAxis = svgBar.append("g")
-    .attr("transform", "translate(0," + heightBar + ")");
+  var xAxis = svgBar.append("g")
+    .attr("transform", "translate(0," + heightBar + ")")
 
 
   // Y axis
@@ -267,11 +267,11 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
   
   svgBar.append("text")
     .attr("x", (widthBar / 2))             
-    .attr("y", heightBar + (margin.top *2.4))
+    .attr("y", heightBar + (margin.top *3.4))
     .attr("text-anchor", "middle")  
     .style("font-size", "12px") 
     .style("font-weight", "bold") 
-    .text("Fire acres"); //label for the x axis of the bar chart
+    .text("Cumulative Number of acres burned by fires"); //label for the x axis of the bar chart
     
   //now we add the bars, wooooooo
   function updateBarChart(selectedYear){
@@ -282,15 +282,36 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
     y.domain(yearData.map(function(d) { return d.NWCG_GENERAL_CAUSE; } ) )
     yAxis.transition().duration(1000).call(d3.axisLeft(y) ) 
 
+        var result = [];
+    yearData.reduce(function(res, value) {
+      if (!res[value.NWCG_GENERAL_CAUSE]) {
+        res[value.NWCG_GENERAL_CAUSE] = { NWCG_GENERAL_CAUSE: value.NWCG_GENERAL_CAUSE, VALUE: value.VALUE, qty: 0 };
+        result.push(res[value.NWCG_GENERAL_CAUSE])
+      }
+      res[value.NWCG_GENERAL_CAUSE].qty += parseInt(value.FIRE_SIZE);
+      return res;
+    }, {});
+
+    console.log("RESULT")
+    console.log(result)
+
     // Add X axis
-    x.domain([0, d3.max(yearData, function(d) { return parseInt(d.FIRE_SIZE) }) ]);
-    xAxis.transition().duration(1000).call(d3.axisBottom(x));
-    // xAxis.selectAll("g")
-    //      .call(d3.axisBottom(x)) 
+    x.domain([0, d3.max(result, function(d) { return parseInt(d.qty) }) ]);
+    xAxis
+      .transition()
+      .duration(1000)
+      .call(d3.axisBottom(x))
+      .selectAll("text")  
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("dy", ".15em")
+            .attr("transform", function(d) {
+                return "rotate(-65)" 
+                });
 
     // map data to existing bars
     var bars = svgBar.selectAll("rect")
-                  .data(yearData)
+                  .data(result)
 
     bars
       .join("rect")
@@ -300,9 +321,10 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
         .attr("x", x(0) )
         .attr("class",function(d){ return "val"+d.VALUE+"bar bars" })
         .attr("y", d => y(d.NWCG_GENERAL_CAUSE) )
-        .attr("width", d => x(d.FIRE_SIZE))
+        .attr("width", d => x(parseInt(d.qty)))
         .attr("height", y.bandwidth() )
         .style("fill", function(d){ return color(d.VALUE) })
+    
     // .attr("stroke", function(d){ return color(d.VALUE) })
     // .attr("stroke-width", 3)
     // .attr("fill-opacity", .4)
