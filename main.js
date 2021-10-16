@@ -11,11 +11,14 @@ var widthBar = 450;
 var heightBar = 250;
 var margin = {top: 20, right: 30, bottom: 100, left: 130};
 
+let activeValue = "";
+
 var currentMapYear = '2000';
 
 let activeValue = "";
 
 var colorrange = ["#7c0202", "#b64d24", "#b86213", "#e18820", "#de9b10", "#f3c523", "#7c5201", "#fac45a", "#fd860b", "#ffdc6c", "#ff4901", "#a43407"] //we can change these colors later :)
+var colorrangeSoft = ["#edc4c4", "#c3a599", "#dfc4ab", "#efc493", "#e7d6b5", "#f7e5a6", "#cfc8bb", "#fce8c0", "#ffbb76", "#fff1c3", "#fa976f", "#a16851"]
 var categories = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']
 var statesDict = {"Alabama": "AL",
               "Alaska": "AK",
@@ -214,7 +217,12 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
       Tooltip.style("opacity", 0);
       Tooltip.style("display", "none");
     })
-  
+
+   //this is nothing important, just a very hacky way to add spacing between the map and bar chart
+   d3.select("#my_dataviz")
+   .append("svg")
+     .attr("width", width)
+     .attr("height", 60)
 
      //this is nothing important, just a very hacky way to add spacing between the map and bar chart
    d3.select("#my_dataviz")
