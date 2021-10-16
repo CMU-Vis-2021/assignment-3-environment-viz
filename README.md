@@ -40,20 +40,26 @@ We seperated the 'Choose-your-state' feature with a dotted line and a subhead. T
 ## Development Process
 
 ### Slider
+Developing the slider was a challenge since it had to update both the map and the bar chart. The largest hurdle was getting it to update the map properly. After trying an implementation in d3, we settled for implementing a browser native slider instead. We then gave it a function to run on every change that was implemented inside our D3 function. this function, in turn, checked on the year the slider was pointing at and updated the data shown in the visuals to match.
 
 ### Map
 
 ### Bar chart
+After creating the slider, the bar chart click-and-filter function was not too hard to implement because it relied on the same logic as the slider. Once a bar was created, the D3 creation also gave it an eventListener which activated a function whenever a bar was clicked. This function took the data, filtered it by the year on the slider, added categories together, and finally updated the visualized data ont he bar charts.
 
 ### Choose your State
 
 
 ## Ideas that didn't work
+* D3 native slider
+  - An advantage to having a slider made in d3 is that all of the years would have been spread out and labelled beneathe the slider. As it stands, we had trouble implementing a slider in d3 and so had to settle for an browser-native slider. Because of this, we had no way to map labels to the slider and therefore used simple HTML and CSS to label the beginning and end of the slider. To let users see what year they've chosen, we implented a simple changing label beneathe the slider, again using vanilla HTML and javascript. 
 
 * Multiple Tooltips
   - Having a tooltip for the US map visualization allows the user to probe the different data points (i.e., retrieve details on demand). We wanted to incorporate this same feature with the state map visualization, but had difficulty declaring another tooltip due to them having the same class name. This issue has been resolved for now by just modifying the HTML below the state map visualization.
 
 ## Future directions
+
+Now that we have this visualization built out in D3, it would be an easy thing to add more years as soon as the US Forest Service releases the information. This tool can be useful for scientists, politicians, etc. looking to see what human causes create the most fires in order to combat them in the future. It can also be useful for those in specific states to see what fires their state has historically been prone to. 
 
 ## Helpful Resources
 Many of the features were inspired by [Yan Holt's D3 Gallery](https://www.d3-graph-gallery.com/index.html). 
