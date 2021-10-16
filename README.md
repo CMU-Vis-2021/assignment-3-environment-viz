@@ -1,6 +1,6 @@
-# Title
+# Visualizing Wildfires in the United States over 18 years
 
-Authors
+Swetha Kannan and Katelyn Morrison
 
 ## Questions/Goals
 
@@ -12,6 +12,8 @@ Authors
 
 ### Bar chart
 
+### Choose your State
+
 ## Development Process
 
 ### Slider
@@ -19,6 +21,8 @@ Authors
 ### Map
 
 ### Bar chart
+
+### Choose your State
 
 
 ## Ideas that didn't work
