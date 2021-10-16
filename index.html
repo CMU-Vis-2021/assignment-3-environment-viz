@@ -26,8 +26,13 @@
 
     <select id="stateSelect"></select>
 
-    <div id="state"></div>
-    <div>
+    <div id="state">
+      
+      <svg id = "legend" width = "200" height = "370">
+      </svg>
+    </div>
+
+    <div id="">
       <p class="choose">Fire Information:</p>
 
       <div id="hover_Text"></div>
@@ -39,7 +44,7 @@
     <script type="module" src="./main.js"></script>
 
     <footer>
-      <p> Data for these visualizations from US Forest Service's <a href="https://www.fs.usda.gov/rds/archive/Catalog/RDS-2013-0009.5">Spatial Wildfire Occurence Data for The United States</a>
+      <p> Data for these visualizations from US Forest Service's <a href="https://www.fs.usda.gov/rds/archive/Catalog/RDS-2013-0009.5">Spatial Wildfire Occurence Data for The United States</a>. The dataset was filtered to showcase fires that burned more than 25,000 acres and that were caused by human activity.
       </p>
     </footer>
   </body>

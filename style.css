@@ -13,6 +13,7 @@ body{
   width:100%;
   display: block;
   margin:auto;
+  white-space: normal;
 }
 
 
@@ -85,10 +86,12 @@ circle:hover{
   font-size: 20px;
   margin-bottom:5px;
 }
+
 text{
-  fill:black!important;
+  fill:black;
   font-size: 12px;
 }
+
 .overflow-viz{
   overflow: visible;
 }

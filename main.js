@@ -96,7 +96,7 @@ var stateProjs = {"Alabama": [-82, 30, 1000],
  "Minnesota": [-92, 45, 1300],
  "Mississippi": [-86, 30, 1300],
  "Missouri": [-90, 37, 1400],
- "Montana": [-108, 46, 1300],
+ "Montana": [-107, 46, 1300],
  "Nebraska": [-98,40,1300],
  "Nevada": [-115, 35, 1000],
  "New Hampshire": [-69, 43, 1700],
@@ -113,7 +113,7 @@ var stateProjs = {"Alabama": [-82, 30, 1000],
  "South Carolina": [-79, 32, 1600],
  "South Dakota": [-99, 43, 1400],
  "Tennessee": [-82, 34, 1700],
- "Texas": [-95, 30, 1000],
+ "Texas": [-93, 29, 1000],
  "Utah": [-110, 37, 1400],
  "Vermont": [-71, 43, 1800],
  "Virginia": [-78, 36, 1500],
@@ -615,7 +615,42 @@ function numberWithCommas(x) {
         updateState(selectedOption)
     })
 
-   
+    let legendSvg = d3.select("#legend").attr("class","overflow-viz")
+    legendSvg.append("circle").attr("cx",20).attr("cy",20).attr("r", 8).style("fill", "#7c0202")
+    legendSvg.append("text").attr("x", 30).attr("y", 20).text("Missing data/not specified/undetermined").style("font-size", "15px").attr("alignment-baseline","middle")
+
+    legendSvg.append("circle").attr("cx",20).attr("cy",50).attr("r", 8).style("fill", "#b64d24")
+    legendSvg.append("text").attr("x", 30).attr("y", 50).text("Debris and open burning").style("font-size", "15px").attr("alignment-baseline","middle")
+
+    legendSvg.append("circle").attr("cx",20).attr("cy",80).attr("r", 8).style("fill", "#b86213")
+    legendSvg.append("text").attr("x", 30).attr("y", 80).text("Arson/incendiarism").style("font-size", "15px").attr("alignment-baseline","middle")
+
+    legendSvg.append("circle").attr("cx",20).attr("cy",110).attr("r", 8).style("fill", "#b86213")
+    legendSvg.append("text").attr("x", 30).attr("y", 110).text("Equipment and vehicle use").style("font-size", "15px").attr("alignment-baseline","middle")
+
+    legendSvg.append("circle").attr("cx",20).attr("cy",140).attr("r", 8).style("fill", "#de9b10")
+    legendSvg.append("text").attr("x", 30).attr("y", 140).text("Recreation and ceremony").style("font-size", "15px").attr("alignment-baseline","middle")
+
+    legendSvg.append("circle").attr("cx",20).attr("cy",170).attr("r", 8).style("fill", "#f3c523")
+    legendSvg.append("text").attr("x", 30).attr("y", 170).text("Misuse of fire by a minor").style("font-size", "15px").attr("alignment-baseline","middle")
+
+    legendSvg.append("circle").attr("cx",20).attr("cy",200).attr("r", 8).style("fill", "#7c5201")
+    legendSvg.append("text").attr("x", 30).attr("y", 200).text("Smoking").style("font-size", "15px").attr("alignment-baseline","middle")
+
+    legendSvg.append("circle").attr("cx",20).attr("cy",290).attr("r", 8).style("fill", "#ffdc6c")
+    legendSvg.append("text").attr("x", 30).attr("y", 290).text("Fireworks").style("font-size", "15px").attr("alignment-baseline","middle")
+
+    legendSvg.append("circle").attr("cx",20).attr("cy",230).attr("r", 8).style("fill", "#ff4901")
+    legendSvg.append("text").attr("x", 30).attr("y", 230).text("Other causes").style("font-size", "15px").attr("alignment-baseline","middle")
+
+    legendSvg.append("circle").attr("cx",20).attr("cy",260).attr("r", 8).style("fill", "#a43407")
+    legendSvg.append("text").attr("x", 30).attr("y", 260).text("Firearms and explosives use").style("font-size", "15px").style("white-space", "normal").attr("alignment-baseline","middle")
+ 
+    legendSvg.append("circle").attr("cx",20).attr("cy",320).attr("r", 8).style("fill", "#fac45a")
+    legendSvg.append("text").attr("x", 30).attr("y", 320).text("Railroad operations and maintenance").style("font-size", "15px").attr("alignment-baseline","middle")
+
+    legendSvg.append("circle").attr("cx",20).attr("cy",350).attr("r", 8).style("fill", "#fd860b")
+    legendSvg.append("text").attr("x", 30).attr("y", 350).text("Power generation/transmission/distribution").style("font-size", "15px").attr("alignment-baseline","middle")
 
 })
 });
