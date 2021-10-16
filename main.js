@@ -13,6 +13,8 @@ var margin = {top: 20, right: 30, bottom: 100, left: 130};
 
 var currentMapYear = '2000';
 
+let activeValue = "";
+
 var colorrange = ["#7c0202", "#b64d24", "#b86213", "#e18820", "#de9b10", "#f3c523", "#7c5201", "#fac45a", "#fd860b", "#ffdc6c", "#ff4901", "#a43407"] //we can change these colors later :)
 var categories = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']
 var statesDict = {"Alabama": "AL",
