@@ -152,6 +152,10 @@ var color = d3.scaleOrdinal()
       .domain(categories)
       .range(colorrange)
 
+var colorSoft = d3.scaleOrdinal()
+      .domain(categories)
+      .range(colorrangeSoft)
+
  // Add a scale for bubble size
  var size = d3.scaleLinear()
  .domain([minRadiusRange,maxRadiusRange])  // What's in the data
