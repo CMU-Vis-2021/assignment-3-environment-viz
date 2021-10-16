@@ -6,16 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment 3</title>
     
-    <script type="module" crossorigin src="./assets/index.da0028fe.js"></script>
-    <link rel="modulepreload" href="./assets/vendor.5b3060b6.js">
-    <link rel="stylesheet" href="./assets/index.ba9c2539.css">
+    
+    <script type="module" crossorigin src="./assets/index.9f84697c.js"></script>
+    <link rel="stylesheet" href="./assets/index.c73e5929.css">
   </head>
   <body>
+    <h1>How have human-made fires changed over the years?</h1>
     
-    <div id="my_dataviz"></div>
-    <h2>Assignment 3</h2>
-    <div id="d3-div"></div>
-    <div id="vega-div"></div>
+    <h2>Most fire incidents are concentrated to the west of the country. That hasn't changed in the past two decades.</h2>
+    <input type="range" min="2000" max="2018" value="2000" class="slider" id="myRange">
+    <span style = "text-align: left;width: 50%;display: inline-block;">2000</span><span style = "text-align: right;width: 50%;display: inline-block;">2018</span>
+    <p class = "yearLabel">Year shown: <span id="yearShown">2000</span></p>
+
+    <div id="my_dataviz"><p class= "hover-instruct"><img class="icon" alt = "search icon" src = "./assets/search.f1647707.svg">Hover for more information</p></div>
+
+    <hr class="state-separater">
+
+    <h2> <b> What are the most popular causes of fires that burned > 25,000 acres in your state between 2000 - 2018? </b> </h2>
+    <p class="choose">Choose a state from the dropdown box. </p>
+
+
+    <select id="stateSelect"></select>
+
+    <div id="state"></div>
+    <div>
+      <p class="choose">Fire Information:</p>
+
+      <div id="hover_Text"></div>
+    </div>
+
+    <hr class="state-separater">
+
+    <!-- This script takes the data and puts it through d3 -->
     
+
+    <footer>
+      <p> Data for these visualizations from US Forest Service's <a href="https://www.fs.usda.gov/rds/archive/Catalog/RDS-2013-0009.5">Spatial Wildfire Occurence Data for The United States</a>
+      </p>
+    </footer>
   </body>
 </html>
