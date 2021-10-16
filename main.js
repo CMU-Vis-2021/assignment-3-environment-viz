@@ -66,8 +66,10 @@ d3.csv("assets/firesfinaldata.csv").then((table)=>{
 
 d3.json("assets/geojson/USA.geojson").then(function(data){
 
-// Filter data
-//data.features = data.features.filter( function(d){return d.properties.name=="USA"});
+  let land_states = table.filter((d) => {return d.STATE != "AK"})
+  land_states = land_states.filter((d) => {return d.STATE != "HI"})
+
+  console.log(land_states)
 
   // Draw the map
   svg.append("g")
@@ -85,7 +87,7 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
   // Add circles:
   svg
   .selectAll("myCircles")
-  .data(table)
+  .data(land_states)
   .enter()
   //.filter(function(d) { return (d.FIRE_YEAR== "2002") })
   .append("circle")
@@ -173,7 +175,7 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
   function updateBarChart(selectedYear){
 
     //only get the subset of data for the year shown
-    let yearData = table.filter( function(d){return d.FIRE_YEAR==selectedYear});
+    let yearData = land_states.filter( function(d){return d.FIRE_YEAR==selectedYear});
     // Y axis
     y.domain(yearData.map(function(d) { return d.NWCG_GENERAL_CAUSE; } ) )
     yAxis.transition().duration(1000).call(d3.axisLeft(y) ) 
