@@ -1,22 +1,25 @@
 # Visualizing Wildfires in the United States over 18 years
 
 **Authors:** Swetha Kannan and Katelyn Morrison
+
 **Class:** CMU Data Visualization 2021
+
 **Assignmnet:** 3 ~ Interactive Data Visualizations
 
 - - -
 
 ## Dataset and subsets
+We retrieved our data from the US Forest Service's [Spatial Wildfire Occurence Data for The United States](https://www.fs.usda.gov/rds/archive/Catalog/RDS-2013-0009.5). The dataset was originally provided as an `.sqlite` file type and had over 2 million records of fires from 1992 - 2018. We created a subset of this dataset using SQL queries. Our filtered subset contains 259 records of fires from 2000 - 2018 that burned over 25,000 acres. We chose to limit it this timeframe  and size of fire in order to work with a mangeable dataset for an MVP. We were also limited to the file size that we could upload to GitHub - thus we limited our dataset to fit within GitHub's limits.
 
 ## Questions/Goals
-Our aim was to use the US Forest Service's [Spatial Wildfire Occurence Data for The United States](https://www.fs.usda.gov/rds/archive/Catalog/RDS-2013-0009.5) in order to visualize the state of Human-made fires from 2000-2018. To do this we had our visuals answer three main questions that adress what users may want to know and also allowed them to personalize the data: 
+Our aim was to use the US Forest Service's [Spatial Wildfire Occurence Data for The United States](https://www.fs.usda.gov/rds/archive/Catalog/RDS-2013-0009.5) in order to visualize the state of Human-made fires from 2000-2018. To do this we had our visuals answer three main questions that adress what users may want to know while allowing them to filter the data: 
 * Q1 - Where are most of the fires caused by humans located within the United States?
 * Q2 - How has the cause of fires changed over the years?
 * Q3 - What is the most common cause of fires for each state? 
 
 ## Design Decisions
 ### Colors
-We based our color choices on a spectrum of orange and reds to better connect the data with fires. The legend up top helps users keep in mind the complicated color spectrum but alo repeat this labeling through out the pice by allowing users to over on colors in the map to read the label and also repeating the categories on the bar chart. This repition of colors and labels hopefully helps the user contextualize the different types of fires in the U.S. without having to completely memorize the legend. 
+We based our color choices on a spectrum of orange and reds to better connect the data with fires. The legend up top helps users keep in mind the complicated color spectrum but alo repeat this labeling through out the pice by allowing users to hover on colors in the map to read the label and also repeating the categories on the bar chart. This repition of colors and labels hopefully helps the user contextualize the different types of fires in the U.S. without having to completely memorize the legend. 
 
 In other areas of the design, We pulled back color in order to let the data points stand strong. The maps and text were all made with greys and blacks.
 
@@ -60,6 +63,8 @@ After creating the slider, the bar chart click-and-filter function was not too h
 ## Future directions
 
 Now that we have this visualization built out in D3, it would be an easy thing to add more years as soon as the US Forest Service releases the information. This tool can be useful for scientists, politicians, etc. looking to see what human causes create the most fires in order to combat them in the future. It can also be useful for those in specific states to see what fires their state has historically been prone to. 
+
+Alternatively, instead of looking at fires that have historically burned over 25,000 acres, this visualization can be modified to include a suite of advanced filtering features to view fires that burned less than 10 acres or between 10 and 30 acres in a given year. Fires in this dataset that burn less than 10 acres is extremely common and should be used in future visualizations with advanced filtering features. 
 
 ## Helpful Resources
 Many of the features were inspired by [Yan Holt's D3 Gallery](https://www.d3-graph-gallery.com/index.html). 
