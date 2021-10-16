@@ -162,6 +162,9 @@ d3.csv("assets/firesfinaldata.csv").then((table)=>{
 
 d3.json("assets/geojson/USA.geojson").then(function(data){
 
+  let land_states = table.filter((d) => {return d.STATE != "AK"})
+  land_states = land_states.filter((d) => {return d.STATE != "HI"})
+
   // Draw the map
   svg.append("g")
     .selectAll("path")
@@ -178,7 +181,7 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
   // Add circles:
   svg
   .selectAll("myCircles")
-  .data(table)
+  .data(land_states)
   .enter()
   //.filter(function(d) { return (d.FIRE_YEAR== "2002") })
   .append("circle")
@@ -528,6 +531,8 @@ function numberWithCommas(x) {
         updateState(selectedOption)
     })
 
+   
+
 })
 });
 
@@ -537,4 +542,3 @@ myRange.oninput = function() {
   // console.log(this.value)
   yearShown.innerHTML = this.value;
 }
-
