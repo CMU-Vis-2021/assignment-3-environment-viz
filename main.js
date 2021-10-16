@@ -627,7 +627,7 @@ d3.csv("assets/firesfinaldata.csv").then((table)=>{
     legendSvg.append("text").attr("x", 30).attr("y", 230).text("Other causes").style("font-size", "15px").attr("alignment-baseline","middle")
 
     legendSvg.append("circle").attr("cx",20).attr("cy",260).attr("r", 8).style("fill", "#a43407")
-    legendSvg.append("text").attr("x", 30).attr("y", 260).text("Firearms and explosives use").style("font-size", "15px").style("white-space", "normal").attr("alignment-baseline","middle")
+    legendSvg.append("text").attr("x", 30).attr("y", 260).text("Firearms and explosives use").style("font-size", "15px").attr("alignment-baseline","middle")
  
     legendSvg.append("circle").attr("cx",20).attr("cy",320).attr("r", 8).style("fill", "#fac45a")
     legendSvg.append("text").attr("x", 30).attr("y", 320).text("Railroad operations and maintenance").style("font-size", "15px").attr("alignment-baseline","middle")
