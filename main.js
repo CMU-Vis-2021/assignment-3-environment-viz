@@ -118,7 +118,8 @@ var stateProjs = {"Alabama": [-82, 30, 1000],
  "West Virginia": [-79, 37, 1500],
  "Wisconsin": [-88, 43,1400],
  "Wyoming": [-106, 42, 1300]}
-      
+var colorrangeSoft = ["#edc4c4", "#c3a599", "#dfc4ab", "#efc493", "#e7d6b5", "#f7e5a6", "#cfc8bb", "#fce8c0", "#ffbb76", "#fff1c3", "#fa976f", "#a16851"]
+
 
 //adjusting the size of the circle for both the bubble map and the key to use
 var minRadiusRange = 1;
