@@ -216,48 +216,74 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
     })
   
 
+     //this is nothing important, just a very hacky way to add spacing between the map and bar chart
+   d3.select("#my_dataviz")
+   .append("svg")
+     .attr("width", width)
+     .attr("height", 60)
+
   //now we make the bar chart
   var svgBar = d3.select("#my_dataviz")
   .append("svg")
     .attr("width", widthBar + margin.left + margin.right)
     .attr("height", heightBar + margin.top + margin.bottom)
+    .attr("class","overflow-viz")
   .append("g")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
   
   // Add X axis of the bar chart
   var x = d3.scaleLinear()
-    //.domain([0, 540000])
     .range([ 0, widthBar]);
   //add x axis to the bar chart svg
   const xAxis = svgBar.append("g")
     .attr("transform", "translate(0," + heightBar + ")");
-    //.call(d3.axisBottom(x))
-    //.selectAll("text")
-    //  .attr("transform", "translate(-10,0)rotate(-45)")
-    //  .style("text-anchor", "end");
+
 
   // Y axis
   var y = d3.scaleBand()
     .range([ 0, heightBar ])
-    // .domain(markers.map(d => d.CAUSE__ABRV))
     .padding(.1);
   //add y axis to the bar chart svg
   const yAxis = svgBar.append("g");
-       //.attr("transform", `translate(0,${widthBar})`);
-    // .call(d3.axisLeft(y))
   
+  //add labels for the bar chart
+  svgBar.append("text")
+    .attr("x", (widthBar / 2)-35) // 35 is arbitrary. Just need it to make title look centered            
+    .attr("y", 0 - (margin.top*2.5))
+    .attr("text-anchor", "middle")  
+    .style("font-size", "16px") 
+    .style("font-weight", "bold") 
+    .text("Human-made fires by cause"); //Title of bar chart
+
+  svgBar.append("text")
+    .attr("x", (widthBar / 2)-35)             
+    .attr("y", 0 - (margin.top*1.3))
+    .attr("text-anchor", "middle")  
+    .style("font-size", "14px") 
+    .style("color", "grey")
+    .style("opacity", ".6") 
+    .text("Click on bar to focus"); // instructions for how to interact with bar chart
+  
+  svgBar.append("text")
+    .attr("x", (widthBar / 2))             
+    .attr("y", heightBar + (margin.top *2.4))
+    .attr("text-anchor", "middle")  
+    .style("font-size", "12px") 
+    .style("font-weight", "bold") 
+    .text("Fire acres"); //label for the x axis of the bar chart
+    
   //now we add the bars, wooooooo
   function updateBarChart(selectedYear){
 
     //only get the subset of data for the year shown
-    let yearData = table.filter( function(d){return d.FIRE_YEAR==selectedYear});
+    let yearData = land_states.filter( function(d){return d.FIRE_YEAR==selectedYear});
     // Y axis
     y.domain(yearData.map(function(d) { return d.NWCG_GENERAL_CAUSE; } ) )
     yAxis.transition().duration(1000).call(d3.axisLeft(y) ) 
 
     // Add X axis
-    x.domain([0, d3.max(yearData, function(d) { return d.FIRE_SIZE }) ]);
+    x.domain([0, d3.max(yearData, function(d) { return parseInt(d.FIRE_SIZE) }) ]);
     xAxis.transition().duration(1000).call(d3.axisBottom(x));
     // xAxis.selectAll("g")
     //      .call(d3.axisBottom(x)) 
@@ -270,20 +296,39 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
       .join("rect")
       .transition()
       .duration(1000)
-        .attr("class", function(d) { return "fire"+d.FIRE_SIZE } )
         .attr("x", x(0) )
+        .attr("x", x(0) )
+        .attr("class",function(d){ return "val"+d.VALUE+"bar bars" })
         .attr("y", d => y(d.NWCG_GENERAL_CAUSE) )
         .attr("width", d => x(d.FIRE_SIZE))
         .attr("height", y.bandwidth() )
         .style("fill", function(d){ return color(d.VALUE) })
-    .attr("stroke", function(d){ return color(d.VALUE) })
-    .attr("stroke-width", 3)
-    .attr("fill-opacity", .4)
-
+    // .attr("stroke", function(d){ return color(d.VALUE) })
+    // .attr("stroke-width", 3)
+    // .attr("fill-opacity", .4)
+        // let allBars = document.getElementsByClassName("bars")
+        // for(let i = 0; i <allBars.length; i++){
+        //   console.log("BARRR");
+        //   allBars[i].addEventListener("click", function() { toggleActive(this); });
+        // }
+   // When the bar chart is clicked, I run function
+    d3.selectAll("rect").on("mousedown",function(event, d) {toggleActive(); this.classList.add("active"); selectedCategory = d.NWCG_GENERAL_CAUSE; activeValue = "";});
+    d3.selectAll("rect").on("mouseup",updateBar);
   }
   //initializing the bar chart by calling the function we made above with the year we want to show first
   updateBarChart(2000);
-        
+  
+  var selectedCategory = "";
+  
+  function toggleActive(){
+      // console.log("ACTIVATREE");
+      let allBars = document.getElementsByClassName("bars");
+        for (let i = 0; i <= allBars.length-1 ;i++){
+          allBars[i].classList.remove('active');
+        }
+  }
+
+
   function updateSlider(){
     // For each check box:
     d3.selectAll(".slider").each(function(d){
@@ -293,10 +338,6 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
       currentMapYear = newYear;
       
       updateBarChart(currentMapYear);
-      let allButtons = document.getElementsByClassName("button");
-          for (let i = 0; i <= allButtons.length-1 ;i++){
-            allButtons[i].classList.remove('active');
-          }
 
       svg.selectAll(".dataCircles").transition().duration(1000).style("opacity", 0).attr("r",0);
       // show the group that the slider indicates
@@ -305,35 +346,49 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
     })
   }
 
+
   function updateBar(e){
     // For each check box:
-    d3.selectAll(".checkbox").each(function(d){
+    // console.log("in UPDATE BAR")
+    d3.selectAll("rect").each(function(d){
       let cb = d3.select(this);
-      console.log(cb)
-      let ctgry = cb.property("value")
-      let grp = "val" + ctgry
-      console.log("group")
-      console.log(grp)
-      console.log("map year")
-      console.log(currentMapYear)
+      let ctgry = d.VALUE;
+      let grp = "val" + ctgry;
 
-      if(cb.property("checked")){
-        console.log("SELECTED", "."+grp+""+currentMapYear);
-        svg.selectAll("."+grp+""+currentMapYear).transition().duration(1000).style("opacity", 1).attr("r", function(d){ return size(d.FIRE_SIZE) })
-        
+      //console.log(grp+""+currentMapYear);
+      if(this.classList.contains("active")!=true && activeValue != grp){
+        //console.log(grp+"bar");
+        // console.log("NOT ACTIVE");
+        // console.log(grp);
+        // console.log(activeValue);
+        // console.log(activeValue != grp);
+        svg.selectAll("."+grp+""+currentMapYear).transition().duration(1000).style("opacity", .3).style("stroke",  function(d){ return color(d.VALUE) }).attr("fill-opacity", .4);
+        svgBar.selectAll("."+grp+"bar").transition().duration(1000).style("fill", function(d){ return colorSoft(d.VALUE) });
        }
       else{
-        console.log("NOT SELECTED");
-        svg.selectAll("."+grp+""+currentMapYear).transition().duration(1000).style("opacity", 0).attr("r", 0)
+        console.log("ACTIVE BUTTON DETECTED");
+        console.log(grp+"bar");
+        console.log(grp+"bar");
+        //console.log(this);
+        activeValue = grp;
+        // console.log(activeValue);
+        // console.log(grp);
+        svg.selectAll("."+grp+""+currentMapYear).transition().duration(1000).style("opacity", 1).style("stroke",  "black" ).attr("fill-opacity", .8)
+        svgBar.selectAll("."+grp+"bar").transition().duration(1000).style("fill", function(d){ return color(d.VALUE) });
       }
     })
   }
 
+  function test (e){
+    console.log("this is a test");
+  }
   // When the slider changes, I run a function
   d3.selectAll(".slider").on("change",updateSlider);
 
   // When the bar chart is clicked, I run function
-  // d3.selectAll(".button").on("click",updateBar);
+  // d3.selectAll("rect").on("mousedown",function(event, d) {toggleActive(); this.classList.add("active"); selectedCategory = d.NWCG_GENERAL_CAUSE; activeValue = "";});
+  // d3.selectAll("rect").on("mouseup",updateBar);
+
   d3.selectAll(".checkbox").on("change",updateBar);
 
   // And I initialize it at the beginning
