@@ -15,6 +15,7 @@ body{
   margin:auto;
 }
 
+
 .icon{
   display:inline;
   width:20px;
@@ -90,4 +91,9 @@ text{
 }
 .overflow-viz{
   overflow: visible;
+}
+
+.bars:hover{
+  stroke: black;
+  stroke-width: 3px;
 }
