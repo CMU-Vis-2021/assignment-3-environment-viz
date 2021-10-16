@@ -1,0 +1,652 @@
+FOD_ID,NWCG_REPORTING_UNIT_NAME,FIRE_YEAR,DISCOVERY_DATE,NWCG_CAUSE_CLASSIFICATION,NWCG_GENERAL_CAUSE,CONT_DATE,FIRE_SIZE,LATITUDE,LONGITUDE,STATE,FIPS_NAME
+127183,Gila National Forest,2000,3/30/2000 0:00,Human,Debris and open burning,4/7/2000 0:00,11000.0,33.50194444,-108.5022222,NM,Not Available
+128682,Arapaho and Roosevelt National Forests and Pawnee National Grassland,2000,6/12/2000 0:00,Human,Recreation and ceremony,6/19/2000 0:00,10599.0,40.44527778,-105.3352778,CO,Larimer County
+128948,Kaibab National Forest,2000,5/10/2000 0:00,Human,Debris and open burning,6/15/2000 0:00,15427.0,36.31916667,-111.9847222,AZ,Not Available
+130130,Santa Fe National Forest,2000,5/29/2000 0:00,Human,Missing data/not specified/undetermined,7/31/2000 0:00,28348.0,35.66777778,-105.6344444,NM,Not Available
+133048,Bitterroot National Forest,2000,7/31/2000 0:00,Human,Recreation and ceremony,11/1/2000 0:00,11486.0,46.26916667,-114.2333333,MT,Not Available
+135227,Helena - Lewis and Clark National Forest,2000,7/23/2000 0:00,Human,Arson/incendiarism,8/23/2000 0:00,30000.0,46.67,-111.6944444,MT,Not Available
+135261,Pike and San Isabel National Forest,2000,6/12/2000 0:00,Human,Smoking,6/25/2000 0:00,10800.0,39.41166667,-105.3947222,CO,Not Available
+135309,Sequoia National Forest,2000,7/22/2000 0:00,Human,Missing data/not specified/undetermined,9/6/2000 0:00,75000.0,35.86777778,-118.2838889,CA,Not Available
+135944,Black Hills National Forest,2000,8/24/2000 0:00,Human,Arson/incendiarism,9/25/2000 0:00,83508.0,43.73166667,-103.8866667,SD,Not Available
+135995,Plumas National Forest,2000,8/17/2000 0:00,Human,Railroad operations and maintenance,9/27/2000 0:00,55261.0,39.91694444,-121.3175,CA,Not Available
+136244,Lincoln National Forest,2000,5/11/2000 0:00,Human,Power generation/transmission/distribution,6/19/2000 0:00,16034.0,32.71666667,-105.7180556,NM,Not Available
+136248,National Forests in North Carolina,2000,10/28/2000 0:00,Human,Recreation and ceremony,11/9/2000 0:00,10120.0,35.92833333,-81.90833333,NC,Burke County
+260893,Standing Rock Agency,2000,10/21/2000 0:00,Human,Missing data/not specified/undetermined,10/22/2000 0:00,12000.0,45.92,-100.5393,SD,Not Available
+286231,Yakama Agency,2000,6/23/2000 0:00,Human,Debris and open burning,6/25/2000 0:00,10323.0,46.30769,-120.3144,WA,Not Available
+310988,Alaska Fire Service,2000,12/28/2000 0:00,Human,Equipment and vehicle use,1/4/2001 0:00,12891.0,62.9659,-162.8524,AK,Not Available
+334887,Boise District,2000,8/7/2000 0:00,Human,Arson/incendiarism,8/10/2000 0:00,31316.0,43.25368,-115.65016,ID,Elmore County
+338055,Butte Field Office,2000,8/6/2000 0:00,Human,Missing data/not specified/undetermined,10/20/2000 0:00,17118.0,46.73716,-113.53535,MT,Granite County
+338058,Butte Field Office,2000,8/15/2000 0:00,Human,Equipment and vehicle use,9/30/2000 0:00,81220.0,46.20297,-111.27376,MT,Broadwater County
+345695,Winnemucca District Office,2000,8/13/2000 0:00,Human,Missing data/not specified/undetermined,8/18/2000 0:00,14892.4,40.5432,-118.6838,NV,Pershing County
+345704,Winnemucca District Office,2000,9/8/2000 0:00,Human,Recreation and ceremony,9/15/2000 0:00,12254.8,41.5166,-118.951,NV,Humboldt County
+347706,Las Cruces Field Office,2000,4/14/2000 0:00,Human,Missing data/not specified/undetermined,4/18/2000 0:00,18000.0,31.5668,-108.8195,NM,Hidalgo County
+347720,Las Cruces Field Office,2000,5/17/2000 0:00,Human,Arson/incendiarism,5/22/2000 0:00,19000.0,32.372,-105.8353,NM,Otero County
+361788,Bandelier National Monument,2000,5/5/2000 0:00,Human,Debris and open burning,7/20/2000 0:00,47650.0,35.85004,-106.41665,NM,Not Available
+362339,Lake Meredith National Recreation Area,2000,2/22/2000 0:00,Human,Smoking,2/23/2000 0:00,20000.0,35.6075,-101.66,TX,Not Available
+364837,Shenandoah National Park,2000,10/29/2000 0:00,Human,Recreation and ceremony,11/16/2000 0:00,16021.0,38.61225,-78.30873,VA,Not Available
+374654,Florida Panther National Wildlife Refuge,2000,4/8/2000 0:00,Human,Debris and open burning,4/15/2000 0:00,16500.0,26.09055556,-81.5425,FL,Not Available
+375430,Hanford Reach National Monument,2000,6/27/2000 0:00,Human,Equipment and vehicle use,7/2/2000 0:00,163884.0,46.57194444,-119.7727778,WA,Not Available
+600627,New Mexico State Forestry Division,2000,3/15/2000 0:00,Human,Missing data/not specified/undetermined,3/15/2000 0:00,13000.0,36.00689999,-104.7136,NM,Mora County
+600628,New Mexico State Forestry Division,2000,3/16/2000 0:00,Human,Railroad operations and maintenance,3/16/2000 0:00,12800.0,34.75719998,-104.9981,NM,Guadalupe County
+600754,New Mexico State Forestry Division,2000,2/12/2000 0:00,Human,Missing data/not specified/undetermined,2/12/2000 0:00,40333.199,33.16166999,-103.6017,NM,Lea County
+600763,New Mexico State Forestry Division,2000,2/17/2000 0:00,Human,Railroad operations and maintenance,2/17/2000 0:00,42212.0,34.39666998,-104.4467,NM,De Baca County
+600797,New Mexico State Forestry Division,2000,3/7/2000 0:00,Human,Missing data/not specified/undetermined,3/7/2000 0:00,36324.0,32.98833001,-103.6533,NM,Lea County
+647982,Texas A & M Forest Service,2000,9/1/2000 0:00,Human,Arson/incendiarism,9/8/2000 0:00,15864.0,30.90208001,-93.58958001,TX,Newton County
+1017742,Louisiana Office of Forestry,2000,9/5/2000 0:00,Human,Missing data/not specified/undetermined,,12877.0,30.7653,-92.6456,LA,Not Available
+1115940,Florida Forest Service,2000,5/27/2000 0:00,Human,Debris and open burning,,14000.0,26.4131,-80.745,FL,Palm Beach County
+1272339,Cleveland National Forest,2000,7/29/2000 0:00,Human,Arson/incendiarism,9/19/2000 0:00,10380.2,33.44305556,-117.0230556,CA,Not Available
+1272362,Helena - Lewis and Clark National Forest,2000,7/23/2000 0:00,Human,Recreation and ceremony,8/23/2000 0:00,15000.0,46.64111111,-111.7788889,MT,Not Available
+1278104,Lakeview District,2000,8/3/2000 0:00,Human,Equipment and vehicle use,8/5/2000 0:00,10121.0,42.6024,-120.1536,OR,Lake County
+1278141,Prineville District,2000,7/22/2000 0:00,Human,Missing data/not specified/undetermined,7/23/2000 0:00,19650.0,45.401,-120.0823,OR,Gilliam County
+15001413,Oklahoma Division of Forestry,2000,9/15/2000 0:00,Human,Missing data/not specified/undetermined,9/25/2000 0:00,11577.0,34.38333333,-97.16666666,OK,Not Available
+400280067,Pueblo County,2000,4/18/2000 0:00,Human,Missing data/not specified/undetermined,,16000.0,38.291,-103.456,CO,Not Available
+400280070,Texas A & M Forest Service,2000,2/25/2000 0:00,Human,Missing data/not specified/undetermined,,20000.0,35.6837,-102.3302,TX,Not Available
+400280072,Florida Forest Service,2000,4/13/2000 0:00,Human,Missing data/not specified/undetermined,,15627.0,26.15,-81.533333,FL,Not Available
+140732,Mendocino National Forest,2001,8/8/2001 0:00,Human,Missing data/not specified/undetermined,8/20/2001 0:00,24970.0,39.375,-122.635,CA,Not Available
+141434,Humboldt-Toiyabe National Forest,2001,8/17/2001 0:00,Human,Power generation/transmission/distribution,8/25/2001 0:00,41830.0,41.66388889,-117.1980556,NV,Humboldt County
+142642,Humboldt-Toiyabe National Forest,2001,6/17/2001 0:00,Human,Recreation and ceremony,7/5/2001 0:00,14500.0,38.7725,-119.7977778,CA,Not Available
+143458,Eldorado National Forest,2001,8/25/2001 0:00,Human,Missing data/not specified/undetermined,8/25/2001 0:00,16761.0,39.05,-120.5186111,CA,Not Available
+276074,Red Lake Agency,2001,4/29/2001 0:00,Human,Arson/incendiarism,4/29/2001 0:00,13820.0,48.1061,-95.5347,MN,Not Available
+284728,Colville Agency,2001,8/14/2001 0:00,Human,Smoking,9/16/2001 0:00,32960.0,48.3457,-119.4387,WA,Not Available
+289084,Southern California Agency,2001,1/3/2001 0:00,Human,Smoking,1/7/2001 0:00,10353.0,32.7792,-116.8342,CA,Not Available
+311024,Alaska Fire Service,2001,6/20/2001 0:00,Human,Debris and open burning,9/10/2001 0:00,84730.0,64.3329,-148.9524,AK,Not Available
+311025,Alaska Fire Service,2001,6/20/2001 0:00,Human,Missing data/not specified/undetermined,10/15/2001 0:00,112112.0,64.6618,-148.2055,AK,Not Available
+316228,Central California District,2001,8/18/2001 0:00,Human,Arson/incendiarism,9/4/2001 0:00,11185.0,37.7463,-120.2513,CA,Not Available
+337816,Twin  Falls District,2001,6/24/2001 0:00,Human,Debris and open burning,6/25/2001 0:00,11058.0,42.64713,-114.42199,ID,Jerome County
+337925,Twin  Falls District,2001,9/3/2001 0:00,Human,Debris and open burning,9/15/2001 0:00,18046.6,43.396,-114.5839,ID,Camas County
+358281,Spokane District,2001,8/18/2001 0:00,Human,Railroad operations and maintenance,8/23/2001 0:00,11526.0,45.7443,-120.4395,WA,Klickitat County
+367683,Big Cypress National Preserve,2001,5/16/2001 0:00,Human,Recreation and ceremony,5/27/2001 0:00,24315.0,26.18851,-81.24764,FL,Not Available
+368064,Everglades National Park,2001,4/23/2001 0:00,Human,Missing data/not specified/undetermined,4/27/2001 0:00,11760.0,25.355716,-80.467001,FL,Not Available
+601523,New Mexico State Forestry Division,2001,5/4/2001 0:00,Human,Missing data/not specified/undetermined,5/4/2001 0:00,11000.0,31.56790001,-108.7957,NM,Hidalgo County
+1115438,Florida Forest Service,2001,2/15/2001 0:00,Human,Railroad operations and maintenance,,10119.0,28.2081,-81.7811,FL,Polk County
+1116354,Florida Forest Service,2001,4/15/2001 0:00,Human,Railroad operations and maintenance,,17000.0,27.5483,-81.1475,FL,Okeechobee County
+1122322,Florida Forest Service,2001,2/25/2001 0:00,Human,Debris and open burning,,10500.0,26.2408,-80.7597,FL,Broward County
+1273027,Stanislaus National Forest,2001,9/5/2001 0:00,Human,Missing data/not specified/undetermined,9/24/2001 0:00,14280.0,38.13555556,-120.3675,CA,Not Available
+1273281,Black Hills National Forest,2001,9/26/2001 0:00,Human,Power generation/transmission/distribution,10/3/2001 0:00,10547.0,43.35,-103.6583333,SD,Not Available
+400280052,Florida Forest Service,2001,2/5/2001 0:00,Human,Missing data/not specified/undetermined,,38100.0,26.8,-80.983333,FL,Not Available
+149930,San Juan National Forest,2002,6/9/2002 0:00,Human,Missing data/not specified/undetermined,8/8/2002 0:00,73121.0,37.43333333,-107.7830556,CO,Not Available
+151178,Santa Fe National Forest,2002,5/22/2002 0:00,Human,Arson/incendiarism,6/8/2002 0:00,12995.0,35.9525,-105.8355556,NM,Rio Arriba County
+151258,Umpqua National Forest,2002,8/16/2002 0:00,Human,Missing data/not specified/undetermined,10/1/2002 0:00,17600.0,43.28472222,-122.6836111,OR,Douglas County
+151520,Dixie National Forest,2002,5/31/2002 0:00,Human,Debris and open burning,7/1/2002 0:00,42799.0,37.95833333,-112.2083333,UT,Not Available
+152127,Ashley National Forest,2002,6/30/2002 0:00,Human,Equipment and vehicle use,7/17/2002 0:00,20038.0,40.94888889,-109.4433333,UT,Daggett County
+152146,Coronado National Forest,2002,5/20/2002 0:00,Human,Missing data/not specified/undetermined,7/15/2002 0:00,30600.0,32.37416667,-110.61,AZ,Pima County
+153288,Humboldt-Toiyabe National Forest,2002,6/15/2002 0:00,Human,Recreation and ceremony,7/19/2002 0:00,23020.0,38.45611111,-119.5455556,CA,Not Available
+153458,Los Padres National Forest,2002,6/1/2002 0:00,Human,Equipment and vehicle use,6/14/2002 0:00,21645.0,34.60916667,-119.3641667,CA,Not Available
+153920,Sequoia National Forest,2002,7/21/2002 0:00,Human,Recreation and ceremony,8/28/2002 0:00,150696.0,35.87361111,-118.4580556,CA,Not Available
+154698,Uinta-Wasatch-Cache National Forest,2002,6/28/2002 0:00,Human,Recreation and ceremony,9/4/2002 0:00,14208.0,40.93777778,-110.8002778,UT,Not Available
+154752,White River National Forest,2002,6/8/2002 0:00,Human,Missing data/not specified/undetermined,10/7/2002 0:00,12209.0,39.54333333,-107.4233333,CO,Garfield County
+155205,Coronado National Forest,2002,4/29/2002 0:00,Human,Recreation and ceremony,5/2/2002 0:00,38179.0,31.485,-110.6019444,AZ,Santa Cruz County
+155311,Black Hills National Forest,2002,8/16/2002 0:00,Human,Power generation/transmission/distribution,8/29/2002 0:00,12443.0,43.93333333,-103.3483333,SD,Not Available
+155922,Pike and San Isabel National Forest,2002,6/8/2002 0:00,Human,Missing data/not specified/undetermined,7/18/2002 0:00,137760.0,39.0575,-105.4083333,CO,Not Available
+156160,Angeles National Forest,2002,9/22/2002 0:00,Human,Arson/incendiarism,10/10/2002 0:00,37240.0,34.23027778,-117.7875,CA,Not Available
+168765,Lincoln National Forest,2002,4/30/2002 0:00,Human,Smoking,6/30/2002 0:00,16020.0,32.84166667,-105.6166667,NM,Otero County
+261293,Standing Rock Agency,2002,7/5/2002 0:00,Human,Arson/incendiarism,7/18/2002 0:00,15732.2,46.0522,-101.2601,ND,Not Available
+265899,Cheyenne River Agency,2002,6/29/2002 0:00,Human,Fireworks,7/1/2002 0:00,14223.8,45.1422,-100.6499,SD,Not Available
+286339,Yakama Agency,2002,7/13/2002 0:00,Human,Missing data/not specified/undetermined,7/16/2002 0:00,10367.0,46.3165,-120.6262,WA,Not Available
+299567,Mescalero Agency,2002,3/23/2002 0:00,Human,Missing data/not specified/undetermined,3/29/2002 0:00,16422.0,33.2837,-105.5147,NM,Not Available
+302872,Fort Apache Agency,2002,6/18/2002 0:00,Human,Arson/incendiarism,6/18/2002 0:00,259158.9,34.1084,-110.4859,AZ,Not Available
+302873,Fort Apache Agency,2002,6/20/2002 0:00,Human,Arson/incendiarism,6/27/2002 0:00,209704.1,34.1362,-110.7029,AZ,Not Available
+311070,Alaska Fire Service,2002,5/15/2002 0:00,Human,Arson/incendiarism,9/11/2002 0:00,64834.0,63.9496,-146.3857,AK,Not Available
+311078,Alaska Fire Service,2002,5/22/2002 0:00,Human,Arson/incendiarism,9/12/2002 0:00,189688.0,62.6994,-155.6523,AK,Not Available
+311080,Alaska Fire Service,2002,5/23/2002 0:00,Human,Equipment and vehicle use,10/8/2002 0:00,115328.0,65.4376,-148.8181,AK,Not Available
+403473,Fairbanks Area,2002,5/23/2002 0:00,Human,Debris and open burning,7/15/2002 0:00,22251.5,65.09241,-146.1877,AK,Not Available
+1273556,Okanogan-Wenatchee National Forest,2002,7/15/2002 0:00,Human,Recreation and ceremony,10/29/2002 0:00,43373.5,48.025,-120.3252778,WA,Chelan County
+1273684,Cleveland National Forest,2002,7/29/2002 0:00,Human,Equipment and vehicle use,8/22/2002 0:00,61690.0,33.1025,-116.5736111,CA,San Diego County
+1273721,Black Hills National Forest,2002,6/29/2002 0:00,Human,Missing data/not specified/undetermined,7/12/2002 0:00,11589.0,44.335,-103.7433333,SD,Not Available
+1273827,Angeles National Forest,2002,6/5/2002 0:00,Human,Missing data/not specified/undetermined,6/8/2002 0:00,23407.0,34.48111111,-118.5527778,CA,Not Available
+1276703,Alaska Fire Service,2002,8/4/2002 0:00,Human,Equipment and vehicle use,,21575.0,65.4562,-164.5693,AK,Not Available
+1301227,Coronado National Forest,2002,6/12/2002 0:00,Human,Missing data/not specified/undetermined,,16369.0,31.338333,-111.088333,AZ,Santa Cruz County
+201940025,Angeles National Forest,2002,9/1/2002 0:00,Human,Missing data/not specified/undetermined,,20857.0,34.267778,-117.835556,CA,Los Angeles County
+160263,Los Padres National Forest,2003,10/23/2003 0:00,Human,Equipment and vehicle use,10/31/2003 0:00,63720.0,34.4875,-118.7588889,CA,Not Available
+160378,Deschutes National Forest,2003,6/28/2003 0:00,Human,Arson/incendiarism,10/31/2003 0:00,21135.0,43.58527778,-121.8563889,OR,Not Available
+160763,Tonto National Forest,2003,6/17/2003 0:00,Human,Recreation and ceremony,7/2/2003 0:00,12900.0,33.93361111,-111.1513889,AZ,Not Available
+162278,San Bernardino National Forest,2003,10/25/2003 0:00,Human,Arson/incendiarism,11/15/2003 0:00,91281.0,34.19694444,-117.2761111,CA,Not Available
+163195,Flathead National Forest,2003,7/23/2003 0:00,Human,Missing data/not specified/undetermined,10/29/2003 0:00,57273.0,48.49388889,-114.1658333,MT,Not Available
+163218,Coronado National Forest,2003,6/17/2003 0:00,Human,Missing data/not specified/undetermined,7/15/2003 0:00,82440.0,32.43,-110.7716667,AZ,Pima County
+163611,Salmon-Challis National Forest,2003,7/12/2003 0:00,Human,Recreation and ceremony,7/29/2003 0:00,13843.0,44.74833333,-113.7172222,ID,Not Available
+163678,Salmon-Challis National Forest,2003,8/10/2003 0:00,Human,Recreation and ceremony,12/9/2003 0:00,25007.0,44.69833333,-114.7644444,ID,Not Available
+165380,Cleveland National Forest,2003,10/25/2003 0:00,Human,Recreation and ceremony,11/4/2003 0:00,280059.0,32.98555556,-116.7275,CA,Not Available
+165498,Cleveland National Forest,2003,10/26/2003 0:00,Human,Arson/incendiarism,10/26/2003 0:00,56427.0,33.25555556,-116.9527778,CA,Not Available
+277041,Red Lake Agency,2003,4/9/2003 0:00,Human,Debris and open burning,4/11/2003 0:00,38753.0,48.1225,-95.5294,MN,Not Available
+277049,Red Lake Agency,2003,4/9/2003 0:00,Human,Debris and open burning,4/10/2003 0:00,19782.0,47.9727,-95.2789,MN,Not Available
+284894,Colville Agency,2003,7/4/2003 0:00,Human,Arson/incendiarism,7/13/2003 0:00,10500.0,47.8524,-118.4294,WA,Not Available
+352818,Cedar City Field Office,2003,6/28/2003 0:00,Human,Recreation and ceremony,7/8/2003 0:00,29933.0,37.06,-113.7791,UT,Washington County
+378935,Hanford Reach National Monument,2003,7/24/2003 0:00,Human,Missing data/not specified/undetermined,7/28/2003 0:00,20000.0,46.58333333,-119.9666667,WA,Not Available
+523414,Minnesota Department of Natural Resources,2003,3/29/2003 0:00,Human,Debris and open burning,,15000.0,48.99573567,-96.20300503,MN,Roseau County
+523676,Minnesota Department of Natural Resources,2003,4/10/2003 0:00,Human,Arson/incendiarism,,12680.0,48.99866747,-96.52370424,MN,Kittson County
+1274369,San Bernardino National Forest,2003,10/21/2003 0:00,Human,Arson/incendiarism,11/14/2003 0:00,59788.0,34.16833333,-117.4813889,CA,Not Available
+1274491,Angeles National Forest,2003,10/25/2003 0:00,Human,Arson/incendiarism,11/3/2003 0:00,10446.0,34.18583333,-117.6822222,CA,Not Available
+1277538,California Desert District,2003,10/26/2003 0:00,Human,Missing data/not specified/undetermined,10/30/2003 0:00,47921.0,32.5667,-116.7675,CA,San Diego County
+1278194,Richfield Field Office,2003,7/8/2003 0:00,Human,Equipment and vehicle use,9/10/2003 0:00,31727.0,37.9165,-110.75026,UT,Garfield County
+1382010,Riverside Unit,2003,2/23/2003 0:00,Human,Debris and open burning,2/23/2003 0:00,12000.0,33.67805555,-116.2080556,CA,Riverside County
+17,Eldorado National Forest,2004,10/6/2004 0:00,Human,Equipment and vehicle use,10/21/2004 0:00,16823.0,38.52333333,-120.2116667,CA,Amador County
+166786,National Forests in Florida,2004,4/5/2004 0:00,Human,Arson/incendiarism,4/5/2004 0:00,26279.0,30.13333333,-84.6,FL,Not Available
+167238,National Forests in Florida,2004,3/7/2004 0:00,Human,Debris and open burning,5/10/2004 0:00,34660.0,30.35833333,-82.48333333,FL,Not Available
+172018,Angeles National Forest,2004,7/12/2004 0:00,Human,Missing data/not specified/undetermined,7/21/2004 0:00,17418.0,34.73666667,-118.6552778,CA,Not Available
+172263,Apache-Sitgreaves National Forest,2004,5/17/2004 0:00,Human,Recreation and ceremony,7/27/2004 0:00,16625.0,33.58638889,-109.2894444,AZ,Greenlee County
+284081,Warm Springs Agency,2004,7/25/2004 0:00,Human,Misuse of fire by a minor,8/17/2004 0:00,13539.0,45.0215,-121.4531,OR,Not Available
+321983,California Desert District,2004,5/3/2004 0:00,Human,Equipment and vehicle use,5/8/2004 0:00,16460.0,33.75,-117.4175,CA,Riverside County
+366107,Whiskeytown National Recreation Area,2004,8/14/2004 0:00,Human,Arson/incendiarism,8/26/2004 0:00,12535.0,40.681,-122.6409,CA,Not Available
+1274967,Shasta-Trinity National Forest,2004,8/11/2004 0:00,Human,Equipment and vehicle use,8/20/2004 0:00,10484.0,40.70333333,-122.2472222,CA,Not Available
+1275052,Angeles National Forest,2004,7/20/2004 0:00,Human,Equipment and vehicle use,7/25/2004 0:00,11966.0,34.4325,-118.2,CA,Not Available
+1275144,Okanogan-Wenatchee National Forest,2004,8/8/2004 0:00,Human,Equipment and vehicle use,9/22/2004 0:00,16424.0,47.56083333,-120.5686111,WA,Chelan County
+1342626,Sonoma-Lake Napa Unit,2004,10/10/2004 0:00,Human,Missing data/not specified/undetermined,10/16/2004 0:00,39138.0,38.91611111,-122.2738889,CA,Yolo County
+3887,Umatilla National Forest,2005,8/5/2005 0:00,Human,Power generation/transmission/distribution,10/1/2005 0:00,52000.0,46.23444444,-117.6805556,WA,Columbia County
+4356,Humboldt-Toiyabe National Forest,2005,8/29/2005 0:00,Human,Debris and open burning,8/31/2005 0:00,12855.0,41.99555556,-117.6388889,NV,Humboldt County
+4861,Sawtooth National Forest,2005,9/3/2005 0:00,Human,Debris and open burning,9/28/2005 0:00,40483.0,43.99277778,-114.7861111,ID,Blaine County
+255533,Talihina Agency,2005,11/8/2005 0:00,Human,Missing data/not specified/undetermined,11/16/2005 0:00,17299.0,35.2161,-96.1858,OK,Not Available
+285147,Colville Agency,2005,7/12/2005 0:00,Human,Equipment and vehicle use,7/17/2005 0:00,11330.0,48.2417,-119.3908,WA,Not Available
+313382,Arizona Strip Field Office,2005,7/19/2005 0:00,Human,Equipment and vehicle use,7/27/2005 0:00,20551.0,36.3603,-113.7808,AZ,Mohave County
+314413,Phoenix District Office,2005,6/16/2005 0:00,Human,Recreation and ceremony,6/25/2005 0:00,58536.0,32.6131,-112.8657,AZ,Maricopa County
+314429,Phoenix District Office,2005,6/29/2005 0:00,Human,Recreation and ceremony,7/5/2005 0:00,17131.0,32.6153,-112.1093,AZ,Maricopa County
+322528,California Desert District,2005,7/18/2005 0:00,Human,Equipment and vehicle use,7/24/2005 0:00,10350.0,35.8855,-117.3312,CA,Inyo County
+336487,Idaho Falls District,2005,9/16/2005 0:00,Human,Debris and open burning,9/18/2005 0:00,16892.1,43.1622,-112.8378,ID,Bingham County
+336960,Idaho Falls District,2005,9/4/2005 0:00,Human,Smoking,9/21/2005 0:00,10629.5,42.6867,-112.5864,ID,Power County
+337419,Twin  Falls District,2005,8/10/2005 0:00,Human,Equipment and vehicle use,8/13/2005 0:00,24810.0,43.2422,-113.6928,ID,Blaine County
+342200,Elko District Office,2005,8/28/2005 0:00,Human,Debris and open burning,9/1/2005 0:00,23749.0,40.8786,-115.6853,NV,Elko County
+357319,Salt Lake Field Office,2005,7/12/2005 0:00,Human,Firearms and explosives use,7/15/2005 0:00,22874.0,40.12362,-112.82937,UT,Tooele County
+357337,Salt Lake Field Office,2005,7/22/2005 0:00,Human,Equipment and vehicle use,7/28/2005 0:00,18420.0,41.7769,-113.2911,UT,Box Elder County
+365999,Santa Monica Mountains National Recreation Area,2005,9/28/2005 0:00,Human,Missing data/not specified/undetermined,10/10/2005 0:00,24970.0,34.2833,-118.6106,CA,Not Available
+380476,Kofa National Wildlife Refuge,2005,10/1/2005 0:00,Human,Firearms and explosives use,10/6/2005 0:00,26000.0,33.17888889,-114.0213889,AZ,Not Available
+603668,New Mexico State Forestry Division,2005,4/13/2005 0:00,Human,Equipment and vehicle use,4/16/2005 0:00,12350.0,36.31749997,-103.9403,NM,Union County
+604124,New Mexico State Forestry Division,2005,11/30/2005 0:00,Human,Arson/incendiarism,12/3/2005 0:00,26000.0,34.25661997,-103.7469,NM,Roosevelt County
+1271718,Tonto National Forest,2005,5/15/2005 0:00,Human,Missing data/not specified/undetermined,5/22/2005 0:00,14534.0,33.87138889,-111.7252778,AZ,Maricopa County
+7449,Cibola National Forest,2006,3/12/2006 0:00,Human,Missing data/not specified/undetermined,3/19/2006 0:00,427696.0,35.21666667,-100.9333333,TX,Gray County
+11712,Gila National Forest,2006,6/19/2006 0:00,Human,Recreation and ceremony,8/23/2006 0:00,55307.0,33.41138889,-108.6313889,NM,Catron County
+12855,Cleveland National Forest,2006,2/6/2006 0:00,Human,Missing data/not specified/undetermined,2/6/2006 0:00,10584.0,33.85194444,-117.6497222,CA,Orange County
+13793,Cleveland National Forest,2006,7/23/2006 0:00,Human,Recreation and ceremony,7/29/2006 0:00,16677.0,32.75444444,-116.6691667,CA,San Diego County
+14206,Boise National Forest,2006,8/14/2006 0:00,Human,Recreation and ceremony,10/6/2006 0:00,35482.0,44.24333333,-115.3863889,ID,Boise County
+14907,Los Padres National Forest,2006,9/4/2006 0:00,Human,Debris and open burning,10/30/2006 0:00,162702.0,34.63222222,-118.7697222,CA,Ventura County
+15173,Los Padres National Forest,2006,6/19/2006 0:00,Human,Missing data/not specified/undetermined,7/20/2006 0:00,14988.0,34.94361111,-119.6872222,CA,Santa Barbara County
+15306,Shasta-Trinity National Forest,2006,9/2/2006 0:00,Human,Equipment and vehicle use,10/10/2006 0:00,35101.0,40.75111111,-123.1508333,CA,Trinity County
+16179,Beaverhead-Deerlodge National Forest,2006,8/23/2006 0:00,Human,Equipment and vehicle use,8/28/2006 0:00,15387.0,45.01111111,-112.7930556,MT,Beaverhead County
+17462,San Bernardino National Forest,2006,10/26/2006 0:00,Human,Arson/incendiarism,10/30/2006 0:00,40200.0,33.89972222,-116.7661111,CA,Riverside County
+251878,Chickasaw Agency,2006,1/12/2006 0:00,Human,Missing data/not specified/undetermined,1/21/2006 0:00,19200.0,34.4486,-97.4972,OK,Not Available
+253745,Okmulgee Field Office,2006,1/1/2006 0:00,Human,Arson/incendiarism,1/2/2006 0:00,16423.0,35.5758,-96.5644,OK,Not Available
+253749,Okmulgee Field Office,2006,1/1/2006 0:00,Human,Arson/incendiarism,1/3/2006 0:00,14000.0,35.5494,-96.1608,OK,Not Available
+319045,Central California District,2006,7/9/2006 0:00,Human,Equipment and vehicle use,7/20/2006 0:00,34271.0,37.4,-121.2808,CA,Stanislaus County
+336675,Twin  Falls District,2006,8/23/2006 0:00,Human,Missing data/not specified/undetermined,8/26/2006 0:00,61929.1,42.6689,-115.4278,ID,Owyhee County
+337453,Twin  Falls District,2006,6/20/2006 0:00,Human,Equipment and vehicle use,6/21/2006 0:00,11443.1,42.8661,-114.7125,ID,Gooding County
+342386,Elko District Office,2006,8/23/2006 0:00,Human,Equipment and vehicle use,8/26/2006 0:00,13456.5,40.9033,-115.8678,NV,Elko County
+347788,Las Cruces Field Office,2006,5/18/2006 0:00,Human,Missing data/not specified/undetermined,7/1/2006 0:00,12806.0,31.5667,-108.7167,NM,Hidalgo County
+348920,Burns District,2006,8/21/2006 0:00,Human,Arson/incendiarism,9/5/2006 0:00,46522.7,42.8374,-118.8299,OR,Harney County
+353474,Cedar City Field Office,2006,6/24/2006 0:00,Human,Missing data/not specified/undetermined,7/9/2006 0:00,17632.0,37.2625,-113.1236,UT,Washington County
+353475,Cedar City Field Office,2006,6/25/2006 0:00,Human,Recreation and ceremony,7/5/2006 0:00,50737.0,37.0717,-113.8331,UT,Washington County
+358710,Casper Field Office,2006,6/13/2006 0:00,Human,Missing data/not specified/undetermined,6/22/2006 0:00,13882.0,42.4125,-104.8225,WY,Platte County
+362516,Lake Meredith National Recreation Area,2006,3/12/2006 0:00,Human,Missing data/not specified/undetermined,3/12/2006 0:00,479549.0,35.6678,-101.3708,TX,Not Available
+362527,Lake Meredith National Recreation Area,2006,4/6/2006 0:00,Human,Power generation/transmission/distribution,4/11/2006 0:00,23827.0,35.55,-101.7833,TX,Not Available
+450067,Florida Forest Service,2006,5/7/2006 0:00,Human,Equipment and vehicle use,5/11/2006 0:00,13700.0,26.32722,-80.71444,FL,Broward County
+604283,New Mexico State Forestry Division,2006,3/1/2006 0:00,Human,Missing data/not specified/undetermined,3/1/2006 0:00,26525.0,36.41833,-104.9764,NM,Colfax County
+604285,New Mexico State Forestry Division,2006,3/12/2006 0:00,Human,Missing data/not specified/undetermined,3/12/2006 0:00,11520.0,36.12139,-103.4208,NM,Union County
+604441,New Mexico State Forestry Division,2006,4/12/2006 0:00,Human,Missing data/not specified/undetermined,4/12/2006 0:00,16000.0,36.09111,-105.1664,NM,Mora County
+604534,New Mexico State Forestry Division,2006,1/1/2006 0:00,Human,Missing data/not specified/undetermined,1/1/2006 0:00,15000.0,32.76167,-103.5983,NM,Lea County
+604603,New Mexico State Forestry Division,2006,3/12/2006 0:00,Human,Missing data/not specified/undetermined,3/12/2006 0:00,92390.0,33.05825,-103.6025,NM,Lea County
+665720,Texas A & M Forest Service,2006,3/12/2006 0:00,Human,Smoking,3/21/2006 0:00,40000.0,34.29083001,-100.2889,TX,Childress County
+665921,Texas A & M Forest Service,2006,3/10/2006 0:00,Human,Equipment and vehicle use,3/13/2006 0:00,13000.0,35.54308001,-102.2663,TX,Oldham County
+665927,Texas A & M Forest Service,2006,4/11/2006 0:00,Human,Equipment and vehicle use,4/12/2006 0:00,18000.0,36.04841998,-100.3649,TX,Hemphill County
+666626,Texas A & M Forest Service,2006,1/1/2006 0:00,Human,Missing data/not specified/undetermined,1/4/2006 0:00,39812.0,31.73667,-100.9456,TX,Tom Green County
+666630,Texas A & M Forest Service,2006,1/1/2006 0:00,Human,Missing data/not specified/undetermined,1/5/2006 0:00,42110.0,31.46667,-101.1667,TX,Irion County
+666631,Texas A & M Forest Service,2006,1/1/2006 0:00,Human,Missing data/not specified/undetermined,1/5/2006 0:00,35300.0,32.23333,-98.83334002,TX,Eastland County
+666632,Texas A & M Forest Service,2006,1/1/2006 0:00,Human,Missing data/not specified/undetermined,1/1/2006 0:00,23000.0,35.04889,-100.8703,TX,Donley County
+667269,Texas A & M Forest Service,2006,5/16/2006 0:00,Human,Recreation and ceremony,5/16/2006 0:00,10919.0,27.89883,-98.95071,TX,Webb County
+1276845,Alaska Fire Service,2006,6/7/2006 0:00,Human,Debris and open burning,10/1/2006 0:00,118520.1,64.37,-149.03,AK,Not Available
+1300923,Oklahoma Division of Forestry,2006,4/7/2006 0:00,Human,Missing data/not specified/undetermined,4/14/2006 0:00,21400.0,35.554444,-99.823056,OK,Roger Mills County
+1300934,Oklahoma Division of Forestry,2006,3/1/2006 0:00,Human,Missing data/not specified/undetermined,3/6/2006 0:00,12500.0,34.531389,-97.698333,OK,Stephens County
+1300940,Kansas Counties,2006,3/8/2006 0:00,Human,Missing data/not specified/undetermined,3/10/2006 0:00,10700.0,37.8425,-96.930556,KS,Butler County
+1300966,Capitan District,2006,1/1/2006 0:00,Human,Missing data/not specified/undetermined,,30000.0,32.7575,-103.5025,NM,Lea County
+1312485,Merced-Mariposa Unit,2006,7/21/2006 0:00,Human,Equipment and vehicle use,7/21/2006 0:00,25000.0,37.39694444,-120.6219444,CA,Merced County
+1395403,Ventura County Fire Department,2006,12/3/2006 0:00,Human,Misuse of fire by a minor,,30000.0,34.32888888,-118.9011111,CA,Ventura County
+18897,Superior National Forest,2007,5/5/2007 0:00,Human,Recreation and ceremony,6/4/2007 0:00,75484.0,48.06888889,-90.81138889,MN,Cook County
+21809,Plumas National Forest,2007,9/3/2007 0:00,Human,Equipment and vehicle use,9/25/2007 0:00,64994.45,40.21333333,-120.8641667,CA,Plumas County
+24951,Los Padres National Forest,2007,7/4/2007 0:00,Human,Equipment and vehicle use,9/2/2007 0:00,240207.0,34.77916667,-120.09,CA,Santa Barbara County
+26075,Cleveland National Forest,2007,10/21/2007 0:00,Human,Missing data/not specified/undetermined,11/8/2007 0:00,28476.0,33.74583333,-117.6666667,CA,Orange County
+26253,San Bernardino National Forest,2007,9/14/2007 0:00,Human,Missing data/not specified/undetermined,,14039.0,34.25805556,-117.0102778,CA,San Bernardino County
+26259,San Bernardino National Forest,2007,10/22/2007 0:00,Human,Missing data/not specified/undetermined,11/14/2007 0:00,12759.0,34.25194444,-117.05,CA,San Bernardino County
+26274,Los Padres National Forest,2007,10/20/2007 0:00,Human,Power generation/transmission/distribution,11/15/2007 0:00,45300.0,34.57305556,-118.6983333,CA,Los Angeles County
+26492,Cleveland National Forest,2007,10/21/2007 0:00,Human,Power generation/transmission/distribution,10/31/2007 0:00,197990.0,33.07444444,-116.7111111,CA,San Diego County
+26584,Angeles National Forest,2007,10/21/2007 0:00,Human,Misuse of fire by a minor,10/21/2007 0:00,38356.0,34.52444444,-118.3347222,CA,Los Angeles County
+26626,Cleveland National Forest,2007,10/23/2007 0:00,Human,Other causes,12/1/2007 0:00,49390.0,33.2775,-116.8680556,CA,San Diego County
+270730,Pine Ridge Agency,2007,7/7/2007 0:00,Human,Fireworks,7/14/2007 0:00,22454.0,43.0419,-102.6542,SD,Not Available
+285423,Colville Agency,2007,8/30/2007 0:00,Human,Arson/incendiarism,9/9/2007 0:00,10500.0,48.2189,-119.3811,WA,Not Available
+285425,Colville Agency,2007,9/10/2007 0:00,Human,Firearms and explosives use,9/24/2007 0:00,26805.0,48.02,-118.7811,WA,Not Available
+310783,Uintah and Ouray Agency,2007,6/29/2007 0:00,Human,Missing data/not specified/undetermined,9/18/2007 0:00,43830.0,40.4969,-110.3419,UT,Not Available
+312053,Alaska Fire Service,2007,6/19/2007 0:00,Human,Missing data/not specified/undetermined,7/19/2007 0:00,56254.0,60.0,-151.28,AK,Not Available
+319992,Central California District,2007,9/3/2007 0:00,Human,Recreation and ceremony,9/10/2007 0:00,47760.0,37.2083,-121.5011,CA,Santa Clara County
+337025,Idaho Falls District,2007,6/20/2007 0:00,Human,Equipment and vehicle use,6/25/2007 0:00,16312.0,42.1169,-112.8556,ID,Oneida County
+337049,Idaho Falls District,2007,8/11/2007 0:00,Human,Missing data/not specified/undetermined,9/26/2007 0:00,13784.0,42.2569,-111.8081,ID,Franklin County
+337525,Twin  Falls District,2007,7/6/2007 0:00,Human,Power generation/transmission/distribution,7/9/2007 0:00,45862.0,42.7803,-114.3664,ID,Lincoln County
+351107,Prineville District,2007,8/3/2007 0:00,Human,Missing data/not specified/undetermined,8/5/2007 0:00,15591.0,45.5339,-120.6919,OR,Sherman County
+352121,Vale District,2007,8/17/2007 0:00,Human,Other causes,9/7/2007 0:00,47860.1,44.085182,-118.196433,OR,Malheur County
+357636,Salt Lake Field Office,2007,6/5/2007 0:00,Human,Firearms and explosives use,6/15/2007 0:00,25582.0,40.3572,-113.0611,UT,Tooele County
+383904,San Diego National Wildlife Refuge,2007,10/21/2007 0:00,Human,Recreation and ceremony,10/31/2007 0:00,90440.0,32.608768,-116.577142,CA,Not Available
+384128,Okefenokee National Wildlife Refuge,2007,4/16/2007 0:00,Human,Missing data/not specified/undetermined,10/10/2007 0:00,191474.0,30.80277778,-82.2725,GA,Not Available
+384407,Edwin B. Forsythe National Wildlife Refuge,2007,5/15/2007 0:00,Human,Arson/incendiarism,5/21/2007 0:00,17050.0,39.7075,-74.30972222,NJ,Not Available
+400308,Fairbanks Area,2007,4/29/2007 0:00,Human,Missing data/not specified/undetermined,,33452.0,64.13333,-146.8167,AK,Not Available
+430299,Florida Forest Service,2007,2/25/2007 0:00,Human,Arson/incendiarism,2/27/2007 0:00,43561.5,26.91694,-81.11444,FL,Glades County
+430524,Florida Forest Service,2007,4/1/2007 0:00,Human,Equipment and vehicle use,4/5/2007 0:00,11600.0,26.36861,-80.74416,FL,Palm Beach County
+432285,Florida Forest Service,2007,4/7/2007 0:00,Human,Equipment and vehicle use,4/11/2007 0:00,12200.0,26.08333,-80.66721997,FL,Broward County
+432291,Florida Forest Service,2007,4/16/2007 0:00,Human,Equipment and vehicle use,4/22/2007 0:00,39000.0,26.18693999,-80.71500002,FL,Broward County
+432529,Florida Forest Service,2007,5/7/2007 0:00,Human,Arson/incendiarism,6/8/2007 0:00,14626.0,29.83694,-82.08833,FL,Bradford County
+432988,Florida Forest Service,2007,5/28/2007 0:00,Human,Arson/incendiarism,6/17/2007 0:00,23250.0,27.12222,-80.89694,FL,Glades County
+530209,Minnesota Department of Natural Resources,2007,4/26/2007 0:00,Human,Arson/incendiarism,,24945.0,48.8510266,-96.29171674,MN,Roseau County
+552752,Southern Land Office,2007,11/12/2007 0:00,Human,Recreation and ceremony,,17954.0,46.0973,-110.1758,MT,Sweet Grass County
+552891,Southwestern Land Office,2007,8/14/2007 0:00,Human,Missing data/not specified/undetermined,,10766.24,47.0201,-114.1511,MT,Missoula County
+605723,New Mexico State Forestry Division,2007,10/17/2007 0:00,Human,Equipment and vehicle use,10/17/2007 0:00,15000.0,34.22111,-103.3175,NM,Roosevelt County
+605753,New Mexico State Forestry Division,2007,11/18/2007 0:00,Human,Equipment and vehicle use,11/18/2007 0:00,18000.0,33.24456,-103.471,NM,Lea County
+720787,Utah Division Forestry Fire State Lands,2007,7/10/2007 0:00,Human,Debris and open burning,8/3/2007 0:00,14656.0,38.19813742,-112.7000094,UT,Beaver County
+730702,Washington State Department of Natural Resources Headquarters,2007,7/6/2007 0:00,Human,Missing data/not specified/undetermined,,17420.0,46.25788,-117.1764,WA,Asotin County
+1278199,Richfield Field Office,2007,7/19/2007 0:00,Human,Missing data/not specified/undetermined,8/1/2007 0:00,25456.0,39.7192,-111.7417,UT,Juab County
+27729,Los Padres National Forest,2008,6/8/2008 0:00,Human,Recreation and ceremony,7/10/2008 0:00,81378.0,36.10527778,-121.4308333,CA,Monterey County
+28099,Cibola National Forest,2008,4/15/2008 0:00,Human,Recreation and ceremony,7/2/2008 0:00,13709.0,34.66,-106.4666667,NM,Torrance County
+29327,Custer Gallatin National Forest,2008,7/26/2008 0:00,Human,Missing data/not specified/undetermined,7/26/2008 0:00,10173.0,45.16944444,-109.4875,MT,Carbon County
+32429,Los Padres National Forest,2008,9/27/2008 0:00,Human,Missing data/not specified/undetermined,,11200.0,36.0025,-121.4397222,CA,Monterey County
+32663,Sequoia National Forest,2008,6/28/2008 0:00,Human,Recreation and ceremony,7/30/2008 0:00,37026.0,35.41916667,-118.4002778,CA,Kern County
+33316,National Forests in Florida,2008,2/11/2008 0:00,Human,Missing data/not specified/undetermined,2/15/2008 0:00,10458.0,30.09916667,-84.69111111,FL,Franklin County
+33645,Bridger-Teton National Forest,2008,7/29/2008 0:00,Human,Recreation and ceremony,11/17/2008 0:00,15089.0,43.10833333,-109.9127778,WY,Sublette County
+33734,Stanislaus National Forest,2008,7/25/2008 0:00,Human,Missing data/not specified/undetermined,9/15/2008 0:00,34091.0,37.5675,-119.9969444,CA,Mariposa County
+33916,Angeles National Forest,2008,11/14/2008 0:00,Human,Missing data/not specified/undetermined,11/21/2008 0:00,11222.0,34.33,-118.4111111,CA,Los Angeles County
+34186,Cleveland National Forest,2008,11/15/2008 0:00,Human,Missing data/not specified/undetermined,11/18/2008 0:00,30305.0,33.87277778,-117.7388889,CA,Orange County
+285560,Colville Agency,2008,8/7/2008 0:00,Human,Arson/incendiarism,8/21/2008 0:00,22155.0,48.1386,-119.1719,WA,Not Available
+324538,California Desert District,2008,10/13/2008 0:00,Human,Power generation/transmission/distribution,10/25/2008 0:00,14703.0,34.3097,-118.6089,CA,Los Angeles County
+328287,Northern California District,2008,6/22/2008 0:00,Human,Equipment and vehicle use,6/28/2008 0:00,11089.0,39.0464,-122.5333,CA,Lake County
+335513,Idaho Falls District,2008,8/18/2008 0:00,Human,Equipment and vehicle use,8/20/2008 0:00,31616.2,42.7961,-113.4867,ID,Minidoka County
+337594,Twin  Falls District,2008,8/27/2008 0:00,Human,Missing data/not specified/undetermined,8/31/2008 0:00,14869.0,43.3017,-114.1508,ID,Blaine County
+348255,Roswell Field Office,2008,4/7/2008 0:00,Human,Arson/incendiarism,4/10/2008 0:00,12624.0,33.8528,-105.2992,NM,Chaves County
+358382,Spokane District,2008,7/8/2008 0:00,Human,Power generation/transmission/distribution,7/20/2008 0:00,15023.0,47.4578,-120.2078,WA,Douglas County
+358392,Spokane District,2008,8/18/2008 0:00,Human,Missing data/not specified/undetermined,9/13/2008 0:00,19090.0,47.7086,-118.4283,WA,Lincoln County
+363708,Yellowstone National Park,2008,7/30/2008 0:00,Human,Power generation/transmission/distribution,10/10/2008 0:00,10361.0,44.35,-110.23,WY,Not Available
+368393,Everglades National Park,2008,5/14/2008 0:00,Human,Missing data/not specified/undetermined,6/4/2008 0:00,39465.0,25.5642,-80.575,FL,Not Available
+437253,Florida Forest Service,2008,5/2/2008 0:00,Human,Arson/incendiarism,6/13/2008 0:00,38000.0,26.81083,-80.9675,FL,Glades County
+695211,Texas A & M Forest Service,2008,2/25/2008 0:00,Human,Missing data/not specified/undetermined,,18000.0,30.806,-101.2848,TX,Crockett County
+695291,Texas A & M Forest Service,2008,2/25/2008 0:00,Human,Missing data/not specified/undetermined,,11180.0,32.30341,-102.3987,TX,Andrews County
+698630,Texas A & M Forest Service,2008,1/28/2008 0:00,Human,Missing data/not specified/undetermined,,11012.0,34.14241,-102.8083,TX,Bailey County
+706713,Texas A & M Forest Service,2008,1/29/2008 0:00,Human,Debris and open burning,1/30/2008 0:00,14210.0,27.26488,-98.51507,TX,Duval County
+706732,Texas A & M Forest Service,2008,2/2/2008 0:00,Human,Missing data/not specified/undetermined,2/2/2008 0:00,19000.0,28.52025,-99.3118,TX,La Salle County
+706870,Texas A & M Forest Service,2008,2/25/2008 0:00,Human,Missing data/not specified/undetermined,2/29/2008 0:00,20200.0,32.05446,-100.7085,TX,Coke County
+706889,Texas A & M Forest Service,2008,2/25/2008 0:00,Human,Equipment and vehicle use,3/1/2008 0:00,13548.0,33.59808,-98.67122,TX,Archer County
+706908,Texas A & M Forest Service,2008,2/25/2008 0:00,Human,Missing data/not specified/undetermined,2/29/2008 0:00,220000.0,31.74216,-101.0438,TX,Sterling County
+706950,Texas A & M Forest Service,2008,2/23/2008 0:00,Human,Missing data/not specified/undetermined,3/1/2008 0:00,28625.0,32.71048,-100.9218,TX,Scurry County
+707116,Texas A & M Forest Service,2008,3/14/2008 0:00,Human,Missing data/not specified/undetermined,3/17/2008 0:00,67500.0,28.3025,-99.43667,TX,Dimmit County
+707188,Texas A & M Forest Service,2008,3/31/2008 0:00,Human,Missing data/not specified/undetermined,4/2/2008 0:00,15000.0,32.68959,-101.6164,TX,Borden County
+707243,Texas A & M Forest Service,2008,3/18/2008 0:00,Human,Missing data/not specified/undetermined,3/22/2008 0:00,25600.0,26.55495,-98.12082,TX,Hidalgo County
+707282,Texas A & M Forest Service,2008,4/30/2008 0:00,Human,Missing data/not specified/undetermined,5/3/2008 0:00,98168.0,30.63117,-101.5342,TX,Pecos County
+707296,Texas A & M Forest Service,2008,4/10/2008 0:00,Human,Missing data/not specified/undetermined,4/10/2008 0:00,16000.0,31.384,-102.789,TX,Crane County
+707516,Texas A & M Forest Service,2008,6/4/2008 0:00,Human,Equipment and vehicle use,6/7/2008 0:00,43241.0,30.48167,-104.32,TX,Presidio County
+1300447,Capitan District,2008,3/14/2008 0:00,Human,Missing data/not specified/undetermined,3/16/2008 0:00,67008.0,32.835556,-103.437778,NM,Lea County
+1300661,Capitan District,2008,4/5/2008 0:00,Human,Missing data/not specified/undetermined,4/7/2008 0:00,16837.0,32.819722,-103.581944,NM,Lea County
+1300715,Kansas Counties,2008,8/4/2008 0:00,Human,Missing data/not specified/undetermined,,38400.0,37.2,-98.8,KS,Barber County
+300338871,Butte Unit,2008,6/11/2008 0:00,Human,Arson/incendiarism,,23344.0,39.762464,-121.736696,CA,Butte County
+35097,National Forests in Florida,2009,3/10/2009 0:00,Human,Recreation and ceremony,4/1/2009 0:00,10022.0,29.19194444,-81.69722222,FL,Marion County
+36001,Coronado National Forest,2009,3/1/2009 0:00,Human,Recreation and ceremony,3/9/2009 0:00,16802.0,31.50222222,-109.0836111,AZ,Cochise County
+39377,Los Padres National Forest,2009,8/8/2009 0:00,Human,Missing data/not specified/undetermined,8/22/2009 0:00,91622.0,34.94972222,-119.9777778,CA,Santa Barbara County
+41500,Angeles National Forest,2009,8/26/2009 0:00,Human,Arson/incendiarism,9/22/2009 0:00,160371.0,34.2425,-118.1888889,CA,Los Angeles County
+255067,Osage Agency,2009,3/17/2009 0:00,Human,Debris and open burning,3/24/2009 0:00,10216.0,36.3544,-96.3108,OK,Not Available
+312384,Alaska Fire Service,2009,5/1/2009 0:00,Human,Firearms and explosives use,5/24/2009 0:00,38398.3,63.9556,-146.3878,AK,Not Available
+314950,Gila District Office,2009,6/11/2009 0:00,Human,Missing data/not specified/undetermined,6/21/2009 0:00,23668.0,31.8517,-111.5583,AZ,Pima County
+320338,Central California District,2009,9/22/2009 0:00,Human,Misuse of fire by a minor,9/28/2009 0:00,17463.0,34.3817,-118.8708,CA,Not Available
+338411,North Central Montana District,2009,1/31/2009 0:00,Human,Debris and open burning,2/8/2009 0:00,14490.0,47.4456,-110.3772,MT,Chouteau County
+341357,Carson City District Office,2009,7/15/2009 0:00,Human,Equipment and vehicle use,7/24/2009 0:00,10549.0,39.7842,-120.0383,NV,Not Available
+341394,Carson City District Office,2009,8/20/2009 0:00,Human,Equipment and vehicle use,8/30/2009 0:00,10670.0,39.8092,-117.5586,NV,Churchill County
+362699,Lake Meredith National Recreation Area,2009,4/4/2009 0:00,Human,Missing data/not specified/undetermined,4/7/2009 0:00,15000.0,35.4306,-100.3819,TX,Not Available
+634626,South Carolina Forestry Commission,2009,4/22/2009 0:00,Human,Debris and open burning,4/28/2009 0:00,19130.0,33.82175,-78.92149,SC,Horry County
+1300151,Oklahoma Division of Forestry,2009,4/4/2009 0:00,Human,Missing data/not specified/undetermined,,11520.0,36.415833,-98.445,OK,Major County
+1341565,Santa Clara Unit,2009,8/13/2009 0:00,Human,Missing data/not specified/undetermined,,12200.0,37.63194444,-121.5380556,CA,San Joaquin County
+1472469,Alaska Fire Service,2009,8/3/2009 0:00,Human,Missing data/not specified/undetermined,9/11/2009 0:00,12834.0,64.9903,-148.5864,AK,Not Available
+1747956,New Mexico State Forestry Division,2009,3/4/2009 0:00,Human,Equipment and vehicle use,3/9/2009 0:00,16141.0,32.887722,-105.172833,NM,Chaves County
+1747995,New Mexico State Forestry Division,2009,3/30/2009 0:00,Human,Power generation/transmission/distribution,4/1/2009 0:00,25747.0,32.7883,-103.4914,NM,Lea County
+201335316,Texas A & M Forest Service,2009,4/7/2009 0:00,Human,Missing data/not specified/undetermined,4/13/2009 0:00,18360.0,32.48883333,-98.97566667,TX,Eastland County
+201335336,Texas A & M Forest Service,2009,4/9/2009 0:00,Human,Missing data/not specified/undetermined,4/15/2009 0:00,16444.0,33.247933,-98.087648,TX,Jack County
+201335338,Texas A & M Forest Service,2009,4/9/2009 0:00,Human,Power generation/transmission/distribution,4/10/2009 0:00,21525.0,33.688,-98.5496,TX,Archer County
+201335342,Texas A & M Forest Service,2009,4/9/2009 0:00,Human,Missing data/not specified/undetermined,4/16/2009 0:00,31419.0,33.65027778,-97.52583333,TX,Montague County
+201335343,Texas A & M Forest Service,2009,4/9/2009 0:00,Human,Missing data/not specified/undetermined,4/13/2009 0:00,16000.0,32.81981813,-99.14663681,TX,Shackelford County
+1428709,Coconino National Forest,2010,6/20/2010 0:00,Human,Recreation and ceremony,7/13/2010 0:00,15075.0,35.2863889,-111.623889,AZ,Coconino County
+1432347,Sequoia National Forest,2010,7/26/2010 0:00,Human,Missing data/not specified/undetermined,8/31/2010 0:00,16442.0,35.7852778,-118.474722,CA,Kern County
+1433319,Okanogan-Wenatchee National Forest,2010,7/10/2010 0:00,Human,Missing data/not specified/undetermined,9/10/2010 0:00,19291.0,47.5758333,-120.3475,WA,Chelan County
+1468514,Alaska Regional Office,2010,5/17/2010 0:00,Human,Recreation and ceremony,9/7/2010 0:00,91885.0,62.395,-153.5033,AK,Not Available
+1473198,California Desert District,2010,7/29/2010 0:00,Human,Equipment and vehicle use,8/3/2010 0:00,13918.0,34.5453,-118.2814,CA,Los Angeles County
+1474317,Idaho Falls District,2010,8/20/2010 0:00,Human,Equipment and vehicle use,8/22/2010 0:00,13745.0,42.0094,-114.6083,ID,Twin Falls County
+1474384,Idaho Falls District,2010,7/13/2010 0:00,Human,Missing data/not specified/undetermined,7/20/2010 0:00,108855.0,43.52969,-112.88078,ID,Butte County
+1474397,Idaho Falls District,2010,8/27/2010 0:00,Human,Equipment and vehicle use,8/29/2010 0:00,14058.0,43.4486,-112.78739,ID,Bingham County
+1476503,Casper Field Office,2010,10/4/2010 0:00,Human,Equipment and vehicle use,10/7/2010 0:00,25093.0,43.0244,-105.2975,WY,Converse County
+1839823,Florida Forest Service,2010,12/26/2010 0:00,Human,Missing data/not specified/undetermined,12/30/2010 0:00,13000.0,27.9434,-80.7864,FL,Brevard County
+15000477,Washington State Fire Marshal's Office,2010,8/6/2010 0:00,Human,Missing data/not specified/undetermined,8/8/2010 0:00,21620.0,46.370556,-118.572222,WA,Walla Walla County
+20022891,Columbia River Gorge National Scenic Area,2011,8/29/2011 0:00,Human,Power generation/transmission/distribution,8/30/2011 0:00,11008.0,45.66555556,-121.0111111,WA,Not Available
+20024430,Pike and San Isabel National Forest,2011,5/8/2011 0:00,Human,Equipment and vehicle use,5/14/2011 0:00,17482.0,37.15555556,-101.7616667,KS,Not Available
+20026006,Apache-Sitgreaves National Forest,2011,5/29/2011 0:00,Human,Recreation and ceremony,7/12/2011 0:00,538049.0,33.60611111,-109.4497222,AZ,Not Available
+20026217,Cibola National Forest,2011,4/19/2011 0:00,Human,Power generation/transmission/distribution,4/20/2011 0:00,11009.0,36.29333333,-102.57,TX,Not Available
+20026222,Cibola National Forest,2011,5/24/2011 0:00,Human,Missing data/not specified/undetermined,5/26/2011 0:00,15280.0,35.455,-102.5936111,TX,Not Available
+20026568,Coronado National Forest,2011,5/30/2011 0:00,Human,Missing data/not specified/undetermined,7/21/2011 0:00,68079.0,31.54055556,-111.1577778,AZ,Not Available
+20026572,Coronado National Forest,2011,5/8/2011 0:00,Human,Missing data/not specified/undetermined,6/25/2011 0:00,222954.0,31.81972222,-109.2111111,AZ,Not Available
+20026605,Coronado National Forest,2011,5/23/2011 0:00,Human,Missing data/not specified/undetermined,5/29/2011 0:00,10610.0,31.33888889,-110.5458333,AZ,Not Available
+20026774,Lincoln National Forest,2011,4/3/2011 0:00,Human,Fireworks,4/8/2011 0:00,10334.0,33.33,-105.6491667,NM,Not Available
+20026929,Santa Fe National Forest,2011,6/18/2011 0:00,Human,Missing data/not specified/undetermined,8/30/2011 0:00,10112.9,35.81194444,-105.8369444,NM,Not Available
+201100585,Osage Agency,2011,3/23/2011 0:00,Human,Debris and open burning,3/31/2011 0:00,11382.0,36.523,-96.6408,OK,Not Available
+201101812,Rosebud Agency,2011,10/5/2011 0:00,Human,Missing data/not specified/undetermined,10/9/2011 0:00,17500.0,43.317656,-100.249361,SD,Not Available
+201103677,Southern California Agency,2011,7/21/2011 0:00,Human,Arson/incendiarism,7/30/2011 0:00,14100.0,33.283017,-116.539044,CA,Not Available
+201106463,Alaska Fire Service,2011,5/30/2011 0:00,Human,Missing data/not specified/undetermined,7/5/2011 0:00,23122.5,65.03,-148.35,AK,Not Available
+201108068,Boise District,2011,8/15/2011 0:00,Human,Missing data/not specified/undetermined,8/17/2011 0:00,15775.0,43.1699,-115.95881,ID,Not Available
+201108849,Carlsbad Field Office,2011,4/24/2011 0:00,Human,Recreation and ceremony,5/18/2011 0:00,53342.0,32.2325,-104.7522,NM,Eddy County
+201108865,Carlsbad Field Office,2011,5/9/2011 0:00,Human,Power generation/transmission/distribution,5/29/2011 0:00,31861.0,32.895,-105.4892,NM,Not Available
+201109091,Roswell Field Office,2011,2/27/2011 0:00,Human,Missing data/not specified/undetermined,2/28/2011 0:00,64936.0,33.0522,-103.8006,NM,Chaves County
+201109959,Winnemucca District Office,2011,7/2/2011 0:00,Human,Missing data/not specified/undetermined,7/4/2011 0:00,11195.3,39.75481,-119.21881,NV,Washoe County
+201110012,Winnemucca District Office,2011,8/6/2011 0:00,Human,Missing data/not specified/undetermined,8/8/2011 0:00,21565.4,40.6128,-118.6208,NV,Pershing County
+201111145,Salt Lake Field Office,2011,7/16/2011 0:00,Human,Firearms and explosives use,7/20/2011 0:00,16267.0,40.8339,-112.7739,UT,Tooele County
+201111649,Coronado National Memorial,2011,6/12/2011 0:00,Human,Missing data/not specified/undetermined,7/16/2011 0:00,30526.0,31.3342,-110.2364,AZ,Not Available
+201111991,Carlsbad Caverns National Park,2011,6/13/2011 0:00,Human,Arson/incendiarism,6/20/2011 0:00,30487.0,32.1753,-104.4903,NM,Not Available
+201112027,Gila Cliff Dwellings National Monument,2011,4/28/2011 0:00,Human,Recreation and ceremony,6/21/2011 0:00,88835.0,33.14369,-108.36869,NM,Not Available
+201112152,Lake Meredith National Recreation Area,2011,2/27/2011 0:00,Human,Missing data/not specified/undetermined,2/28/2011 0:00,23000.0,35.55793,-101.41768,TX,Not Available
+201112157,Lake Meredith National Recreation Area,2011,4/9/2011 0:00,Human,Missing data/not specified/undetermined,4/10/2011 0:00,60000.0,35.6903,-101.9164,TX,Not Available
+201120144,Wichita Mountains National Wildlife Refuge,2011,9/1/2011 0:00,Human,Equipment and vehicle use,9/9/2011 0:00,39907.0,34.71111111,-98.61333333,OK,Not Available
+201159536,Georgia Forestry Commission,2011,3/18/2011 0:00,Human,Arson/incendiarism,3/18/2011 0:00,12485.0,31.11520039,-82.88655122,GA,Clinch County
+201159579,Georgia Forestry Commission,2011,3/24/2011 0:00,Human,Debris and open burning,3/25/2011 0:00,22246.0,31.47299498,-82.57689022,GA,Bacon County
+201161930,Georgia Forestry Commission,2011,6/15/2011 0:00,Human,Debris and open burning,8/5/2011 0:00,19198.0,31.20029008,-82.5240704,GA,Ware County
+201168120,New Mexico State Forestry Division,2011,6/18/2011 0:00,Human,Missing data/not specified/undetermined,6/19/2011 0:00,32243.0,34.69383,-103.725,NM,Quay County
+201168201,New Mexico State Forestry Division,2011,6/18/2011 0:00,Human,Debris and open burning,6/18/2011 0:00,10077.0,34.61089,-104.2861,NM,De Baca County
+201168404,Gila National Forest,2011,6/13/2011 0:00,Human,Debris and open burning,6/22/2011 0:00,15086.0,31.658611,-108.707222,NM,Hidalgo County
+201168413,New Mexico State Forestry Division,2011,6/12/2011 0:00,Human,Equipment and vehicle use,6/28/2011 0:00,19970.0,36.9308,-104.4572,NM,Colfax County
+201168418,New Mexico State Forestry Division,2011,4/25/2011 0:00,Human,Equipment and vehicle use,4/26/2011 0:00,24781.0,32.9267,-103.5731,NM,Lea County
+201168620,New Mexico State Forestry Division,2011,4/17/2011 0:00,Human,Debris and open burning,4/19/2011 0:00,24000.0,34.3315,-103.617667,NM,Curry County
+201168937,New Mexico State Forestry Division,2011,4/9/2011 0:00,Human,Equipment and vehicle use,4/11/2011 0:00,24305.0,36.500153,-103.133489,NM,Union County
+201168938,New Mexico State Forestry Division,2011,4/9/2011 0:00,Human,Equipment and vehicle use,4/10/2011 0:00,23000.0,33.3043,-103.2937,NM,Lea County
+201169236,Taos Pueblo,2011,3/24/2011 0:00,Human,Equipment and vehicle use,3/24/2011 0:00,21510.0,33.1525,-103.637778,NM,Lea County
+201169324,Las Cruces Field Office,2011,5/7/2011 0:00,Human,Recreation and ceremony,5/13/2011 0:00,23600.0,31.356389,-108.8625,NM,Hidalgo County
+201178356,New Mexico State Forestry Division,2011,6/26/2011 0:00,Human,Power generation/transmission/distribution,8/2/2011 0:00,156593.0,35.811667,-106.536667,NM,Sandoval County
+201180482,Minnesota Department of Natural Resources,2011,10/5/2011 0:00,Human,Debris and open burning,,28810.0,48.8216,-96.33001,MN,Roseau County
+201210027,South Dakota Wildland Fire Suppression,2011,10/5/2011 0:00,Human,Missing data/not specified/undetermined,,11000.0,45.7253,-100.0685,SD,Campbell County
+201216005,Pueblo County,2011,3/24/2011 0:00,Human,Missing data/not specified/undetermined,3/24/2011 0:00,12000.0,38.745278,-103.655,CO,Lincoln County
+201216008,Kansas Counties,2011,3/22/2011 0:00,Human,Missing data/not specified/undetermined,3/28/2011 0:00,40000.0,37.654,-102.036,KS,Stanton County
+201337119,Texas A & M Forest Service,2011,2/16/2011 0:00,Human,Power generation/transmission/distribution,2/17/2011 0:00,15908.0,36.08611111,-100.2830556,TX,Lipscomb County
+201337193,Texas A & M Forest Service,2011,2/27/2011 0:00,Human,Equipment and vehicle use,3/1/2011 0:00,24310.0,35.27527778,-101.8016667,TX,Potter County
+201337196,Texas A & M Forest Service,2011,2/27/2011 0:00,Human,Missing data/not specified/undetermined,3/2/2011 0:00,41000.0,33.97085185,-101.0112563,TX,Motley County
+201337199,Texas A & M Forest Service,2011,2/27/2011 0:00,Human,Missing data/not specified/undetermined,2/28/2011 0:00,22958.0,30.91489227,-101.1482788,TX,Crockett County
+201337202,Texas A & M Forest Service,2011,2/27/2011 0:00,Human,Missing data/not specified/undetermined,2/28/2011 0:00,65000.0,32.4241667,-102.2596667,TX,Andrews County
+201337204,Texas A & M Forest Service,2011,2/27/2011 0:00,Human,Missing data/not specified/undetermined,2/28/2011 0:00,13740.0,32.38868333,-100.8679167,TX,Mitchell County
+201337585,Texas A & M Forest Service,2011,4/6/2011 0:00,Human,Equipment and vehicle use,4/21/2011 0:00,122500.0,33.11793333,-100.325,TX,Stonewall County
+201337607,Texas A & M Forest Service,2011,4/9/2011 0:00,Human,Power generation/transmission/distribution,4/14/2011 0:00,32000.0,33.246135,-101.381621,TX,Garza County
+201337608,Texas A & M Forest Service,2011,4/9/2011 0:00,Human,Smoking,4/10/2011 0:00,41000.0,30.371712,-103.623445,TX,Brewster County
+201337611,Texas A & M Forest Service,2011,4/9/2011 0:00,Human,Missing data/not specified/undetermined,5/12/2011 0:00,314444.0,30.84951667,-104.0460222,TX,Jeff Davis County
+201337612,Texas A & M Forest Service,2011,4/9/2011 0:00,Human,Equipment and vehicle use,4/9/2011 0:00,16500.0,31.86946666,-102.1841667,TX,Midland County
+201337637,Texas A & M Forest Service,2011,4/11/2011 0:00,Human,Power generation/transmission/distribution,4/14/2011 0:00,30814.0,30.36805556,-101.3522222,TX,Crockett County
+201337676,Texas A & M Forest Service,2011,4/15/2011 0:00,Human,Power generation/transmission/distribution,4/16/2011 0:00,11785.0,33.89225,-98.640925,TX,Wichita County
+201337815,Texas A & M Forest Service,2011,4/25/2011 0:00,Human,Missing data/not specified/undetermined,5/9/2011 0:00,175000.0,30.1635,-101.2471667,TX,Val Verde County
+201337831,Texas A & M Forest Service,2011,4/26/2011 0:00,Human,Missing data/not specified/undetermined,4/27/2011 0:00,15479.0,31.633385,-102.437217,TX,Crane County
+201337903,Texas A & M Forest Service,2011,5/6/2011 0:00,Human,Missing data/not specified/undetermined,5/14/2011 0:00,89200.0,33.60996575,-100.6924122,TX,Dickens County
+201337923,Texas A & M Forest Service,2011,5/8/2011 0:00,Human,Missing data/not specified/undetermined,5/12/2011 0:00,14513.0,32.57066,-100.6125,TX,Fisher County
+201337990,Texas A & M Forest Service,2011,5/24/2011 0:00,Human,Missing data/not specified/undetermined,5/25/2011 0:00,25000.0,32.26772,-102.2480467,TX,Andrews County
+201338000,Texas A & M Forest Service,2011,5/24/2011 0:00,Human,Missing data/not specified/undetermined,6/25/2011 0:00,16803.0,34.95088333,-101.8533167,TX,Randall County
+201338079,Texas A & M Forest Service,2011,6/2/2011 0:00,Human,Equipment and vehicle use,6/6/2011 0:00,12311.0,30.63458481,-104.1033621,TX,Jeff Davis County
+201338178,Texas A & M Forest Service,2011,6/8/2011 0:00,Human,Equipment and vehicle use,6/14/2011 0:00,19391.0,31.9041149,-100.779495,TX,Coke County
+201338304,Livingston Area,2011,6/17/2011 0:00,Human,Equipment and vehicle use,6/29/2011 0:00,20222.0,31.00662583,-94.97748583,TX,Polk County
+201338316,Texas A & M Forest Service,2011,6/18/2011 0:00,Human,Missing data/not specified/undetermined,6/22/2011 0:00,30000.0,27.1525,-98.35527778,TX,Brooks County
+201338382,Texas A & M Forest Service,2011,6/20/2011 0:00,Human,Missing data/not specified/undetermined,6/27/2011 0:00,72473.0,32.0782,-100.4601833,TX,Coke County
+201339499,Texas A & M Forest Service,2011,9/4/2011 0:00,Human,Missing data/not specified/undetermined,9/15/2011 0:00,41050.0,32.9731333,-94.4307,TX,Cass County
+201339520,Texas A & M Forest Service,2011,9/4/2011 0:00,Human,Power generation/transmission/distribution,9/30/2011 0:00,34068.0,30.22777389,-97.211651,TX,Bastrop County
+201408420,Texas A & M Forest Service,2011,2/27/2011 0:00,Human,Power generation/transmission/distribution,,19200.0,36.110143,-100.456581,TX,Lipscomb County
+201410853,Texas A & M Forest Service,2011,4/9/2011 0:00,Human,Power generation/transmission/distribution,,15000.0,33.279167,-102.568188,TX,Terry County
+201411320,Texas A & M Forest Service,2011,4/15/2011 0:00,Human,Power generation/transmission/distribution,,18000.0,34.0004325,-98.223224,TX,Clay County
+201414040,Texas A & M Forest Service,2011,6/12/2011 0:00,Human,Equipment and vehicle use,,24000.0,32.3689,-102.5242,TX,Andrews County
+201940024,Las Cruces Field Office,2011,4/21/2011 0:00,Human,Missing data/not specified/undetermined,,13424.0,32.292778,-106.4875,NM,Dona Ana County
+201430855,Nez Perce - Clearwater National Forests,2012,9/6/2012 0:00,Human,Missing data/not specified/undetermined,10/25/2012 0:00,48626.0,45.53416667,-116.2975,ID,Idaho County
+201431223,"Medicine Bow-Routt National Forests, Thunder Basin National Grassland",2012,6/30/2012 0:00,Human,Missing data/not specified/undetermined,10/26/2012 0:00,10517.0,41.11666667,-106.0833333,WY,Albany County
+201431506,Pike and San Isabel National Forest,2012,6/23/2012 0:00,Human,Missing data/not specified/undetermined,,18947.0,38.88333333,-104.9333333,CO,El Paso County
+201432331,Coronado National Forest,2012,5/21/2012 0:00,Human,Recreation and ceremony,5/25/2012 0:00,12015.0,31.38333333,-110.45,AZ,Cochise County
+201432610,Prescott National Forest,2012,5/13/2012 0:00,Human,Other causes,6/18/2012 0:00,16240.0,34.235,-112.3338889,AZ,Yavapai County
+201432752,Tonto National Forest,2012,5/12/2012 0:00,Human,Missing data/not specified/undetermined,7/2/2012 0:00,17618.0,33.93027778,-111.4763889,AZ,Maricopa County
+201432861,Tonto National Forest,2012,6/14/2012 0:00,Human,Missing data/not specified/undetermined,7/19/2012 0:00,11936.0,34.16722222,-110.8652778,AZ,Gila County
+201432957,Boise National Forest,2012,8/3/2012 0:00,Human,Equipment and vehicle use,10/22/2012 0:00,146832.0,43.71111111,-115.3655556,ID,Elmore County
+201433054,Bridger-Teton National Forest,2012,6/24/2012 0:00,Human,Missing data/not specified/undetermined,10/23/2012 0:00,65220.0,42.43416667,-110.6005556,WY,Lincoln County
+201433062,Bridger-Teton National Forest,2012,8/24/2012 0:00,Human,Recreation and ceremony,10/24/2012 0:00,29950.0,43.92555556,-110.2111111,WY,Teton County
+201434273,Mendocino National Forest,2012,7/7/2012 0:00,Human,Missing data/not specified/undetermined,8/2/2012 0:00,29502.0,39.31833333,-122.7069444,CA,Colusa County
+201434383,Plumas National Forest,2012,7/29/2012 0:00,Human,Recreation and ceremony,10/25/2012 0:00,75431.0,40.00694444,-121.2713889,CA,Plumas County
+201436579,George Washington & Jefferson National Forests,2012,4/7/2012 0:00,Human,Railroad operations and maintenance,4/26/2012 0:00,11381.0,37.75861111,-80.19888889,VA,Alleghany County
+201436585,George Washington & Jefferson National Forests,2012,4/9/2012 0:00,Human,Arson/incendiarism,4/26/2012 0:00,15454.0,37.86972222,-79.62527778,VA,Rockbridge County
+201436855,National Forests in North Carolina,2012,6/16/2012 0:00,Human,Debris and open burning,7/6/2012 0:00,21331.0,34.93333333,-77.01666667,NC,Craven County
+201500048,Alaska Fire Service,2012,9/25/2012 0:00,Human,Missing data/not specified/undetermined,10/9/2012 0:00,10222.0,63.9667,-146.3333,AK,Not Available
+201500166,Alaska Fire Service,2012,11/2/2012 0:00,Human,Equipment and vehicle use,11/9/2012 0:00,16566.0,58.98,-158.55,AK,Not Available
+201501107,Truxton Canyon Agency,2012,6/27/2012 0:00,Human,Equipment and vehicle use,8/1/2012 0:00,18392.0,35.7275,-113.8114,AZ,Not Available
+201501322,Central California District,2012,9/4/2012 0:00,Human,Arson/incendiarism,9/10/2013 0:00,17944.0,38.94444,-122.3445,CA,Colusa County
+201502383,Tres Rios Field Office,2012,6/22/2012 0:00,Human,Arson/incendiarism,7/24/2012 0:00,10133.0,37.2708,-108.3025,CO,Montezuma County
+201504033,Blackfeet Agency,2012,1/4/2012 0:00,Human,Debris and open burning,1/20/2012 0:00,12000.0,48.5305,-112.964,MT,Not Available
+201504352,Dillon Field Office,2012,6/25/2012 0:00,Human,Fireworks,7/6/2012 0:00,15341.0,45.6128,-111.555,MT,Madison County
+201504386,Fort Belknap Agency,2012,9/14/2012 0:00,Human,Equipment and vehicle use,9/19/2012 0:00,33318.0,48.3231,-108.6504,MT,Not Available
+201504724,Malta Field Office,2012,8/24/2012 0:00,Human,Arson/incendiarism,10/4/2012 0:00,10924.0,48.0667,-108.2667,MT,Phillips County
+201504874,Miles City Field Office,2012,9/14/2012 0:00,Human,Missing data/not specified/undetermined,9/24/2012 0:00,10473.0,45.8369,-104.5719,MT,Carter County
+201506735,Carson City District Office,2012,5/16/2012 0:00,Human,Missing data/not specified/undetermined,5/21/2012 0:00,17200.0,39.8889,-117.5567,NV,Churchill County
+201507304,Winnemucca District Office,2012,8/13/2012 0:00,Human,Power generation/transmission/distribution,8/15/2012 0:00,10720.6,41.79253,-117.73828,NV,Lander County
+201507920,Okmulgee Field Office,2012,8/2/2012 0:00,Human,Smoking,8/18/2012 0:00,58501.0,35.9567,-96.4392,OK,Not Available
+201508678,Vale District,2012,8/28/2012 0:00,Human,Equipment and vehicle use,9/4/2012 0:00,19448.8,43.011794,-117.195384,OR,Malheur County
+201509851,Rosebud Agency,2012,10/17/2012 0:00,Human,Power generation/transmission/distribution,10/19/2012 0:00,14453.0,43.059847,-100.972106,SD,Not Available
+201510630,Richfield Field Office,2012,6/22/2012 0:00,Human,Arson/incendiarism,6/27/2012 0:00,15898.0,39.353297,-112.494203,UT,Millard County
+201510631,Richfield Field Office,2012,6/23/2012 0:00,Human,Power generation/transmission/distribution,7/6/2012 0:00,47387.0,39.6065,-111.5849,UT,Sanpete County
+201510635,Richfield Field Office,2012,6/27/2012 0:00,Human,Arson/incendiarism,8/14/2012 0:00,107847.0,39.3231,-112.3881,UT,Millard County
+201511097,Colville Agency,2012,10/2/2012 0:00,Human,Missing data/not specified/undetermined,10/29/2012 0:00,16853.0,48.38544,-119.4415,WA,Not Available
+201511414,Casper Field Office,2012,7/14/2012 0:00,Human,Firearms and explosives use,7/22/2012 0:00,14140.0,42.3961,-104.86,WY,Platte County
+201511420,Casper Field Office,2012,9/9/2012 0:00,Human,Missing data/not specified/undetermined,10/1/2012 0:00,15556.0,42.71147,-106.31263,WY,Natrona County
+201511570,New Castle Field Office,2012,6/29/2012 0:00,Human,Power generation/transmission/distribution,10/9/2012 0:00,61416.0,43.9148,-104.2844,WY,Weston County
+201614296,Florida Forest Service,2012,5/5/2012 0:00,Human,Equipment and vehicle use,5/9/2012 0:00,10658.0,26.3323,-80.6402,FL,Broward County
+201750010,Yuma County,2012,3/18/2012 0:00,Human,Missing data/not specified/undetermined,3/20/2012 0:00,24000.0,40.016667,-102.455556,CO,Yuma County
+201750039,Washington State Fire Marshal's Office,2012,8/1/2012 0:00,Human,Missing data/not specified/undetermined,,12500.0,48.060278,-119.851389,WA,Douglas County
+201750055,Southeast Region-Department of Natural Resources,2012,8/13/2012 0:00,Human,Missing data/not specified/undetermined,,23500.0,47.165278,-120.816389,WA,Kittitas County
+201760068,Sawtooth National Forest,2013,8/17/2013 0:00,Human,Missing data/not specified/undetermined,11/18/2013 0:00,23406.0,43.88666667,-115.1794444,ID,Elmore County
+201760265,Tahoe National Forest,2013,8/10/2013 0:00,Human,Missing data/not specified/undetermined,10/8/2013 0:00,27440.0,39.11888889,-120.6461111,CA,Placer County
+201761774,Angeles National Forest,2013,5/30/2013 0:00,Human,Power generation/transmission/distribution,5/30/2013 0:00,30274.0,34.59222222,-118.4552778,CA,Los Angeles County
+201762181,Santa Fe National Forest,2013,5/30/2013 0:00,Human,Power generation/transmission/distribution,7/5/2013 0:00,10219.0,35.71583333,-105.6830556,NM,San Miguel County
+201763488,Klamath National Forest,2013,7/31/2013 0:00,Human,Missing data/not specified/undetermined,10/1/2013 0:00,12365.0,41.31027778,-123.2044444,CA,Siskiyou County
+201763765,Santa Fe National Forest,2013,5/31/2013 0:00,Human,Power generation/transmission/distribution,7/1/2013 0:00,23938.0,35.8925,-106.62,NM,Sandoval County
+201764781,Coronado National Forest,2013,5/17/2013 0:00,Human,Recreation and ceremony,5/28/2013 0:00,10775.0,31.42472222,-110.755,AZ,Santa Cruz County
+201765026,Lassen National Forest,2013,8/23/2013 0:00,Human,Power generation/transmission/distribution,8/29/2013 0:00,11429.0,40.03305556,-121.8755556,CA,Tehama County
+201765124,Six Rivers National Forest,2013,7/31/2013 0:00,Human,Arson/incendiarism,10/30/2013 0:00,22445.0,41.3275,-123.3791667,CA,Siskiyou County
+201766082,Dakota Prairie National Grasslands,2013,4/3/2013 0:00,Human,Debris and open burning,4/7/2013 0:00,10679.7,45.88138889,-102.5430556,SD,Perkins County
+201766413,Stanislaus National Forest,2013,8/17/2013 0:00,Human,Missing data/not specified/undetermined,10/24/2013 0:00,255858.0,37.86055556,-120.0830556,CA,Tuolumne County
+201770032,Alaska Fire Service,2013,5/30/2013 0:00,Human,Missing data/not specified/undetermined,,67338.0,63.8931,-145.9931,AK,Not Available
+201770099,Alaska Fire Service,2013,6/19/2013 0:00,Human,Arson/incendiarism,,87154.4,64.68,-146.58,AK,Not Available
+201771508,California Desert District,2013,7/15/2013 0:00,Human,Power generation/transmission/distribution,11/25/2013 0:00,27531.0,33.70703,-116.72789,CA,Riverside County
+201771519,California Desert District,2013,8/7/2013 0:00,Human,Missing data/not specified/undetermined,8/21/2013 0:00,20292.0,33.85728,-116.90633,CA,Riverside County
+201772330,Santa Monica Mountains National Recreation Area,2013,5/2/2013 0:00,Human,Missing data/not specified/undetermined,5/17/2013 0:00,24238.0,34.200976,-118.969471,CA,Not Available
+201773305,Big Cypress National Preserve,2013,3/29/2013 0:00,Human,Arson/incendiarism,4/9/2013 0:00,20300.0,26.091403,-81.281369,FL,Not Available
+201778244,Warm Springs Agency,2013,7/20/2013 0:00,Human,Arson/incendiarism,8/9/2013 0:00,53000.0,44.8167,-121.2375,OR,Not Available
+201780308,Yakama Agency,2013,7/24/2013 0:00,Human,Missing data/not specified/undetermined,9/26/2013 0:00,26093.0,45.99609,-120.65139,WA,Not Available
+201815308,Washington State Department of Natural Resources Headquarters,2013,7/27/2013 0:00,Human,Missing data/not specified/undetermined,10/2/2013 0:00,80053.0,47.2982,-120.1225,WA,Chelan County
+201823340,Berthoud Fire Protection District,2013,6/13/2013 0:00,Human,Missing data/not specified/undetermined,6/19/2013 0:00,16580.0,38.9872,-104.763,CO,Larimer County
+300000650,Coconino National Forest,2014,5/20/2014 0:00,Human,Missing data/not specified/undetermined,7/10/2014 0:00,22077.0,34.95166667,-111.7547222,AZ,Coconino County
+300001013,Lassen National Forest,2014,7/31/2014 0:00,Human,Missing data/not specified/undetermined,8/24/2014 0:00,47958.0,40.71944444,-121.5522222,CA,Shasta County
+300004616,Sierra National Forest,2014,7/28/2014 0:00,Human,Recreation and ceremony,8/18/2014 0:00,13837.0,37.27472222,-119.3372222,CA,Madera County
+300007296,Alaska Fire Service,2014,5/13/2014 0:00,Human,Missing data/not specified/undetermined,9/22/2014 0:00,23270.0,64.03386,-146.31786,AK,Not Available
+300009075,Navajo Region Fire and Aviation Management,2014,6/13/2014 0:00,Human,Debris and open burning,6/23/2014 0:00,14712.0,35.99647,-108.92028,NM,Not Available
+300011651,Northern California District,2014,7/11/2014 0:00,Human,Missing data/not specified/undetermined,7/26/2014 0:00,12660.0,40.41967,-122.7295,CA,Shasta County
+300012497,"Northwest District, Craig",2014,7/23/2014 0:00,Human,Equipment and vehicle use,8/8/2014 0:00,19569.0,40.70036,-108.05758,CO,Moffat County
+300022846,Osage Agency,2014,3/30/2014 0:00,Human,Debris and open burning,4/11/2014 0:00,17683.0,36.611128,-96.435031,OK,Not Available
+300022870,Osage Agency,2014,4/9/2014 0:00,Human,Debris and open burning,4/16/2014 0:00,14910.6,36.50092,-96.49756,OK,Not Available
+300024413,Prineville District,2014,7/29/2014 0:00,Human,Equipment and vehicle use,8/13/2014 0:00,25937.0,45.2355,-120.3497,OR,Gilliam County
+300028679,Spokane District,2014,7/8/2014 0:00,Human,Other causes,9/12/2014 0:00,22001.0,47.6626,-120.2906,WA,Chelan County
+300028688,Spokane District,2014,7/19/2014 0:00,Human,Firearms and explosives use,8/12/2014 0:00,10552.2,47.320294,-117.879983,WA,Lincoln County
+300028689,Spokane District,2014,7/18/2014 0:00,Human,Missing data/not specified/undetermined,7/21/2014 0:00,25000.0,46.8597,-119.9933,WA,Kittitas County
+300080856,Florida Forest Service,2014,4/27/2014 0:00,Human,Equipment and vehicle use,5/2/2014 0:00,11000.0,26.3179,-80.7176,FL,Broward County
+300099485,Texas A & M Forest Service,2014,4/27/2014 0:00,Human,Debris and open burning,5/4/2014 0:00,14987.0,30.23338333,-101.5422167,TX,Val Verde County
+300124877,Texas A & M Forest Service,2014,3/18/2014 0:00,Human,Missing data/not specified/undetermined,3/20/2014 0:00,29611.0,36.0833,-100.1156333,TX,Lipscomb County
+300156672,Eldorado National Forest,2014,9/13/2014 0:00,Human,Missing data/not specified/undetermined,,97717.0,38.7925,-120.6022222,CA,El Dorado County
+300206706,San Bernardino National Forest,2015,6/17/2015 0:00,Human,Missing data/not specified/undetermined,,51000.0,34.15694444,-116.9008333,CA,San Bernardino County
+300208089,Alaska Fire Service,2015,6/20/2015 0:00,Human,Missing data/not specified/undetermined,9/21/2015 0:00,75135.0,62.58,-158.02,AK,Not Available
+300209126,Central California District,2015,8/9/2015 0:00,Human,Equipment and vehicle use,8/24/2015 0:00,25156.0,38.83875,-122.50264,CA,Napa County
+300209128,Central California District,2015,7/29/2015 0:00,Human,Other causes,8/15/2015 0:00,69363.0,39.91194,-122.49306,CA,Lake County
+300209556,Northern California District,2015,8/3/2015 0:00,Human,Equipment and vehicle use,8/17/2015 0:00,10570.0,40.9636,-120.1142,CA,Lassen County
+300210756,Boise District,2015,6/25/2015 0:00,Human,Power generation/transmission/distribution,6/29/2015 0:00,10845.0,43.9476,-116.37031,ID,Gem County
+300214581,Cherokee Nation Tribe,2015,11/11/2015 0:00,Human,Missing data/not specified/undetermined,11/14/2015 0:00,22787.0,36.7808,-95.8378,OK,Not Available
+300215511,Roseburg District,2015,7/30/2015 0:00,Human,Equipment and vehicle use,10/29/2015 0:00,26452.2,42.9214,-123.0492,OR,Douglas County
+300215622,Vale District,2015,8/5/2015 0:00,Human,Power generation/transmission/distribution,8/12/2015 0:00,12024.0,44.3914,-117.3358,OR,Baker County
+300215723,Warm Springs Agency,2015,8/12/2015 0:00,Human,Equipment and vehicle use,11/20/2015 0:00,66613.0,44.8297,-121.3767,OR,Not Available
+300217045,Colville Agency,2015,8/13/2015 0:00,Human,Equipment and vehicle use,10/7/2015 0:00,218138.0,48.33814,-119.00175,WA,Not Available
+300217192,Spokane District,2015,8/4/2015 0:00,Human,Missing data/not specified/undetermined,8/13/2015 0:00,33103.0,45.7206,-120.3108,WA,Klickitat County
+300217203,Spokane District,2015,8/14/2015 0:00,Human,Arson/incendiarism,9/24/2015 0:00,64007.7,47.9892,-118.2164,WA,Stevens County
+300217207,Spokane District,2015,8/19/2015 0:00,Human,Missing data/not specified/undetermined,11/5/2015 0:00,11212.7,48.3806,-120.2433,WA,Okanogan County
+300218366,Wichita Mountains National Wildlife Refuge,2015,9/14/2015 0:00,Human,Firearms and explosives use,9/18/2015 0:00,10471.0,34.68176253,-98.59010782,OK,Comanche County
+300224006,Texas A & M Forest Service,2015,8/27/2015 0:00,Human,Power generation/transmission/distribution,9/1/2015 0:00,10468.0,30.78083333,-99.0155,TX,Mason County
+300235579,Oregon Department of Forestry Salem Headquarters,2015,9/12/2015 0:00,Human,Recreation and ceremony,10/21/2015 0:00,17823.0,44.8346,-117.2206,OR,Baker County
+300272280,Texas A & M Forest Service,2015,8/10/2015 0:00,Human,Missing data/not specified/undetermined,8/16/2015 0:00,17831.0,30.005,-100.3911667,TX,Edwards County
+400458128,Southeast Weld Fire Protection District,2015,9/18/2015 0:00,Human,Missing data/not specified/undetermined,9/18/2015 0:00,12699.0,40.392,-104.5784,CO,Weld County
+400001517,Klamath National Forest,2016,8/27/2016 0:00,Human,Arson/incendiarism,,33011.0,41.85305556,-123.115,CA,Siskiyou County
+400001542,Los Padres National Forest,2016,8/18/2016 0:00,Human,Power generation/transmission/distribution,9/15/2016 0:00,32606.0,34.54638889,-119.805,CA,Santa Barbara County
+400002183,Wallowa-Whitman National Forest,2016,7/31/2016 0:00,Human,Missing data/not specified/undetermined,9/30/2016 0:00,43799.0,44.4075,-118.3827778,OR,Baker County
+400002585,Lolo National Forest,2016,7/31/2016 0:00,Human,Recreation and ceremony,11/28/2016 0:00,28553.0,47.60111111,-115.2052778,MT,Sanders County
+400002664,"Medicine Bow-Routt National Forests, Thunder Basin National Grassland",2016,6/19/2016 0:00,Human,Recreation and ceremony,10/12/2016 0:00,38380.0,40.945,-106.6138889,CO,Jackson County
+400002665,Pike and San Isabel National Forest,2016,10/17/2016 0:00,Human,Power generation/transmission/distribution,6/15/2017 0:00,18320.0,38.16111111,-105.1988889,CO,Custer County
+400002734,Cibola National Forest,2016,6/14/2016 0:00,Human,Equipment and vehicle use,,17912.0,34.81111111,-106.3747222,NM,Torrance County
+400002883,Boise National Forest,2016,7/18/2016 0:00,Human,Missing data/not specified/undetermined,,188404.0,43.95027778,-115.7619444,ID,Boise County
+400003169,Los Padres National Forest,2016,7/22/2016 0:00,Human,Recreation and ceremony,11/10/2016 0:00,132127.0,36.46083333,-121.9005556,CA,Monterey County
+400003229,San Bernardino National Forest,2016,8/16/2016 0:00,Human,Missing data/not specified/undetermined,8/27/2016 0:00,36274.0,34.2625,-117.4625,CA,San Bernardino County
+400003232,Sequoia National Forest,2016,8/16/2016 0:00,Human,Missing data/not specified/undetermined,8/16/2016 0:00,29192.52,35.74555556,-118.5913889,CA,Kern County
+400003485,Chattahoochee-Oconee National Forest,2016,11/9/2016 0:00,Human,Arson/incendiarism,12/9/2016 0:00,24725.0,34.94111111,-83.54722222,GA,Rabun County
+400003644,George Washington & Jefferson National Forests,2016,11/19/2016 0:00,Human,Debris and open burning,12/13/2016 0:00,11229.0,37.72333333,-79.17027778,VA,Amherst County
+400004334,Nebraska National Forest,2016,10/16/2016 0:00,Human,Missing data/not specified/undetermined,,41360.0,43.89694444,-102.0225,SD,Pennington County
+400005773,National Forests in North Carolina,2016,11/3/2016 0:00,Human,Arson/incendiarism,11/24/2016 0:00,10641.8,35.27388889,-83.55972222,NC,Macon County
+400015493,California Desert District,2016,7/22/2016 0:00,Human,Missing data/not specified/undetermined,10/10/2016 0:00,41432.0,34.4275,-118.4083,CA,Los Angeles County
+400015751,Central California District,2016,6/23/2016 0:00,Human,Missing data/not specified/undetermined,7/7/2016 0:00,48007.0,35.6133,-118.4658,CA,Kern County
+400018957,Idaho Falls District,2016,8/21/2016 0:00,Human,Missing data/not specified/undetermined,9/14/2016 0:00,52512.0,43.3736,-111.9472,ID,Bonneville County
+400020643,Great Smoky Mountains National Park,2016,11/23/2016 0:00,Human,Misuse of fire by a minor,1/4/2017 0:00,17140.0,35.6308,-83.4778,TN,Not Available
+400025042,Cherokee Nation Tribe,2016,2/24/2016 0:00,Human,Arson/incendiarism,2/27/2016 0:00,14000.0,36.9153,-95.8039,OK,Not Available
+400025436,Okmulgee Field Office,2016,2/18/2016 0:00,Human,Debris and open burning,2/25/2016 0:00,21860.0,35.55628,-96.10425,OK,Not Available
+400025636,Osage Agency,2016,3/6/2016 0:00,Human,Arson/incendiarism,3/15/2016 0:00,11258.0,36.6642,-96.0289,OK,Not Available
+400025652,Osage Agency,2016,3/19/2016 0:00,Human,Arson/incendiarism,4/1/2016 0:00,12468.0,36.8292,-96.0006,OK,Not Available
+400026438,Prineville District,2016,7/21/2016 0:00,Human,Missing data/not specified/undetermined,8/4/2016 0:00,31848.0,45.5233,-120.3675,OR,Gilliam County
+400026719,Vale District,2016,8/21/2016 0:00,Human,Missing data/not specified/undetermined,8/29/2016 0:00,35194.0,43.55556,-117.3075,OR,Malheur County
+400028252,Amarillo Field Office,2016,3/24/2016 0:00,Human,Missing data/not specified/undetermined,3/25/2016 0:00,44686.0,35.6469,-101.255797,TX,Not Available
+400029445,Shenandoah National Park,2016,4/16/2016 0:00,Human,Recreation and ceremony,4/29/2016 0:00,10326.0,38.3144,-78.6461,VA,Not Available
+400029639,Spokane Agency,2016,8/21/2016 0:00,Human,Equipment and vehicle use,10/10/2016 0:00,18117.0,47.834981,-118.1154,WA,Not Available
+400029680,Spokane District,2016,7/30/2016 0:00,Human,Firearms and explosives use,8/2/2016 0:00,16005.5,47.2769,-119.0847,WA,Lincoln County
+400030362,Cody Field Office,2016,8/2/2016 0:00,Human,Equipment and vehicle use,9/23/2016 0:00,12387.0,44.445,-109.427,WY,Park County
+400030882,Alligator River National Wildlife Refuge,2016,4/18/2016 0:00,Human,Equipment and vehicle use,5/7/2016 0:00,15449.0,35.631841,-75.907249,NC,Hyde County
+400031073,Buenos Aires National Wildlife Refuge,2016,6/17/2016 0:00,Human,Debris and open burning,6/22/2016 0:00,15405.0,31.775403,-111.562903,AZ,Pima County
+400031182,Hanford Reach National Monument,2016,7/30/2016 0:00,Human,Equipment and vehicle use,8/6/2016 0:00,171915.0,46.569326,-120.080828,WA,Yakima County
+400045599,Capitan District,2016,3/2/2016 0:00,Human,Equipment and vehicle use,,18500.0,33.752354,-103.199008,NM,Roosevelt County
+400050976,South Carolina Forestry Commission,2016,11/9/2016 0:00,Human,Recreation and ceremony,12/8/2016 0:00,10623.0,35.03389,-82.744446,SC,Pickens County
+400074419,Oklahoma Division of Forestry,2016,2/19/2016 0:00,Human,Arson/incendiarism,2/20/2016 0:00,10436.0,34.80867,-95.20437,OK,Latimer County
+400081546,California Department of Forestry & Fire Protection,2016,7/30/2016 0:00,Human,Arson/incendiarism,,13349.0,37.017409,-119.526299,CA,Fresno County
+400086496,Texas A & M Forest Service,2016,3/23/2016 0:00,Human,Missing data/not specified/undetermined,3/25/2016 0:00,15174.0,35.22761667,-100.3435167,TX,Wheeler County
+400090967,Texas A & M Forest Service,2016,7/12/2016 0:00,Human,Missing data/not specified/undetermined,7/13/2016 0:00,10789.0,35.8558,-100.9121333,TX,Roberts County
+400092923,California Department of Forestry & Fire Protection,2016,8/13/2016 0:00,Human,Missing data/not specified/undetermined,9/6/2016 0:00,46235.0,35.669518,-120.99246,CA,San Luis Obispo County
+400101504,Wyoming State Forestry,2016,7/17/2016 0:00,Human,Missing data/not specified/undetermined,,20000.0,44.3187,-105.144,WY,Not Available
+400241939,Cowley County,2016,3/4/2016 0:00,Human,Missing data/not specified/undetermined,,25650.0,37.3522,-96.5611,KS,Cowley County
+400254457,Reno County,2016,3/23/2016 0:00,Human,Missing data/not specified/undetermined,,14000.0,38.0578,-97.7023,KS,Reno County
+400259053,Tennessee Division of Forestry,2016,11/9/2016 0:00,Human,Missing data/not specified/undetermined,,10586.0,36.4391667,-84.2236111,TN,Campbell County
+400008223,Ochoco National Forest,2017,7/25/2017 0:00,Human,Arson/incendiarism,8/4/2017 0:00,10527.0,44.73583333,-121.0416667,OR,Jefferson County
+400009466,Angeles National Forest,2017,12/5/2017 0:00,Human,Power generation/transmission/distribution,12/24/2017 0:00,15619.0,34.32222222,-118.3413889,CA,Los Angeles County
+400009652,Los Padres National Forest,2017,12/4/2017 0:00,Human,Missing data/not specified/undetermined,,281893.0,34.42527778,-119.0602778,CA,Ventura County
+400009729,Shasta-Trinity National Forest,2017,8/30/2017 0:00,Human,Power generation/transmission/distribution,11/14/2017 0:00,18316.0,40.77111111,-123.1241667,CA,Trinity County
+400009841,Okanogan-Wenatchee National Forest,2017,7/23/2017 0:00,Human,Missing data/not specified/undetermined,,127498.0,48.85527778,-120.4136111,WA,Okanogan County
+400009866,Columbia River Gorge National Scenic Area,2017,9/2/2017 0:00,Human,Fireworks,11/30/2017 0:00,48488.0,45.63027778,-121.9041667,OR,Multnomah County
+400011376,Prescott National Forest,2017,6/24/2017 0:00,Human,Missing data/not specified/undetermined,,28516.0,34.3575,-112.3730556,AZ,Yavapai County
+400011754,Los Padres National Forest,2017,7/8/2017 0:00,Human,Missing data/not specified/undetermined,,18431.0,34.56722222,-119.9541667,CA,Santa Barbara County
+400012088,Sequoia National Forest,2017,8/29/2017 0:00,Human,Arson/incendiarism,8/30/2017 0:00,36556.0,36.15194444,-118.7138889,CA,Tulare County
+400012140,Sierra National Forest,2017,8/29/2017 0:00,Human,Power generation/transmission/distribution,,12407.0,37.44888889,-119.65,CA,Madera County
+400014192,Gila District Office,2017,4/23/2017 0:00,Human,Fireworks,5/16/2017 0:00,46991.0,31.7989,-110.8586,AZ,Pima County
+400015899,Central California District,2017,7/9/2017 0:00,Human,Equipment and vehicle use,7/22/2017 0:00,48000.0,35.821336,-120.157158,CA,Fresno County
+400015902,Central California District,2017,7/16/2017 0:00,Human,Firearms and explosives use,9/7/2017 0:00,81826.0,37.61965,-120.2158,CA,Mariposa County
+400015986,Central California District,2017,10/8/2017 0:00,Human,Missing data/not specified/undetermined,10/28/2017 0:00,36807.0,38.60895,-122.62879,CA,Napa County
+400015987,Central California District,2017,10/8/2017 0:00,Human,Missing data/not specified/undetermined,10/29/2017 0:00,56556.0,38.4089,-122.47,CA,Sonoma County
+400015988,Central California District,2017,10/8/2017 0:00,Human,Missing data/not specified/undetermined,10/28/2017 0:00,51624.0,38.39206,-122.24367,CA,Napa County
+400015989,Central California District,2017,10/9/2017 0:00,Human,Missing data/not specified/undetermined,10/29/2017 0:00,17357.0,38.7661,-122.9069,CA,Sonoma County
+400015990,Central California District,2017,10/8/2017 0:00,Human,Missing data/not specified/undetermined,10/29/2017 0:00,36523.0,39.24873,-123.16639,CA,Mendocino County
+400016424,Northern California District,2017,7/11/2017 0:00,Human,Equipment and vehicle use,7/27/2017 0:00,83599.0,40.07486,-120.14819,NV,Washoe County
+400017037,"Northwest District, Craig",2017,6/11/2017 0:00,Human,Recreation and ceremony,7/16/2017 0:00,18804.0,40.1531,-108.815,CO,Moffat County
+400017920,Big Cypress National Preserve,2017,3/18/2017 0:00,Human,Smoking,6/8/2017 0:00,26371.0,25.9514,-81.22,FL,Not Available
+400018817,Fort Hall Agency,2017,8/4/2017 0:00,Human,Missing data/not specified/undetermined,9/8/2017 0:00,55529.0,42.7061,-112.7247,ID,Not Available
+400018987,Idaho Falls District,2017,8/25/2017 0:00,Human,Equipment and vehicle use,8/31/2017 0:00,17588.0,43.7936,-112.055,ID,Jefferson County
+400019160,Twin  Falls District,2017,8/4/2017 0:00,Human,Missing data/not specified/undetermined,8/9/2017 0:00,49912.0,43.0653,-114.3867,ID,Blaine County
+400019162,Twin  Falls District,2017,8/5/2017 0:00,Human,Missing data/not specified/undetermined,8/9/2017 0:00,35704.0,42.8644,-114.7122,ID,Lincoln County
+400023895,Carson City District Office,2017,7/3/2017 0:00,Human,Arson/incendiarism,7/21/2017 0:00,41545.0,39.58713,-119.68269,NV,Washoe County
+400023914,Carson City District Office,2017,7/12/2017 0:00,Human,Firearms and explosives use,8/6/2017 0:00,23387.0,39.17546,-118.13989,NV,Churchill County
+400024693,Winnemucca District Office,2017,7/3/2017 0:00,Human,Missing data/not specified/undetermined,7/14/2017 0:00,98960.1,39.762111,-119.252656,NV,Washoe County
+400024695,Winnemucca District Office,2017,7/3/2017 0:00,Human,Missing data/not specified/undetermined,7/17/2017 0:00,14592.0,40.3347,-118.2714,NV,Pershing County
+400024711,Winnemucca District Office,2017,7/14/2017 0:00,Human,Missing data/not specified/undetermined,7/24/2017 0:00,22360.6,40.754694,-118.016284,NV,Pershing County
+400024715,Winnemucca District Office,2017,7/17/2017 0:00,Human,Missing data/not specified/undetermined,7/22/2017 0:00,11580.5,40.7055,-117.6972,NV,Pershing County
+400026077,Burns District,2017,8/2/2017 0:00,Human,Missing data/not specified/undetermined,10/1/2017 0:00,52531.0,43.568,-119.9367,OR,Harney County
+400026501,Prineville District,2017,6/20/2017 0:00,Human,Equipment and vehicle use,6/30/2017 0:00,15200.0,44.91,-120.4164,OR,Wheeler County
+400028190,Wind Cave National Park,2017,12/11/2017 0:00,Human,Power generation/transmission/distribution,12/22/2017 0:00,54023.0,43.76753,-103.4578,SD,Not Available
+400028338,Padre Island National Seashore,2017,12/21/2017 0:00,Human,Recreation and ceremony,12/27/2017 0:00,14240.0,27.06595,-97.37883,TX,Not Available
+400028509,Cedar City Field Office,2017,6/17/2017 0:00,Human,Debris and open burning,12/5/2017 0:00,71675.0,37.7178,-112.8367,UT,Garfield County
+400029706,Spokane District,2017,7/30/2017 0:00,Human,Missing data/not specified/undetermined,8/8/2017 0:00,10408.7,46.12041,-120.04159,WA,Yakima County
+400106908,Oregon Department of Forestry Salem Headquarters,2017,8/26/2017 0:00,Human,Missing data/not specified/undetermined,11/1/2017 0:00,16436.0,42.93528,-123.60472,OR,Douglas County
+400110477,Texas A & M Forest Service,2017,3/23/2017 0:00,Human,Power generation/transmission/distribution,3/25/2017 0:00,38104.0,35.82253333,-100.7818333,TX,Roberts County
+400112392,Crook Volunteer Fire Department,2017,3/7/2017 0:00,Human,Equipment and vehicle use,3/7/2017 0:00,30000.0,40.8054,-102.9536,CO,Logan County
+400112398,Texas A & M Forest Service,2017,3/6/2017 0:00,Human,Equipment and vehicle use,3/7/2017 0:00,28800.0,35.31945,-101.8311833,TX,Potter County
+400113284,Florida Forest Service,2017,5/20/2017 0:00,Human,Equipment and vehicle use,5/25/2017 0:00,23500.0,26.3193,-80.6355,FL,Broward County
+400113287,Florida Forest Service,2017,5/19/2017 0:00,Human,Equipment and vehicle use,5/25/2017 0:00,19600.0,26.3978,-80.841,FL,Palm Beach County
+400114322,Oregon Department of Forestry Salem Headquarters,2017,8/8/2017 0:00,Human,Equipment and vehicle use,8/27/2017 0:00,68135.0,45.09278,-121.24639,OR,Wasco County
+400136148,Florida Forest Service,2017,2/15/2017 0:00,Human,Arson/incendiarism,2/18/2017 0:00,12564.0,27.9987,-80.7868,FL,Brevard County
+400141590,Texas A & M Forest Service,2017,2/23/2017 0:00,Human,Missing data/not specified/undetermined,2/24/2017 0:00,12913.0,35.55251667,-102.2352667,TX,Oldham County
+400142021,Texas A & M Forest Service,2017,3/7/2017 0:00,Human,Missing data/not specified/undetermined,3/8/2017 0:00,135000.0,35.31808333,-100.5388333,TX,Gray County
+400142232,Texas A & M Forest Service,2017,3/6/2017 0:00,Human,Missing data/not specified/undetermined,3/12/2017 0:00,318156.0,36.0865,-100.531,TX,Lipscomb County
+400145652,Utah Division Forestry Fire State Lands,2017,6/2/2017 0:00,Human,Missing data/not specified/undetermined,6/8/2017 0:00,11000.0,40.06,-112.82,UT,Tooele County
+400147617,North Central Montana District,2017,7/3/2017 0:00,Human,Missing data/not specified/undetermined,7/19/2017 0:00,11172.0,47.9083,-108.548,MT,Phillips County
+400149630,Rocky Boy's Agency,2017,8/27/2017 0:00,Human,Missing data/not specified/undetermined,9/19/2017 0:00,18915.04,48.17,-109.6217,MT,Hill County
+400153398,Texas A & M Forest Service,2017,11/1/2017 0:00,Human,Missing data/not specified/undetermined,,15000.0,34.17249,-102.51546,TX,Lamb County
+400163673,Oklahoma Division of Forestry,2017,3/4/2017 0:00,Human,Missing data/not specified/undetermined,3/5/2017 0:00,14000.0,35.7575,-95.13467,OK,Muskogee County
+400176307,Lane County,2017,3/6/2017 0:00,Human,Power generation/transmission/distribution,3/7/2017 0:00,18000.0,38.47942,-100.30192,KS,Lane County
+400176586,Nebraska Forest Service,2017,1/27/2017 0:00,Human,Equipment and vehicle use,1/28/2017 0:00,11000.0,41.95605,-100.7542,NE,Thomas County
+400178506,Comanche County,2017,3/8/2017 0:00,Human,Debris and open burning,3/8/2017 0:00,37000.0,37.36700451,-99.491933,KS,Comanche County
+400181259,Russell County,2017,3/6/2017 0:00,Human,Missing data/not specified/undetermined,3/7/2017 0:00,28000.0,38.900988,-98.6136705,KS,Russell County
+400300764,Gila National Forest,2018,5/22/2018 0:00,Human,Recreation and ceremony,5/21/2019 0:00,50296.0,33.72361111,-108.5372222,NM,Catron County
+400300964,Manti-Lasal National Forest,2018,6/7/2018 0:00,Human,Debris and open burning,8/12/2018 0:00,18080.0,39.35805556,-111.2163889,UT,Emery County
+400302411,"Medicine Bow-Routt National Forests, Thunder Basin National Grassland",2018,6/10/2018 0:00,Human,Equipment and vehicle use,8/30/2018 0:00,21357.0,41.01833333,-106.1888889,WY,Albany County
+400302444,Pike and San Isabel National Forest,2018,6/26/2018 0:00,Human,Arson/incendiarism,,107995.0,37.49638889,-105.2908333,CO,Costilla County
+400302446,San Juan National Forest,2018,6/1/2018 0:00,Human,Missing data/not specified/undetermined,7/31/2018 0:00,54129.0,37.46055556,-107.8080556,CO,La Plata County
+400302533,Coconino National Forest,2018,4/27/2018 0:00,Human,Recreation and ceremony,,16738.0,34.55694444,-111.1597222,AZ,Coconino County
+400302660,Bridger-Teton National Forest,2018,9/15/2018 0:00,Human,Recreation and ceremony,,61522.0,43.04138889,-110.5869444,WY,Sublette County
+400302837,Cleveland National Forest,2018,8/6/2018 0:00,Human,Missing data/not specified/undetermined,9/13/2018 0:00,23025.0,33.67833333,-117.5144444,CA,Orange County
+400302872,Klamath National Forest,2018,7/5/2018 0:00,Human,Debris and open burning,7/21/2018 0:00,38008.0,41.88083333,-122.54,CA,Siskiyou County
+400302943,San Bernardino National Forest,2018,7/25/2018 0:00,Human,Arson/incendiarism,,13229.0,33.71138889,-116.7694444,CA,Riverside County
+400302952,Shasta-Trinity National Forest,2018,9/5/2018 0:00,Human,Missing data/not specified/undetermined,11/28/2018 0:00,63458.0,40.9425,-122.4272222,CA,Shasta County
+400302960,Shasta-Trinity National Forest,2018,7/23/2018 0:00,Human,Equipment and vehicle use,8/29/2018 0:00,229651.0,40.67,-122.6430556,CA,Shasta County
+400302964,Shasta-Trinity National Forest,2018,8/9/2018 0:00,Human,Missing data/not specified/undetermined,11/26/2018 0:00,40580.0,40.89111111,-122.2283333,CA,Shasta County
+400303049,Fremont-Winema National Forest,2018,8/15/2018 0:00,Human,Missing data/not specified/undetermined,11/27/2018 0:00,59061.0,42.64972222,-120.8275,OR,Lake County
+400303157,Columbia River Gorge National Scenic Area,2018,7/31/2018 0:00,Human,Arson/incendiarism,8/7/2018 0:00,10232.0,45.66472222,-121.0336111,WA,Klickitat County
+400303807,"Medicine Bow-Routt National Forests, Thunder Basin National Grassland",2018,9/15/2018 0:00,Human,Recreation and ceremony,,28584.0,40.97777778,-106.7472222,CO,Jackson County
+400303899,Pike and San Isabel National Forest,2018,3/10/2018 0:00,Human,Equipment and vehicle use,,17650.0,37.03027778,-103.0202778,NM,Union County
+400304718,Dixie National Forest,2018,6/27/2018 0:00,Human,Recreation and ceremony,7/24/2018 0:00,11771.0,37.39722222,-113.4233333,UT,Washington County
+400304779,Payette National Forest,2018,7/26/2018 0:00,Human,Equipment and vehicle use,,34729.0,44.67583333,-116.4477778,ID,Adams County
+400305002,Mendocino National Forest,2018,6/23/2018 0:00,Human,Missing data/not specified/undetermined,,15186.0,39.09972222,-122.6163889,CA,Lake County
+400305003,Mendocino National Forest,2018,7/28/2018 0:00,Human,Equipment and vehicle use,10/19/2018 0:00,410203.0,39.23888889,-123.1086111,CA,Mendocino County
+400305445,Willamette National Forest,2018,8/19/2018 0:00,Human,Smoking,,11555.0,44.08361111,-122.2377778,OR,Lane County
+400305890,Alaska Fire Service,2018,7/23/2018 0:00,Human,Missing data/not specified/undetermined,10/23/2018 0:00,27193.6,62.8303,-142.3597,AK,Southeast Fairbanks Census Area
+400306102,Fort Apache Agency,2018,4/11/2018 0:00,Human,Recreation and ceremony,5/30/2018 0:00,26072.0,33.6558,-109.5058,AZ,Not Available
+400307064,Central California District,2018,7/27/2018 0:00,Human,Missing data/not specified/undetermined,8/13/2018 0:00,48920.0,39.06,-123.1397,CA,Lake County
+400307067,Central California District,2018,6/30/2018 0:00,Human,Other causes,7/14/2018 0:00,90288.0,38.81,-122.1997,CA,Yolo County
+400307281,Northern California District,2018,11/8/2018 0:00,Human,Power generation/transmission/distribution,11/25/2018 0:00,153336.0,39.8139,-121.4347,CA,Butte County
+400307326,Santa Monica Mountains National Recreation Area,2018,11/8/2018 0:00,Human,Missing data/not specified/undetermined,11/22/2018 0:00,96949.0,34.24,-118.6997,CA,Not Available
+400307342,Yosemite National Park,2018,7/13/2018 0:00,Human,Missing data/not specified/undetermined,12/12/2018 0:00,96953.0,37.6519,-119.8808,CA,Not Available
+400307374,Front Range District Office,2018,4/17/2018 0:00,Human,Missing data/not specified/undetermined,4/19/2018 0:00,42795.0,38.5588,-104.63553,CO,El Paso County
+400307420,"Northwest District, Craig",2018,6/29/2018 0:00,Human,Missing data/not specified/undetermined,7/9/2018 0:00,19946.0,40.7825,-107.8361,CO,Moffat County
+400308046,Big Cypress National Preserve,2018,4/30/2018 0:00,Human,Missing data/not specified/undetermined,6/5/2018 0:00,11689.0,26.2447,-81.2219,FL,Not Available
+400308380,Idaho Falls District,2018,9/22/2018 0:00,Human,Debris and open burning,9/27/2018 0:00,13617.8,42.2439,-113.4497,ID,Cassia County
+400308518,Idaho Falls District,2018,9/12/2018 0:00,Human,Missing data/not specified/undetermined,9/20/2018 0:00,12572.4,44.3089,-112.3997,ID,Clark County
+400308656,Twin  Falls District,2018,7/29/2018 0:00,Human,Firearms and explosives use,9/6/2018 0:00,64763.5,43.46669,-114.14553,ID,Blaine County
+400310400,Carlsbad Field Office,2018,4/17/2018 0:00,Human,Missing data/not specified/undetermined,4/18/2018 0:00,20480.0,33.303292,-103.481797,NM,Eddy County
+400310579,Las Cruces Field Office,2018,5/16/2018 0:00,Human,Missing data/not specified/undetermined,5/20/2018 0:00,20586.0,31.3489,-108.6778,NM,Hidalgo County
+400310659,Roswell Field Office,2018,4/12/2018 0:00,Human,Missing data/not specified/undetermined,5/9/2018 0:00,44162.0,33.497878,-103.337997,NM,Lea County
+400310911,Elko District Office,2018,7/1/2018 0:00,Human,Railroad operations and maintenance,7/19/2018 0:00,10907.4,40.7372,-114.5955,NV,Elko County
+400310977,Elko District Office,2018,8/18/2018 0:00,Human,Equipment and vehicle use,8/26/2018 0:00,59741.5,40.7728,-116.8422,NV,Lander County
+400310985,Elko District Office,2018,8/23/2018 0:00,Human,Equipment and vehicle use,8/30/2018 0:00,12978.1,40.6461,-116.1586,NV,Elko County
+400311253,Winnemucca District Office,2018,7/5/2018 0:00,Human,Missing data/not specified/undetermined,7/21/2018 0:00,416821.2,41.52733,-117.426523,NV,Humboldt County
+400311334,Western Nevada Agency,2018,7/27/2018 0:00,Human,Arson/incendiarism,8/8/2018 0:00,51386.0,39.86108,-119.6158,NV,Not Available
+400311640,Concho Field Office,2018,4/12/2018 0:00,Human,Missing data/not specified/undetermined,4/27/2018 0:00,286196.0,35.8486,-99.213331,OK,Not Available
+400311796,Osage Agency,2018,3/6/2018 0:00,Human,Power generation/transmission/distribution,3/14/2018 0:00,20307.0,36.7981,-96.5011,OK,Not Available
+400311805,Osage Agency,2018,3/15/2018 0:00,Human,Power generation/transmission/distribution,3/25/2018 0:00,10816.0,36.2997,-96.2939,OK,Not Available
+400312261,Prineville District,2018,7/17/2018 0:00,Human,Missing data/not specified/undetermined,8/6/2018 0:00,78425.0,45.5753,-121.1025,OR,Wasco County
+400312270,Prineville District,2018,7/26/2018 0:00,Human,Equipment and vehicle use,8/6/2018 0:00,33451.0,45.4283,-121.06,OR,Wasco County
+400313293,Uintah and Ouray Agency,2018,7/1/2018 0:00,Human,Missing data/not specified/undetermined,8/20/2018 0:00,68547.0,40.11,-110.819742,UT,Not Available
+400313527,Spokane District,2018,7/19/2018 0:00,Human,Missing data/not specified/undetermined,7/24/2018 0:00,71209.0,46.95188,-120.28329,WA,Kittitas County
+400313543,Spokane District,2018,8/11/2018 0:00,Human,Equipment and vehicle use,8/15/2018 0:00,76817.1,47.84,-119.33989,WA,Douglas County
+400313842,Kemmerer Field Office,2018,8/16/2018 0:00,Human,Power generation/transmission/distribution,8/21/2018 0:00,13763.0,41.9433,-111.1228,UT,Rich County
+400314274,Ten Thousand Islands National Wildlife Refuge,2018,3/4/2018 0:00,Human,Missing data/not specified/undetermined,3/31/2018 0:00,10466.0,26.022161,-81.512006,FL,Collier County
+400314399,McNary National Wildlife Refuge,2018,7/29/2018 0:00,Human,Missing data/not specified/undetermined,8/6/2018 0:00,12377.0,45.97436,-118.9977,OR,Umatilla County
+400319851,Texas A & M Forest Service,2018,4/13/2018 0:00,Human,Power generation/transmission/distribution,4/15/2018 0:00,26979.0,34.82021667,-100.2201833,TX,Collingsworth County
+400319864,Texas A & M Forest Service,2018,4/13/2018 0:00,Human,Power generation/transmission/distribution,4/17/2018 0:00,12530.0,35.224,-100.1305,TX,Wheeler County
+400322727,Texas A & M Forest Service,2018,3/15/2018 0:00,Human,Equipment and vehicle use,3/18/2018 0:00,15682.0,35.612972,-102.301128,TX,Oldham County
+400323481,Texas A & M Forest Service,2018,4/17/2018 0:00,Human,Equipment and vehicle use,4/21/2018 0:00,23143.0,35.22066667,-100.8693333,TX,Gray County
+400326089,California Department of Forestry & Fire Protection,2018,6/29/2018 0:00,Human,Equipment and vehicle use,8/9/2018 0:00,11789.0,38.052055,-120.945482,CA,San Joaquin County
+400341268,Texas A & M Forest Service,2018,4/2/2018 0:00,Human,Debris and open burning,4/8/2018 0:00,14824.0,35.0672,-101.1847,TX,Armstrong County
+400372078,State of Hawaii,2018,8/1/2018 0:00,Human,Missing data/not specified/undetermined,8/4/2018 0:00,18000.0,19.883333,-155.7,HI,Hawaii County
+400372333,Oregon Department of Forestry Salem Headquarters,2018,8/1/2018 0:00,Human,Missing data/not specified/undetermined,8/10/2018 0:00,20026.0,45.41917,-121.24528,OR,Wasco County
+400376589,Cimarron District,2018,5/31/2018 0:00,Human,Missing data/not specified/undetermined,,36740.0,36.551389,-105.121125,NM,Colfax County
+400380336,California Department of Forestry & Fire Protection,2018,1/3/2018 0:00,Human,Missing data/not specified/undetermined,,12300.01,37.607204,-121.010773,CA,Stanislaus County
+400389746,Baca County Office,2018,4/17/2018 0:00,Human,Missing data/not specified/undetermined,,50671.0,37.4007,-102.2765,CO,Baca County
