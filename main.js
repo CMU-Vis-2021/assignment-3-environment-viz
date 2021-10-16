@@ -216,13 +216,7 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
       Tooltip.style("display", "none");
     })
 
-   //this is nothing important, just a very hacky way to add spacing between the map and bar chart
-   d3.select("#my_dataviz")
-   .append("svg")
-     .attr("width", width)
-     .attr("height", 60)
-
-     //this is nothing important, just a very hacky way to add spacing between the map and bar chart
+  //this is nothing important, just a very hacky way to add spacing between the map and bar chart
    d3.select("#my_dataviz")
    .append("svg")
      .attr("width", width)
@@ -294,23 +288,9 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
     // xAxis.selectAll("g")
     //      .call(d3.axisBottom(x)) 
 
-    //inspired by: https://www.codegrepper.com/code-examples/javascript/javascript+group+by+sum+array+reduce
-    var result = [];
-    yearData.reduce(function(res, value) {
-      if (!res[value.NWCG_GENERAL_CAUSE]) {
-        res[value.NWCG_GENERAL_CAUSE] = { NWCG_GENERAL_CAUSE: value.NWCG_GENERAL_CAUSE, VALUE: value.VALUE, qty: 0 };
-        result.push(res[value.NWCG_GENERAL_CAUSE])
-      }
-      res[value.NWCG_GENERAL_CAUSE].qty += parseInt(value.FIRE_SIZE);
-      return res;
-    }, {});
-
-    console.log("RESULT")
-    console.log(result)
-
     // map data to existing bars
     var bars = svgBar.selectAll("rect")
-                  .data(result)
+                  .data(yearData)
 
     bars
       .join("rect")
@@ -320,7 +300,7 @@ d3.json("assets/geojson/USA.geojson").then(function(data){
         .attr("x", x(0) )
         .attr("class",function(d){ return "val"+d.VALUE+"bar bars" })
         .attr("y", d => y(d.NWCG_GENERAL_CAUSE) )
-        .attr("width", d => x(d.qty))
+        .attr("width", d => x(d.FIRE_SIZE))
         .attr("height", y.bandwidth() )
         .style("fill", function(d){ return color(d.VALUE) })
     // .attr("stroke", function(d){ return color(d.VALUE) })
