@@ -271,7 +271,7 @@ d3.csv("assets/firesfinaldata.csv").then((table)=>{
       .style("font-size", "14px") 
       .style("color", "grey")
       .style("opacity", ".6") 
-      .text("Click on bar to focus"); // instructions for how to interact with bar chart
+      .text("Click on bar to focus. Click again to undo."); // instructions for how to interact with bar chart
     
     svgBar.append("text")
       .attr("x", (widthBar / 2))             
