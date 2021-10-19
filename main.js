@@ -11,6 +11,8 @@ var margin = {top: 20, right: 30, bottom: 100, left: 130};
 
 let activeValue = "";
 
+var turnOffFilter = false;
+
 var currentMapYear = '2000';
 
 //defining variables for color legend
@@ -332,7 +334,7 @@ d3.csv("assets/firesfinaldata.csv").then((table)=>{
           .style("fill", function(d){ return color(d.VALUE) })
 
      // When the bar chart is clicked, call updateBar function 
-      d3.selectAll("rect").on("mousedown",function(event, d) {toggleActive(); this.classList.add("active"); selectedCategory = d.NWCG_GENERAL_CAUSE; activeValue = "";});
+      d3.selectAll("rect").on("mousedown",function(event, d) {toggleActive(); this.classList.add("active"); selectedCategory = d.NWCG_GENERAL_CAUSE; console.log(activeValue);console.log(d.VALUE);if (activeValue == "val"+d.VALUE){turnOffFilter = true;};activeValue = "";});
       d3.selectAll("rect").on("mouseup",updateBar);
     }
 
@@ -368,24 +370,43 @@ d3.csv("assets/firesfinaldata.csv").then((table)=>{
     }
 
 
-    function updateBar(e){
-      // For each check box:
-      d3.selectAll("rect").each(function(d){
-        let cb = d3.select(this);
-        let ctgry = d.VALUE;
-        let grp = "val" + ctgry;
+    function updateBar(e, f){
+      //first check if we are focusing the bars or unfocusing them
+      if( turnOffFilter == true){
+        //this is what happens to unfocus the bars
+        d3.selectAll("rect").each(function(d){
+          let cb = d3.select(this);
+          let ctgry = d.VALUE;
+          let grp = "val" + ctgry;
 
-        
-        if(this.classList.contains("active")!=true && activeValue != grp){
-          svg.selectAll("."+grp+""+currentMapYear).transition().duration(1000).style("opacity", .3).style("stroke",  function(d){ return color(d.VALUE) }).attr("fill-opacity", .4);
-          svgBar.selectAll("."+grp+"bar").transition().duration(1000).style("fill", function(d){ return colorSoft(d.VALUE) });
-         }
-        else{
-          activeValue = grp;
-          svg.selectAll("."+grp+""+currentMapYear).transition().duration(1000).style("opacity", 1).style("stroke",  "black" ).attr("fill-opacity", .8)
+          svg.selectAll("."+grp+""+currentMapYear).transition().duration(1000).style("opacity", 1).attr("fill-opacity", .8)
           svgBar.selectAll("."+grp+"bar").transition().duration(1000).style("fill", function(d){ return color(d.VALUE) });
+
+          svg.selectAll("."+grp+""+currentMapYear).transition().duration(1000).style("opacity", 1).style("stroke",  function(d){ return color(d.VALUE) }).attr("fill-opacity", .4);
+          svgBar.selectAll("."+grp+"bar").transition().duration(1000).style("stroke",  "none" ).style("fill", function(d){ return color(d.VALUE) });
+        })
+        turnOffFilter = false;
+      }
+      else{
+        // For each check box:
+          d3.selectAll("rect").each(function(d){
+            let cb = d3.select(this);
+            let ctgry = d.VALUE;
+            let grp = "val" + ctgry;
+
+            
+            if(this.classList.contains("active")!=true && activeValue != grp){
+              svg.selectAll("."+grp+""+currentMapYear).transition().duration(1000).style("opacity", .3).style("stroke",  function(d){ return color(d.VALUE) }).attr("fill-opacity", .4);
+              svgBar.selectAll("."+grp+"bar").transition().duration(1000).style("stroke",  "none" ).style("fill", function(d){ return colorSoft(d.VALUE) });
+            }
+            else{
+              activeValue = grp;
+              svg.selectAll("."+grp+""+currentMapYear).transition().duration(1000).style("opacity", 1).style("stroke",  "black" ).attr("fill-opacity", .8)
+              svgBar.selectAll("."+grp+"bar").transition().duration(1000).style("fill", function(d){ return color(d.VALUE) });
+            }
+          })
         }
-      })
+        console.log(turnOffFilter)
     }
 
     function test (e){
