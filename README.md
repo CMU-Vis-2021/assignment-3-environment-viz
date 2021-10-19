@@ -9,6 +9,8 @@
 - - -
 
 ## Dataset and subsets
+Wildfires have been increasingly getting worse in the United States. We were curious to see what role humans played in these wildfires or if they were primarily caused by increasingly dry climates. 
+
 We retrieved our data from the US Forest Service's [Spatial Wildfire Occurence Data for The United States](https://www.fs.usda.gov/rds/archive/Catalog/RDS-2013-0009.5). The dataset was originally provided as an `.sqlite` file type and had over 2 million records of fires from 1992 - 2018. We created a subset of this dataset using SQL queries. Our filtered subset contains 259 records of fires from 2000 - 2018 that burned over 25,000 acres. We chose to limit it this timeframe  and size of fire in order to work with a mangeable dataset for an MVP. We were also limited to the file size that we could upload to GitHub - thus we limited our dataset to fit within GitHub's limits.
 
 ## Questions/Goals
